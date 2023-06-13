@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-
+import SidePanel from '@/components/sidepanel/SidePanel';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,9 +15,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="container">
+            <Navbar />
+            <div className="page">
+                <SidePanel className="ten" />
+                <div className="ninety">
+                    {children}
+                </div>
+            </div>
+            <Footer />
+        </div>
       </body>
     </html>
   )

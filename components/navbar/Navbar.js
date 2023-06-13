@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import styles from "./navbar.module.css"
 
 const links = [
     {
@@ -32,15 +33,18 @@ const links = [
 const Navbar = () => {
     
   return (
-    <>
-        <Link href="/"> Stephen Cabunilas </Link>
-
-        <div>
+    <div className={styles.container}>
+        <Link href="/" className={styles.logo}> 
+        Stephen Cabunilas 
+        </Link>
+        <div className={styles.links}>
             {links.map(link=>(
-                <Link key={link.id} href={link.url}>{link.title}</Link>
+                <Link key={link.id} href={link.url} className={styles.link}>
+                    {link.title}
+                </Link>
             ))}
         </div>
-    </>
+    </div>
   )
 }
 

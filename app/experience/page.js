@@ -3,7 +3,7 @@ import styles from "./page.module.css"
 
 const Experience = () => {
   return (
-    <div>
+    <div className={styles.container}>
       Experience
     </div>
   )

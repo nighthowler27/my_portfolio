@@ -12,5 +12,30 @@
 html,
 body {
     max-width: 100vw;
-    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1366px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page {
+    margin: 0;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ten {
+    min-width: 100%;
+}
+
+.ninety {
+    min-width: 100%;
 }
