@@ -158,7 +158,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-10.png" width={100} height={100} alt="shape-ten" />
+            <Image src="/img/shape-10-1.png" width={100} height={100} alt="shape-ten" />
         </div>
 
         <div className={styles.shapeEleven} style={{
@@ -176,7 +176,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-12.png" width={100} height={100} alt="shape-Twelve" />
+            <Image src="/img/shape-12-1.png" width={100} height={100} alt="shape-Twelve" />
         </div>
 
         <div className={styles.shapeThirteen} style={{
