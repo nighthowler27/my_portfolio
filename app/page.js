@@ -10,8 +10,8 @@ export default function Home() {
         
         <div className="leftside">
             <div className="descBox">
-                <h1>Hi, I'm Steph</h1>
-                <h2>I'm a <strong></strong> </h2>
+                <h1>Hi, I'm Stephen</h1>
+                <h2> a certified <strong> </strong> </h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                 </p>

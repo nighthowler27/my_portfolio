@@ -91,7 +91,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-          <Image src="/img/shape-3.png" width={400} height={400} alt="shape-three" />
+          <Image src="/img/shape-3-1.png" width={400} height={400} alt="shape-three" />
         </div>
 
         <div
@@ -102,7 +102,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-          <Image src="/img/shape-4.png" width={100} height={100} alt="shape-four" />
+          <Image src="/img/shape-4-2.png" width={100} height={100} alt="shape-four" />
         </div>
 
         <div
@@ -140,7 +140,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-8.png" width={100} height={100} alt="shape-eight" />
+            <Image src="/img/shape-8-2.png" width={100} height={100} alt="shape-eight" />
         </div>
 
         <div className={styles.shapeNine} style={{
@@ -158,7 +158,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-10-1.png" width={100} height={100} alt="shape-ten" />
+            <Image src="/img/shape-10-2.png" width={100} height={100} alt="shape-ten" />
         </div>
 
         <div className={styles.shapeEleven} style={{
@@ -167,7 +167,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-11.png" width={100} height={100} alt="shape-eleven" />
+            <Image src="/img/shape-11-2.png" width={100} height={100} alt="shape-eleven" />
         </div>
 
         <div className={styles.shapeTwelve} style={{
@@ -185,7 +185,7 @@ const ParallaxBG = () => {
           }}
           onAnimationEnd={resetShapePositions}
         >
-            <Image src="/img/shape-13.png" width={100} height={100} alt="shape-Thirteen" />
+            <Image src="/img/shape-13-2.png" width={100} height={100} alt="shape-Thirteen" />
         </div>
 
         <div className={styles.shapeFourteen} style={{

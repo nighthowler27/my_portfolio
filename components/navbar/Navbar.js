@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
         <Link href="/" className={styles.logo}> 
-        Stephen Cabunilas 
+        Steph Cabunilas 
         </Link>
         <div className={styles.links}>
             {links.map(link=>(
