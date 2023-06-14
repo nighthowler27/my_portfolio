@@ -1,4 +1,6 @@
 .container {
+    padding-left: 10px;
+    padding-right: 30px;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -9,8 +11,13 @@
     font-weight: bold;
     font-size: large;
 }
+
 .links {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.link {
+    padding: 0 20px;
 }

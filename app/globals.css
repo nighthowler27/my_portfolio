@@ -13,6 +13,9 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    background: rgb(34, 34, 34);
+    color: #fff;
+    z-index: -1;
 }
 
 .container {
@@ -25,17 +28,122 @@ body {
     justify-content: space-between;
 }
 
-.page {
-    margin: 0;
-    padding: 0 50px;
+.main {
+    height: 80vh;
+    /* background: #fff; */
+}
+
+
+/* Home page */
+
+.landingPage {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.ten {
-    min-width: 100%;
+.leftside {
+    width: 50%;
+    padding: 25px;
+    background: rgba(195, 194, 194, 0.586);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
-.ninety {
-    min-width: 100%;
+.leftside .descBox {
+    padding-left: 35px;
+}
+
+.leftside h1 {
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.leftside h2 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.leftside p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.leftside button {
+    padding: 5px 10px;
+    background: #ff0000;
+    border-radius: 5px;
+    border: none;
+}
+
+.rightside {
+    width: 50%;
+    /* background: rgb(13, 249, 95); */
+    display: flex;
+    position: relative;
+}
+
+.rightside .resume-btn {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+}
+
+.rightside .resume-btn button {
+    padding: 5px 10px;
+    background: #ff0000;
+    border-radius: 5px;
+    border: none;
+}
+
+.rightside .myPic {
+    /* background: #ff0000; */
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.myPic::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 70%;
+    top: 60%;
+    right: 0;
+    border: 20px solid #000;
+    border-bottom: none;
+    transform: translateY(-50%);
+}
+
+.myPic::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 70%;
+    border: 20px solid #000;
+    border-top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.myPic Image {
+    position: relative;
+    z-index: 5;
+}
+
+.leftside,
+.rightside {
+    height: 80vh;
+}
+
+.parallaxBG {
+    position: absolute;
+    z-index: 0;
 }
