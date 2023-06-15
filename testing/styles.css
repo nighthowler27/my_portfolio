@@ -1,21 +1,21 @@
-  /* .background {
+.background {
     display: flex;
-    min-height: 600px;
-  } */
+    min-height: 100vh;
+  }
   
-  .container {
+.container {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
   }
   
-  .screen {
+.screen {
     position: relative;
     background: #3e3e3e;
     border-radius: 15px;
   }
   
-  .screen:after {
+.screen:after {
     content: '';
     display: block;
     position: absolute;
@@ -28,7 +28,7 @@
     z-index: -1;
   }
   
-  .screenHeader {
+.screen-header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -37,11 +37,11 @@
     border-top-right-radius: 15px;
   }
   
-  .screenHeaderLeft {
+.screen-header-left {
     margin-right: auto;
   }
   
-  .screenHeaderButton {
+.screen-header-button {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -50,23 +50,23 @@
     background: white;
   }
   
-  .screenHeaderButton.close {
+.screen-header-button.close {
     background: #ed1c6f;
   }
   
-  .screenHeaderButton.maximize {
+  .screen-header-button.maximize {
     background: #e8e925;
   }
   
-  .screenHeaderButton.minimize {
+  .screen-header-button.minimize {
     background: #74c54f;
   }
   
-  .screenHeaderRight {
+  .screen-header-right {
     display: flex;
   }
   
-  .screenHeaderEllipsis {
+  .screen-header-ellipsis {
     width: 3px;
     height: 3px;
     margin-left: 2px;
@@ -74,21 +74,21 @@
     background: #999;
   }
   
-  .screenBody {
+  .screen-body {
     display: flex;
   }
   
-  .screenBodyItem {
+  .screen-body-item {
     flex: 1;
     padding: 50px;
   }
   
-  .screenBodyItem.left {
+  .screen-body-item.left {
     display: flex;
     flex-direction: column;
   }
   
-  .appTitle {
+  .app-title {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -96,7 +96,7 @@
     font-size: 26px;
   }
   
-  .appTitle:after {
+  .app-title:after {
     content: '';
     display: block;
     position: absolute;
@@ -106,41 +106,27 @@
     height: 4px;
     background: #ea1d6f;
   }
-
-  .thankYou {
-    font-size: 18px;
-    font-weight: bold;
-  }
   
-  .appContact {
+  .app-contact {
     margin-top: auto;
+    font-size: 8px;
     color: #888;
   }
-
-  .contactP {
-    font-size: 14px;
-  }
-  .contactN {
-    font-size: 12px;
-  }
-  .contactE {
-    font-size: 12px;
-  }
   
-  .appFormGroup {
+  .app-form-group {
     margin-bottom: 15px;
   }
   
-  .appFormGroup.message {
+  .app-form-group.message {
     margin-top: 40px;
   }
   
-  .appFormGroup.buttons {
+  .app-form-group.buttons {
     margin-bottom: 0;
     text-align: right;
   }
   
-  .appFormControl {
+  .app-form-control {
     width: 100%;
     padding: 10px 0;
     background: none;
@@ -153,16 +139,15 @@
     transition: border-color .2s;
   }
   
-  .appFormControl::placeholder {
+  .app-form-control::placeholder {
     color: #666;
   }
   
-  .appFormControl:focus {
+  .app-form-control:focus {
     border-bottom-color: #ddd;
   }
   
-  .appFormButton {
-    margin-left: 25px;
+  .app-form-button {
     background: none;
     border: none;
     color: #ea1d6f;
@@ -171,7 +156,7 @@
     outline: none;
   }
   
-  .appFormButton:hover {
+  .app-form-button:hover {
     color: #b9134f;
   }
   
@@ -186,7 +171,7 @@
     font-weight: normal;
   }
   
-  .creditsLink {
+  .credits-link {
     display: flex;
     align-items: center;
     color: #fff;
@@ -201,33 +186,33 @@
   }
   
   @media screen and (max-width: 520px) {
-    .screenBody {
+    .screen-body {
       flex-direction: column;
     }
   
-    .screenBodyItem.left {
+    .screen-body-item.left {
       margin-bottom: 30px;
     }
   
-    .appTitle {
+    .app-title {
       flex-direction: row;
     }
   
-    .appTitle span {
+    .app-title span {
       margin-right: 12px;
     }
   
-    .appTitle:after {
+    .app-title:after {
       display: none;
     }
   }
   
   @media screen and (max-width: 600px) {
-    .screenBody {
+    .screen-body {
       padding: 40px;
     }
   
-    .screenBodyItem {
+    .screen-body-item {
       padding: 0;
     }
   }
