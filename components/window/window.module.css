@@ -1,11 +1,10 @@
-/* .background {
+.background {
     display: flex;
-    max-height: 1000px;
+    max-height: 400px;
     position: relative;
-  } */
+  }
 
   .mainContainer {
-    min-height: 80vh;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -21,57 +20,13 @@
   }
 
   .firstWindow {
+    width: 600px;
     position: relative;
     justify-content: center;
     left: 0;
-    top: -75px;
-    z-index: 5;
-    transition: all .5s ease-in-out;
+    top: 0;
   }
 
-  .firstWindow:hover {
-    transform: scale(1.2);
-  }
-
-
-  .secondWindow {
-    position: relative;
-    justify-content: center;
-    left: 0;
-    top: 100px;
-    z-index: 3;
-    transition: all .5s ease-in-out;
-  }
-
-  .secondWindow:hover {
-    transform: scale(1.1);
-    z-index: 6;
-  }
-
-  .miniWindow1 {
-    position: absolute;
-    top: 25px;
-    right: 20px;
-    width: 350px; 
-    height: 200px
-  }
-  .miniWindow2 {
-    position: absolute;
-    top: 10px;
-    right: 400px;
-    width: 400px; 
-    height: 400px
-  }
-  .miniWindow3 {
-    position: absolute;
-    bottom: 20px;
-    left: 120px;
-  }
-  .miniWindow4 {
-    position: absolute;
-    bottom: 0;
-    left: 400px;
-  }
   
   .screen {
     position: relative;
