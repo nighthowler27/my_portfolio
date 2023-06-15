@@ -16,7 +16,7 @@ const ParallaxBG = () => {
       setIsMouseInFrame(true);
     };
 
-    const handleMouseLeave = () => {
+    const handleLeave = () => {
       setIsMouseInFrame(false);
     };
 
