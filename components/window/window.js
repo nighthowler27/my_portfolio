@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./window.module.css"
+import Typing from '../typing/typing'
 
 const Window = () => {
   return (
@@ -26,8 +27,7 @@ const Window = () => {
                     <div className={styles.screenBody}>
                     <div className={`${styles.screenBodyItem} ${styles.left}`}>
                         <div className={styles.appTitle}>
-                        <span className={styles.question}>WHO AM I?</span>
-
+                            <Typing />
                         </div>
                         
                         </div>
