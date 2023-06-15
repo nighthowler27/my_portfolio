@@ -19,12 +19,16 @@ const ParallaxBG = () => {
       setIsMouseInFrame(false);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
+   window.addEventListener('touchmove', handleMove, { passive: true });
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('touchend', handleLeave);
+    window.addEventListener('mouseleave', handleLeave);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('touchend', handleLeave);
+      window.removeEventListener('mouseleave', handleLeave);
     };
   }, []);
 
