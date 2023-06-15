@@ -15,7 +15,7 @@ export default function Home() {
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                 </p>
-                <button type="button" >Hire me</button>
+                <button type="button" >Hire me now</button>
             </div>
         </div>
 
