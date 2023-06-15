@@ -10,8 +10,9 @@ const ParallaxBG = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+    const handleMove = (event) => {
+      const { clientX, clientY } = event.touches ? event.touches[0] : event;
+      setMousePosition({ x: clientX, y: clientY });
       setIsMouseInFrame(true);
     };
 
