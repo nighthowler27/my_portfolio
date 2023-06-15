@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-
+import { useForm, ValidationError } from '@formspree/react';
 import styles from './page.module.css';
 
 
@@ -10,7 +10,12 @@ import theme from "@/config/theme";
 import MessageBox from '@/components/messageBox/messageBox';
 
 const Contact = () => {
-    
+    const [state, handleSubmit] = useForm("https://formspree.io/f/mvonergq");
+  
+    if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+    }
+  
     return (
       <div className={styles.background}>
         <div className={styles.container}>
