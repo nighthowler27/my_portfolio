@@ -211,6 +211,12 @@ body {
     content: "";
     animation: typing 13.5s infinite;
   }
+
+  .typewriter::after {
+    content: "";
+    border-right: 1ch solid var(--caret);
+    animation: blink 0.5s linear infinite;
+  }
   
   .typewriter.thick::after {
     border-right: 1ch solid var(--caret);
