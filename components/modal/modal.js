@@ -25,7 +25,7 @@ const Modal = ({ open, onClose }) => {
           </div>
           <div className={styles.btnContainer}>
             <button className={styles.btnPrimary}>
-              <span className={styles.bold}>YES</span>, I love NFT's
+              <span className={styles.bold}>YES</span>, I love NFT&apos;s
             </button>
             <button className={styles.btnOutline}>
               <span className={styles.bold}>NO</span>, thanks
