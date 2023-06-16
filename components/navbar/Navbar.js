@@ -20,8 +20,8 @@ const links = [
     },
     // {
     //     id: 4,
-    //     title: "Experience",
-    //     url: "/experience",
+    //     title: "Appointment",
+    //     url: "/appointment",
     // },
     {
         id: 5,

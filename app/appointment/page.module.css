@@ -1,0 +1,58 @@
+.container {
+    min-width: 1200px;
+    min-height: 600px;
+    /* background: #fff; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .appointment {
+    width: 1000px;
+    height: 450px;
+    background: #8a8888;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .formWrapper {
+    display: flex;
+    position: relative;
+  }
+  
+  .leftForm,
+  .rightForm {
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+  }
+
+  .leftForm {
+    flex-direction: column;
+  }
+
+  .leftForm input {
+    height: 30px;
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .leftForm textarea {
+    height: 300px;
+  }
+
+  .rightForm {
+    flex-direction: column;
+  }
+
+  .rightForm button {
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  

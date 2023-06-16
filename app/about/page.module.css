@@ -9,6 +9,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
@@ -31,6 +32,10 @@
 
   .firstWindow:hover {
     transform: scale(1.2);
+  }
+
+  .firstWindow, .secondWindow {
+    flex: 1 0 50%;
   }
 
 

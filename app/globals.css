@@ -93,6 +93,10 @@ body {
     color: #ff0000;
 }
 
+.leftSide .hireBtn {
+    width: 50px;
+}
+
 .rightside {
     width: 50%;
     /* background: rgb(13, 249, 95); */
@@ -254,4 +258,10 @@ body {
   }
   
   /**/
+
+
+.hireModal {
+    z-index: 5;
+}
+
   

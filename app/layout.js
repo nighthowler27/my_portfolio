@@ -20,9 +20,7 @@ export default function RootLayout({ children }) {
         <div className="container">
             <Navbar />
             <div className="main">   
-                <div className="content">
-                    {children}
-                </div>
+                {children}
             </div>
             <Footer />
         </div>

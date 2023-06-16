@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import ParallaxBG from '@/components/parallaxBG/parallaxBG'
+import Link from 'next/link'
+
 
 export default function Home() {
   return (
@@ -18,7 +20,11 @@ export default function Home() {
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                     </p>
-                    <button type="button" >Hire me now</button>
+                    <button type="button">
+                        <Link href="/appointment" className=""> 
+                            Hire me
+                        </Link>
+                    </button>
                 </div>
             </div>
 
