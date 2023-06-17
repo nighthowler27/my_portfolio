@@ -1,15 +1,14 @@
 "use client"
-import React from 'react'
-import Box from '@mui/material/Box';
+
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
-import styles from './meeting.module.css'
+import styles from './meeting.module.css';
 
 const currencies = [
     {
-        value: 'Select',
-        label: 'Select',
-      },
+      value: 'Select',
+      label: 'Select',
+    },
     {
       value: 'Online',
       label: 'Online',
@@ -17,38 +16,54 @@ const currencies = [
     {
       value: 'In-person',
       label: 'In-person',
-    }, 
+    },
   ];
-
-const MeetingType = () => {
-  return (
-    <div className={styles.meetingTypeContainer}>
+  
+  const MeetingType = ({ handleMeetingTypeChange, handlePurposeChange }) => {
+    const [purpose, setPurpose] = useState('');
+    const [meetingType, setMeetingType] = useState('Select');
+  
+    const handleMeetingTypeSelection = (event) => {
+      const selectedValue = event.target.value;
+      setMeetingType(selectedValue);
+      handleMeetingTypeChange(selectedValue);
+    };
+  
+    const handlePurposeInput = (event) => {
+      const inputValue = event.target.value;
+      setPurpose(inputValue);
+      handlePurposeChange(inputValue);
+    };
+  
+    return (
+      <div>
         <TextField
-            required
-            id="outlined-required"
-            helperText="Please kindly state the purpose of the meeting"
-            label="PURPOSE"
-            className={styles.meetingPurpuse}
+          required
+          id="outlined-required"
+          helperText="Please kindly state the purpose of the meeting"
+          label="PURPOSE"
+          value={purpose}
+          onChange={handlePurposeInput}
         />
-
+  
         <TextField
-        id="outlined-select-currency-native"
-        select
-        label="MEETING TYPE"
-        defaultValue="Select"
-        SelectProps={{
+          id="outlined-select-currency-native"
+          select
+          label="MEETING TYPE"
+          value={meetingType}
+          onChange={handleMeetingTypeSelection}
+          SelectProps={{
             native: true,
-        }}
+          }}
         >
-        {currencies.map((option) => (
+          {currencies.map((option) => (
             <option key={option.value} value={option.value}>
-            {option.label}
+              {option.label}
             </option>
-        ))}
+          ))}
         </TextField>
-    </div>
- 
-  )
-}
-
-export default MeetingType
+      </div>
+    );
+  };
+  
+  export default MeetingType;
