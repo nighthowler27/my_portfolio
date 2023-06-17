@@ -3,6 +3,7 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styles from './page.module.css';
 import Window from '@/components/window/window'
+import Center from '@/components/center/center'
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("mknadbvj");
@@ -155,7 +156,9 @@ function ContactForm() {
   };
   function Contact() {
     return (
-      <ContactForm />
+        <Center>
+            <ContactForm />
+        </Center>
     );
   }
   

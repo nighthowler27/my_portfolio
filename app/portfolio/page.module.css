@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .webDevCardContainer,
+  .photogCardContainer {
+    margin: 5px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  
+  .webDevCards,
+  .photogCards {
+    height: 500px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 400px;
+    padding: 10px;
+  }
+  
+  .windowComp {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+  

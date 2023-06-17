@@ -11,45 +11,74 @@
 
 html,
 body {
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
     background: rgb(34, 34, 34);
     color: #fff;
-    z-index: -1;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 .container {
     max-width: 1366px;
-    max-height: 800px;
+    height: 100vh;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: auto 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     object-fit: contain;
-    overflow: hidden;
 }
 
-.main {
-    height: 80vh;
-    /* background: #fff; */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
+
+.mainLayout {
+    min-height: 80vh;
+    margin: 10px 20px;
+}
+
+.mainLayout::-webkit-scrollbar {
+    display: none;
+  }
 
 
 /* Home page */
+.landingMain {
+    height: 80vh;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
 .landingPage {
     width: 85vw;
+    position: relative;
     display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: space-between;
-    object-fit: contain;
+    flex-direction: column;
+    border-radius: 25px;
     overflow: hidden;
-    left: 105px;
-    border-radius: 15px;
-    
+    justify-content: center;
+}
+
+.parallaxBG {
+   display: flex;
+   position: absolute;
+   object-fit: cover;
+   justify-content: center;
+}
+
+.contentLanding {
+    display: flex;
+    flex-direction: row;
 }
 
 .leftside {
@@ -169,11 +198,6 @@ body {
     height: 80vh;
 }
 
-.parallaxBG {
-    position: absolute;
-    z-index: 0;
-    object-fit: cover;
-}
 
 /* typewriter effect */
 @keyframes typing {

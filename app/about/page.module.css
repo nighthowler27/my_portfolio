@@ -58,14 +58,14 @@
     top: 25px;
     right: 20px;
     width: 350px; 
-    height: 200px
+    max-height: 200px;
   }
   .miniWindow2 {
     position: absolute;
     top: 10px;
     right: 400px;
     width: 400px; 
-    height: 400px
+    height: 400px;
   }
   .miniWindow3 {
     position: absolute;

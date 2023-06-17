@@ -2,10 +2,9 @@ import Image from 'next/image'
 import ParallaxBG from '@/components/parallaxBG/parallaxBG'
 import Link from 'next/link'
 
-
 export default function Home() {
   return (
-    <div className="container">
+    <div className="landingMain">
 
         <div className="landingPage">
             
@@ -13,6 +12,7 @@ export default function Home() {
                 <ParallaxBG />
             </div>    
             
+            <div className="contentLanding">
             <div className="leftside">
                 <div className="descBox">
                     <h1>Hi, I&apos;m Stephen</h1>
@@ -37,8 +37,9 @@ export default function Home() {
                     <Image src="/img/homepage_pic.png" fill={true} alt="homepage_pic.png"/>
                 </div>
             </div>
+            </div>
         </div>
     </div>
-   
+
   )
 }
