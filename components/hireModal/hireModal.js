@@ -1,56 +1,105 @@
 "use client"
 import React from 'react'
-import { AiFillGithub } from 'react-icons/ai';
-import { GoLinkExternal } from 'react-icons/go';
+import { useForm, ValidationError } from '@formspree/react';
+import TextField from '@mui/material/TextField';
+import { FaTimes } from 'react-icons/fa';
 import styles from './hiremodal.module.css';
+import Calendar from "@/components/calendar/calendar";
+import TimeSelector from "@/components/time/time";
+import MeetingType from "@/components/meetingPurpose/meetingType";
 
 const HireModal = ({ open, onClose }) => {
+    const [state, handleSubmit] = useForm("mknadbvj");
     return (
         <>
         {open && (
           <div className={styles.modalOverlay}>
             <div className={styles.modal}>
-              <div className={styles.modalBanner}>
-                <p>Banner Image</p>
+                
+                <div className={styles.modalBtn}>
+                    <button type="button" className={styles.closeBtn} onClick={onClose}>
+                    <FaTimes />
+                    </button>
+                </div>
+
+                <div className={styles.modalBanner}>
+                    <p>Banner Image</p>
+                </div>
+                <div className={styles.modalContent}>
+             
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.modalLeft}>
+                        <TextField
+                        required
+                        id="outlined-required"
+                        label="NAME"
+                        className={styles.inputName}
+                        />
+
+                        <TextField
+                        required
+                        id="outlined-required"
+                        label="EMAIL"
+                        className={styles.inputEmail}
+                        />
+
+                        <TextField
+                        required
+                        id="outlined-required"
+                        label="CONTACT NO."
+                        className={styles.inputContactNo}
+                        />
+
+                        <TextField
+                        id="filled-multiline-static"
+                        label="Notes, concerns or requirements"
+                        multiline
+                        maxRows={4}
+                        className={styles.inputTextArea}
+                        />   
+                    </div>
+
+                    <div className={styles.modalRight}>
+            
+    
+                        <h2>Choose a date and time</h2>
+
+                        <div className="dateTIme">
+                            
+                            <Calendar className={styles.datePicker} />
+                        
+                            <TimeSelector />
+
+                        </div> 
+
+                        <h2>Preferred Platform</h2>
+
+                        <div className="meetingSelector">
+                        <MeetingType />
+                        </div>
+                        
+
+                    </div>
+
+                    <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    />
+                    <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                    />
+                    <div className={`${styles.appFormGroup} ${styles.buttons}`}>
+                    <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
+                        Submit
+                    </button>
+                    </div>
+                </form>
+
               </div>
 
-              <div className={styles.modalContent}>
-                <div className={styles.modalLeft}>
-                  <h1>Project: School Website</h1>
-                  <h2>Group Name: Team M.E.R.S.</h2>
-                  <h2>Date Started: DD/MM/YYYY</h2>
-                  <h2>Date Completed: DD/MM/YYYY</h2>
-                  <h2>Contributors/Members:</h2>
-                  
-  
-                </div>
-                <div className={styles.modalRight}>
-                    <div className="modalRightContent">
-                        <div className="RigthTitle">
-                            <h2>Description</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, cum ipsum id quo saepe magnam libero esse eveniet, incidunt laboriosam nisi! Nobis corrupti ullam voluptate dolores necessitatibus maiores repudiandae placeat minus vitae doloremque fugit beatae quis fuga sapiente nesciunt aperiam perferendis rem nostrum, itaque ad culpa porro? Dolor nobis accusantium dignissimos ab dolore quam reiciendis vitae! Placeat dolorem perspiciatis aliquid animi dolor excepturi, officiis dolore quia sequi similique libero, quam rem. Facilis, laudantium! Cupiditate dignissimos porro dolores repellendus excepturi libero.</p>
-                        </div>
-                    </div>
-                </div>
-              </div>
-  
-              <div className={styles.modalBtn}>
-                <button type="button" className={styles.closeBtn} onClick={onClose}>
-                  Close
-                </button>
-  
-                <div className={styles.webLinks}>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <p>Check Repository</p>
-                    <AiFillGithub />
-                  </a>
-  
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <p>Live Link</p>
-                    <GoLinkExternal />
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         )}

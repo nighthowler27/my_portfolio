@@ -110,12 +110,7 @@ body::-webkit-scrollbar {
     margin-bottom: 10px;
 }
 
-.leftside button {
-    padding: 5px 10px;
-    background: #ff0000;
-    border-radius: 5px;
-    border: none;
-}
+
 
 .leftside button:hover {
     background: #fff;
