@@ -1,37 +1,71 @@
 .container {
     display: flex;
     flex-direction: column;
+    height: fit-content;
+    padding: 30px;
+    margin-bottom: 10px;
   }
   
   .container::-webkit-scrollbar {
     display: none;
   }
   
-  .webDevCardContainer,
-  .photogCardContainer {
+  .CardInfoContainer {
     margin: 5px;
     margin-bottom: 30px;
     justify-content: center;
   }
   
-  .webDevCards,
-  .photogCards {
-    height: 500px;
-    margin: 10px;
-    padding: 10px;
+  .Cards{
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   
   .card {
-    width: 400px;
-    padding: 10px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    align-items: center; /* Add this line */
+    justify-content: center; /* Add this line */
   }
-  
+
+  .portBtn {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    z-index: 3;
+  }
+
+  .miniScreen {
+    background: #fff;
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 50%; /* Add this line */
+    left: 50%; /* Add this line */
+    transform: translate(-50%, -50%); /* Add this line */
+  }
+
   .windowComp {
-    height: 100%;
-    max-height: 100%;
-    overflow: hidden;
+    z-index: 1;
   }
   
+
+  /* ==================== */
+  .containerTest {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .windowTest {
+    width: 600px;
+    height: 200px;
+    display: flex;
+  }
+
