@@ -1,8 +1,30 @@
+"use client"
+import React, { useState } from 'react'
 import Image from 'next/image'
 import ParallaxBG from '@/components/parallaxBG/parallaxBG'
 import Link from 'next/link'
+import HireModal from '@/components/hireModal/hireModal'
+import ResumeModal from '@/components/resumeModal/resumeModal'
 
 export default function Home() {
+    const [isHireModalOpen, setHireModalOpen] = useState(false);
+    const [isResumeModalOpen, setResumeModalOpen] = useState(false);
+
+    const openHireModal = () => {
+    setHireModalOpen(true);
+    };
+
+    const closeHireModal = () => {
+    setHireModalOpen(false);
+    };
+
+    const openResumeModal = () => {
+    setResumeModalOpen(true);
+    };
+
+    const closeResumeModal = () => {
+    setResumeModalOpen(false);
+    };
   return (
     <div className="landingMain">
 
@@ -20,17 +42,21 @@ export default function Home() {
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                     </p>
-                    <button type="button">
-                        <Link href="/appointment" className=""> 
-                            Hire me
-                        </Link>
-                    </button>
+                    <button type="button" className="hireBtn" onClick={openHireModal}>Hire Me</button>
+
+                    {isHireModalOpen && (
+                        <HireModal open={isHireModalOpen} onClose={closeHireModal}/>
+                    )}
                 </div>
             </div>
 
             <div className="rightside">
                 <div className="resume-btn">
-                    <button>CV | Resume</button>
+                <button type="button" className="CvResumeBtn" onClick={openResumeModal}>CV | Resume</button>
+
+                {isResumeModalOpen && (
+                    <ResumeModal open={isResumeModalOpen} onClose={closeResumeModal}/>
+                )}
                 </div>
                 
                 <div className="myPic">

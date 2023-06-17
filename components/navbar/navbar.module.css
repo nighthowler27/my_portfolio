@@ -28,3 +28,8 @@
 .link {
     padding: 0 20px;
 }
+
+.active {
+    font-weight: bold;
+    color: blue;
+  }

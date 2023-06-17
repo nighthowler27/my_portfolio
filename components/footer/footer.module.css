@@ -1,3 +1,36 @@
 .container {
     margin: 10px 15px 20px 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.copyText {
+    padding: 10px;
+}
+
+.socIcons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .scaled {
+    transform: scale(1.6); /* You can adjust the scale factor as needed */
+  }
+  
+  .icons:hover {
+    color: burlywood;
+  }
+
+  .copyText strong:hover {
+    color: brown;
+  }

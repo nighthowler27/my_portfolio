@@ -1,13 +1,12 @@
 "use client"
 import React from 'react'
-import styles from './modal.module.css';
+import styles from './resume.module.css';
 import { AiFillGithub } from 'react-icons/ai';
 import { GoLinkExternal } from 'react-icons/go';
-import Contributor from '../contributors/contributor';
 
 
 
-const Modal = ({ open, onClose }) => {
+const ResumeModal = ({ open, onClose }) => {
     return (
       <>
         {open && (
@@ -24,8 +23,7 @@ const Modal = ({ open, onClose }) => {
                   <h2>Date Started: DD/MM/YYYY</h2>
                   <h2>Date Completed: DD/MM/YYYY</h2>
                   <h2>Contributors/Members:</h2>
-                  
-                  <Contributor />
+        
                 </div>
                 <div className={styles.modalRight}>
                     <div className="modalRightContent">
@@ -61,4 +59,4 @@ const Modal = ({ open, onClose }) => {
     );
   };
 
-export default Modal;
+export default ResumeModal;
