@@ -7,9 +7,15 @@ import styles from './hiremodal.module.css';
 import Calendar from "@/components/calendar/calendar";
 import TimeSelector from "@/components/time/time";
 import MeetingType from "@/components/meetingPurpose/meetingType";
+import UploadSection from '../uploadsection/uploadsection';
 
 const HireModal = ({ open, onClose }) => {
-    const [state, handleSubmit] = useForm("mknadbvj");
+    const [state, handleSubmit] = useForm("mlekqlww");
+    if (state.succeeded) {
+        return (
+            <div>Thank you! I will review your booking and confirm it as soon as I can</div>
+        );
+      }
     return (
         <>
         {open && (
@@ -35,7 +41,7 @@ const HireModal = ({ open, onClose }) => {
                 <form onSubmit={handleSubmit} className={styles.appointmentForm}>
 
                     <div className={styles.modalLeft}>
-                        <p>Tell me your name and how can I contact you.</p>
+                        <p className={styles.modalInstruction}>• Tell your name and where to contact you.</p>
                         
                         <TextField
                         required
@@ -64,15 +70,17 @@ const HireModal = ({ open, onClose }) => {
                         multiline
                         maxRows={4}
                         className={styles.inputTextArea}
-                        />   
+                        />
+
+                        <UploadSection />   
                     </div>
 
                     <div className={styles.modalRight}>
             
     
-                        <p>Choose your preferred date and time</p>
+                        <p className={styles.modalInstruction}>• Choose your preferred date and time</p>
 
-                        <div className="dateTIme">
+                        <div className={styles.dateTIme}>
                             
                             <Calendar className={styles.datePicker} />
                         
@@ -80,7 +88,7 @@ const HireModal = ({ open, onClose }) => {
 
                         </div> 
 
-                        <p>Additional Info</p>
+                        <p className={styles.modalInstruction}>• Additional Info</p>
 
                         <div className="meetingSelector">
                             <MeetingType />
@@ -103,14 +111,14 @@ const HireModal = ({ open, onClose }) => {
                     <div className={`${styles.appFormGroup} ${styles.buttons}`}>
 
                     <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
-                        Submit
+                        Book
                     </button>
                     </div>
                 </form>
                 </div>
 
                 <div className={styles.modalFooter}>
-                    <p>Banner Image</p>
+                    <p>*Please check if all information are correct before booking</p>
                 </div>
 
             </div>

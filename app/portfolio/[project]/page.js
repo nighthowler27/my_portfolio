@@ -4,6 +4,7 @@ import styles from "../page.module.css"
 import Window from '@/components/window/window'
 import Image from 'next/image'
 import Modal from '@/components/modal/modal'
+import UploadSection from '@/components/uploadsection/uploadsection'
 
 
 const Project = () => {
@@ -40,6 +41,8 @@ const Project = () => {
           </div>
         </div>
       </div>
+
+      <UploadSection />
     </div>
   );
 };

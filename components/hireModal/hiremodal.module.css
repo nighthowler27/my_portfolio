@@ -69,13 +69,12 @@
     gap: 15px;
   }
 
-  .inputName,
-  .inputEmail,
-  .inputContactNo,
-  .inputTextArea {
-    width: 100%;
+  .modalInstruction {
+    text-align: left;
+    white-space: nowrap;
+    font-size: 12px;
   }
-  
+ 
   .modalContent .modalRight {
     width: 50%;
     padding: 15px;
@@ -99,10 +98,18 @@
   .closeBtn {
     margin-top: 10px;
     padding: 10px;
-    background-color: #be1616;
+    background-color: #be4816;
+    color: #d0cfcf;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+  }
+
+  .closeBtn:hover {
+    background-color: #d0cfcf;
+    color: #be4816;
+    border: 2px solid #be4816;
+
   }
   
 
@@ -121,8 +128,18 @@
     border-radius: 10px;
 }
 
+.appFormButton:hover {
+    color: rgb(7, 159, 108);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(7, 159, 108);
+}
+
+.dateTIme{
+    width: 100%;
+    margin: 0 auto;
+}
 
   .datePicker {
-    margin: 10px;
+    margin: 0 auto;
     z-index: 999;
   }
