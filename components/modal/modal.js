@@ -44,7 +44,7 @@ const Modal = ({ open, onClose }) => {
   
                 <div className={styles.webLinks}>
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <p>Check Repository</p>
+                    <p>Github Repository</p>
                     <AiFillGithub />
                   </a>
   

@@ -15,6 +15,10 @@ const HireModal = ({ open, onClose }) => {
         {open && (
           <div className={styles.modalOverlay}>
             <div className={styles.modal}>
+
+                <div className={styles.modalTitle}>
+                    <p>SET AN APPOINTMENT MEETING </p>
+                </div>
                 
                 <div className={styles.modalBtn}>
                     <button type="button" className={styles.closeBtn} onClick={onClose}>
@@ -25,10 +29,14 @@ const HireModal = ({ open, onClose }) => {
                 <div className={styles.modalBanner}>
                     <p>Banner Image</p>
                 </div>
+
                 <div className={styles.modalContent}>
              
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={styles.appointmentForm}>
+
                     <div className={styles.modalLeft}>
+                        <p>Tell me your name and how can I contact you.</p>
+                        
                         <TextField
                         required
                         id="outlined-required"
@@ -52,7 +60,7 @@ const HireModal = ({ open, onClose }) => {
 
                         <TextField
                         id="filled-multiline-static"
-                        label="Notes, concerns or requirements"
+                        label="Special notes, concerns or requirements"
                         multiline
                         maxRows={4}
                         className={styles.inputTextArea}
@@ -62,20 +70,20 @@ const HireModal = ({ open, onClose }) => {
                     <div className={styles.modalRight}>
             
     
-                        <h2>Choose a date and time</h2>
+                        <p>Choose your preferred date and time</p>
 
                         <div className="dateTIme">
                             
                             <Calendar className={styles.datePicker} />
                         
-                            <TimeSelector />
+                            <TimeSelector className={styles.datePicker}/>
 
                         </div> 
 
-                        <h2>Preferred Platform</h2>
+                        <p>Additional Info</p>
 
                         <div className="meetingSelector">
-                        <MeetingType />
+                            <MeetingType />
                         </div>
                         
 
@@ -91,14 +99,19 @@ const HireModal = ({ open, onClose }) => {
                     field="message"
                     errors={state.errors}
                     />
+
                     <div className={`${styles.appFormGroup} ${styles.buttons}`}>
+
                     <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
                         Submit
                     </button>
                     </div>
                 </form>
+                </div>
 
-              </div>
+                <div className={styles.modalFooter}>
+                    <p>Banner Image</p>
+                </div>
 
             </div>
           </div>
