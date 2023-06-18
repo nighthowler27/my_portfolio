@@ -1,10 +1,9 @@
 "use client"
 import React, { useState } from 'react'
 import styles from "./page.module.css"
-import MiniPoject1 from '@/components/portfolio/miniproject1/miniproject1'
-import MiniPoject2 from '@/components/portfolio/miniproject2/miniproject2'
+import MiniProject1 from '@/components/portfolio/miniproject1/miniproject1'
+import MiniProject2 from '@/components/portfolio/miniproject2/miniproject2'
 import CapstoneProject from '@/components/portfolio/capstoneproject/capstoneproject'
-import ContentNavbar from '@/components/navbar/portfolioNavbar/contentNavbar'
 
 const Portfolio = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -23,9 +22,9 @@ const Portfolio = () => {
                 <h2>Projects</h2>
                 <div className={styles.Cards}>
 
-                    <MiniPoject1 className={styles.card} />
+                    <MiniProject1 className={styles.card} />
 
-                    <MiniPoject2 className={styles.card} />
+                    <MiniProject2 className={styles.card} />
 
                     <CapstoneProject className={styles.card} />
 
@@ -33,9 +32,9 @@ const Portfolio = () => {
 
                 <div className={styles.Cards}>
 
-                    <MiniPoject1 className={styles.card} />
+                    <MiniProject1 className={styles.card} />
 
-                    <MiniPoject2 className={styles.card} />
+                    <MiniProject2 className={styles.card} />
 
                     <CapstoneProject className={styles.card} />
 

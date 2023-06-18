@@ -1,0 +1,90 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: auto; /* Change to "auto" to enable scrolling */
+  }
+  
+  .modal {
+    max-width: 80%; /* Change to "max-width" for responsiveness */
+    height: auto; /* Change to "auto" for dynamic height */
+    margin: 60px;
+    color: black;
+    background-color: #fff;
+    padding-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .modalBanner {
+    background: #ddd;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    flex: 1; /* Allow modal content to grow and occupy available space */
+    padding: 20px;
+    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
+    display: flex;
+    flex-direction: row;
+}
+  
+  .modalContent .modalLeft {
+    width: 50%;
+    padding: 15px;
+    text-align: justify;
+  }
+  
+  .modalContent .modalRight {
+    width: 50%;
+    padding: 15px;
+    text-align: justify;
+  }
+  
+  .modalBtn {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .webLinks {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .link {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .closeBtn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

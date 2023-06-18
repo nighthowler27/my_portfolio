@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './modal.module.css';
 import { AiFillGithub } from 'react-icons/ai';
 import { GoLinkExternal } from 'react-icons/go';
-import Contributor from '../contributors/contributor';
+import Contributor from '../contributors/capstonecontributor';
 
 
 

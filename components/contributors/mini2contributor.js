@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './contributor.module.css'
 
-const Contributor = () => {
+const MIni2Contributor = () => {
   return (
     <div className={styles.container}>
       Contributors
@@ -10,4 +10,4 @@ const Contributor = () => {
   )
 }
 
-export default Contributor
+export default MIni2Contributor

@@ -1,58 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+  <title>Code Editor</title>
+  <style>
+    /* CSS for the code editor */
+    #editor {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      font-family: monospace;
+    }
+    #preview {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-    <div class="background">
-        <div class="container">
-          <div class="screen">
-            <div class="screen-header">
-              <div class="screen-header-left">
-                <div class="screen-header-button close"></div>
-                <div class="screen-header-button maximize"></div>
-                <div class="screen-header-button minimize"></div>
-              </div>
-              <div class="screen-header-right">
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-              </div>
-            </div>
-            <div class="screen-body">
-              <div class="screen-body-item left">
-                <div class="app-title">
-                  <span>CONTACT</span>
-                  <span>US</span>
-                </div>
-                <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
-              </div>
-              <div class="screen-body-item">
-                <div class="app-form">
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="NAME" value="Krisantus Wanandi">
-                  </div>
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="EMAIL">
-                  </div>
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="CONTACT NO">
-                  </div>
-                  <div class="app-form-group message">
-                    <input class="app-form-control" placeholder="MESSAGE">
-                  </div>
-                  <div class="app-form-group buttons">
-                    <button class="app-form-button">CANCEL</button>
-                    <button class="app-form-button">SEND</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>    
+  <h1>Code Editor</h1>
+
+  <h2>HTML</h2>
+  <textarea id="html-code" class="code" rows="10"></textarea>
+
+  <h2>CSS</h2>
+  <textarea id="css-code" class="code" rows="10"></textarea>
+
+  <h2>JavaScript</h2>
+  <textarea id="js-code" class="code" rows="10"></textarea>
+
+  <h2>Preview</h2>
+  <div id="preview"></div>
+
+  <script>
+    // Get the code editor elements
+    const htmlCode = document.getElementById('html-code');
+    const cssCode = document.getElementById('css-code');
+    const jsCode = document.getElementById('js-code');
+    const preview = document.getElementById('preview');
+
+    // Function to update the preview
+    function updatePreview() {
+      preview.innerHTML = htmlCode.value; // Set the HTML content
+
+      // Create a <style> element and set the CSS content
+      const styleElement = document.createElement('style');
+      styleElement.innerHTML = cssCode.value;
+
+      // Append the <style> element to the preview
+      preview.appendChild(styleElement);
+
+      // Execute the JavaScript code
+      try {
+        eval(jsCode.value);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Event listeners for code changes
+    htmlCode.addEventListener('input', updatePreview);
+    cssCode.addEventListener('input', updatePreview);
+    jsCode.addEventListener('input', updatePreview);
+
+    // Initial preview update
+    updatePreview();
+  </script>
 </body>
 </html>
