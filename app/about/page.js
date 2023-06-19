@@ -19,9 +19,9 @@ const About = () => {
             <Window />
         </div>
 
-        {/* <div className={styles.miniWindow4}>
+        <div className={styles.miniWindow4}>
             <Window />
-        </div> */}
+        </div>
         
 
         <div className={styles.firstWindow}>

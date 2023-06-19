@@ -1,9 +1,15 @@
 .container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     height: fit-content;
     gap: 20px;
   }
+
+  .container h1 {
+    padding: 10px;
+    font-size: 40px;
+}
 
   .sideNavbar {
     width: fit-content;
@@ -19,6 +25,32 @@
     display: flex;
     flex-direction: column;
   }
+
+  .CardInfoContainer h1 {
+    font-size: 24px;
+  }
+
+  .appIcons {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .appIcons span {
+    padding: 5px;
+  }
+
+  .iconBox {
+    padding: 10px;
+    display: flex;
+    background: #404040;
+    border-radius: 10px;
+    gap: 5px;
+    justify-content: space-evenly;
+  }
+
+
   
   .Cards{
     width: 100%;

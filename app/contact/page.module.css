@@ -1,37 +1,69 @@
+  .mainContainer {
+    width: 100%;
+    padding: 0 30px 30px 30px;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .contentContainer{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+
   .background {
     display: flex;
     max-height: 600px;
+    z-index: 1;
   }
   
   .container {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+    z-index: 2;
+  }
+
+  .miniWindows {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
     z-index: 1;
+
   }
 
   .miniWindow1 {
     position: absolute;
-    bottom: 200px;
-    left: 150px;
+    bottom: 30px;
+    left: 100px;
     width: 300px;
-    z-index: 1;
+    height: 300px;
   }
   .miniWindow2 {
     position: absolute;
-    bottom: 350px;
-    left: 250px;
+    bottom: 250px;
+    left: 200px;
     width: 200px;
-    height: 200;
-    z-index: 0;
+    height: 200px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
   }
 
   .miniWindow3 {
     position: absolute;
-    bottom: 90px;
-    right: 250px;
+    bottom: 50px;
+    right: 10px;
     width: 400px;
-    z-index: 1;
+    height: 400px;
+  }
+
+  .miniWindow4 {
+    position: absolute;
+    bottom: -30px;
+    right: 150px;
+    width: 200px;
+    height: 200px;
   }
   
   .screen {

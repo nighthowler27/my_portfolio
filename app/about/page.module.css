@@ -6,6 +6,7 @@
 
   .mainContainer {
     min-height: 80vh;
+    padding: 0 20px 20px 20px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -58,11 +59,11 @@
     top: 25px;
     right: 20px;
     width: 350px; 
-    max-height: 200px;
+    height: 200px;
   }
   .miniWindow2 {
     position: absolute;
-    top: 10px;
+    top: 1px;
     right: 400px;
     width: 400px; 
     height: 400px;
@@ -71,11 +72,15 @@
     position: absolute;
     bottom: 20px;
     left: 120px;
+    width: 350px; 
+    height: 200px;
   }
   .miniWindow4 {
     position: absolute;
     bottom: 0;
     left: 400px;
+    width: 350px; 
+    height: 200px;
   }
   
   .screen {

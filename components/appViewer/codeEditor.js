@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import styles from './codeEditor.module.css';
+import Window from '../window/window';
 
 const CodeEditor = ()  => {
   const [htmlCode, setHtmlCode] = useState('');
@@ -64,10 +65,6 @@ const CodeEditor = ()  => {
 
       <div className={styles.editorViewer}>
 
-        <div>
-            <h2 className={styles.viewerHeader}>Preview</h2>
-        </div>
-
         <div className={styles.previewContainer}>
           <div className={styles.browserFrame}>
             <div className={styles.browserContent}>
@@ -79,6 +76,9 @@ const CodeEditor = ()  => {
             </div>
           </div>
         </div>
+
+        <Window className={styles.browserBG}/>
+        
       </div>
 {/* 
       <button onClick={updatePreview} className={styles.prevBtn}>

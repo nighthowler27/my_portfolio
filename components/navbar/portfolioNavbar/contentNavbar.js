@@ -1,7 +1,7 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown, FaPlus, FaMinus } from 'react-icons/fa';
 import styles from './contentNavbar.module.css';
 
 const links = [
@@ -38,7 +38,23 @@ const links = [
     id: 2,
     title: 'Freelance',
     url: '/portfolio/freelance',
-    subLinks: [],
+    subLinks: [
+      {
+        id: 12,
+        title: 'Graphic Design',
+        url: '/portfolio/freelance/graphicDesign',
+      },
+      {
+        id: 13,
+        title: 'Photography',
+        url: '/portfolio/freelance/photo',
+      },
+      {
+        id: 14,
+        title: 'Web Development',
+        url: '/portfolio/freelance/webdev',
+      },
+    ],
   },
   {
     id: 3,
@@ -56,6 +72,7 @@ const links = [
 
 const ContentNavbar = () => {
   const [openMenus, setOpenMenus] = useState([]);
+  const navbarRef = useRef();
 
   const toggleSubMenu = (id) => {
     if (openMenus.includes(id)) {
@@ -69,29 +86,51 @@ const ContentNavbar = () => {
     return openMenus.includes(id);
   };
 
+  const closeSubMenus = () => {
+    setOpenMenus([]);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        closeSubMenus();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const renderSubMenu = (subLinks) => {
     return (
       <div className={styles.subMenu}>
         {subLinks.map((subLink) => (
-          <div key={subLink.id} className={styles.subLinkWrapper}>
-            <Link href={subLink.url}>
-              <div className={styles.subLink}>{subLink.title}</div>
-            </Link>
-            {subLink.subLinks && (
-              <button
-                className={styles.arrowButton}
-                onClick={() => toggleSubMenu(subLink.id)}
-              >
-                <FaAngleDown
-                  className={
-                    isSubMenuOpen(subLink.id)
-                      ? styles.arrowIconActive
-                      : styles.arrowIcon
-                  }
-                />
-              </button>
-            )}
-            {isSubMenuOpen(subLink.id) && subLink.subLinks && renderSubMenu(subLink.subLinks)}
+          <div key={subLink.id} className={styles.subMenuLinkWrapper}>
+            <div className={styles.sublinkSubmenuWrapper}>
+              <Link href={subLink.url}>
+                <div className={styles.subMenuLink}>{subLink.title}</div>
+              </Link>
+              {subLink.subLinks && (
+                <button
+                  className={styles.arrowButtonSubmenu}
+                  onClick={() => toggleSubMenu(subLink.id)}
+                >
+                  {isSubMenuOpen(subLink.id) ? (
+                    <FaMinus className={styles.plusMinusIcon} />
+                  ) : (
+                    <FaPlus className={styles.plusMinusIcon} />
+                  )}
+                </button>
+              )}
+            </div>
+            <div className={styles.container2ndSubLink}>
+              {isSubMenuOpen(subLink.id) &&
+                subLink.subLinks &&
+                renderSubMenu(subLink.subLinks)}
+            </div>
           </div>
         ))}
       </div>
@@ -99,28 +138,32 @@ const ContentNavbar = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={navbarRef}>
       <div className={styles.links}>
         {links.map((link) => (
           <div key={link.id} className={styles.linkWrapper}>
             <Link href={link.url}>
               <div className={styles.linkButton}>{link.title}</div>
             </Link>
-            {link.subLinks && (
-              <button
-                className={styles.arrowButton}
-                onClick={() => toggleSubMenu(link.id)}
-              >
-                <FaAngleDown
-                  className={
-                    isSubMenuOpen(link.id)
-                      ? styles.arrowIconActive
-                      : styles.arrowIcon
-                  }
-                />
-              </button>
-            )}
-            {isSubMenuOpen(link.id) && link.subLinks && renderSubMenu(link.subLinks)}
+            <div className={styles.subLinkWrapper}>
+              {link.subLinks && (
+                <button
+                  className={styles.arrowButton}
+                  onClick={() => toggleSubMenu(link.id)}
+                >
+                  {isSubMenuOpen(link.id) ? (
+                    <FaMinus className={styles.plusMinusIcon} />
+                  ) : (
+                    <FaPlus className={styles.plusMinusIcon} />
+                  )}
+                </button>
+              )}
+              {isSubMenuOpen(link.id) && link.subLinks && (
+                <div className={styles.FstSubmenu}>
+                  {renderSubMenu(link.subLinks)}
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>

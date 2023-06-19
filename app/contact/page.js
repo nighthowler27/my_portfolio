@@ -3,7 +3,6 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styles from './page.module.css';
 import Window from '@/components/window/window'
-import Center from '@/components/center/center'
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("mknadbvj");
@@ -46,19 +45,28 @@ function ContactForm() {
     }
   
     return (
-      <div className={styles.mainContainer}>
+      <div className={styles.contentContainer}>
 
-        <div className={styles.miniWindow1}>
-            <Window />
+        <div className={styles.miniWindows}>
+             
+            <div className={styles.miniWindow1}>
+                <Window />
+            </div>
+
+            <div className={styles.miniWindow2}>
+                <Window />
+            </div>
+            
+            <div className={styles.miniWindow3}>
+                <Window />
+            </div>
+
+            <div className={styles.miniWindow4}>
+                <Window />
+            </div>
+            
         </div>
 
-        <div className={styles.miniWindow2}>
-            <Window />
-        </div>
-
-        <div className={styles.miniWindow3}>
-            <Window />
-        </div>
 
         <div className={styles.background}>
             <div className={styles.container}>
@@ -156,9 +164,9 @@ function ContactForm() {
   };
   function Contact() {
     return (
-        <Center>
+        <div className={styles.mainContainer}>
             <ContactForm />
-        </Center>
+        </div>
     );
   }
   

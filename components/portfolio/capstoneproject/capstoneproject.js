@@ -25,9 +25,9 @@ const CapstoneProject = () => {
             </div>
 
             <div className={styles.textBox}>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quasi, veniam cum odit ab tempore! Dicta dignissimos minima a, sequi recusandae deserunt...</p>
+                <p>Capstone Project</p>
 
-                <button type="button" className={styles.portBtn} onClick={openModal}>Read More</button>
+                <button type="button" className={styles.portBtn} onClick={openModal}>View</button>
             </div>
 
         </div>

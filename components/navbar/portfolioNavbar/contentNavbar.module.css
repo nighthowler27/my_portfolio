@@ -1,10 +1,13 @@
 .container {
+    width: 100%;
     margin: 0;
     padding: 10px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: space-between;
+    /* background-color: blue; */
 }
 
 .navHead {
@@ -12,6 +15,8 @@
 }
 
 .links {
+    width: 100%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -19,4 +24,113 @@
 .link {
     margin-bottom: 10px;
     padding: 5px;
+    background-color: rgb(123, 123, 123);
+}
+
+.linkWrapper {
+    padding: 5px;
+    display: flex;
+    position: relative;
+    justify-content: space-between; 
+    margin-bottom: 5px; 
+    background-color: rgb(78, 78, 78);
+    border-radius: 5px;
+}
+
+.sublinkWrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    z-index: 999;
+}
+
+.arrowIconActive {
+    transform: rotate(180deg);
+}
+
+.subLink {
+    padding: 10px;
+}
+.subLink:hover {
+    color: aquamarine;
+}
+
+.linkButton {
+    padding: 5px;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+.linkButton:hover {
+    color: rgb(7, 137, 94);
+}
+
+.arrowButton {
+    right: 0;
+    padding: 5px;
+    border-radius: 50%;
+    justify-content: right;
+
+}
+
+.arrowButton:hover {
+    background-color: rgb(189, 193, 193);
+    color: rgb(7, 137, 94);
+    border: 2px solid rgb(7, 137, 94);
+}
+
+.arrowButtonSubmenu {
+    right: 0;
+    padding: 5px;
+    border-radius: 50%;
+    justify-content: right;
+}
+
+.arrowButtonSubmenu:hover {
+    background-color: rgb(189, 193, 193);
+    color: rgb(7, 137, 94);
+    border: 2px solid rgb(7, 137, 94);
+}
+
+.subMenuLinkWrapper {
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(123, 123, 123); */
+}
+
+.sublinkSubmenuWrapper {
+    padding-bottom: 5px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.subMenuLink {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.subMenuLink:hover {
+    color:  rgb(7, 137, 94);
+}
+
+.container2ndSubLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.FstSubmenu {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    right: 0;
+    border-radius: 5px;
+    background-color: rgb(160, 160, 159);
+    z-index: 999;
 }

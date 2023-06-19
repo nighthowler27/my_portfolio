@@ -40,12 +40,16 @@ body::-webkit-scrollbar {
 }
 
 .mainLayout {
-    min-height: 80vh;
+    height: fit-content;
     margin: 10px 20px;
 }
 
 .mainLayout::-webkit-scrollbar {
     display: none;
+  }
+
+  .mainLayoutContentBox {
+    height: fit-content;
   }
 
 

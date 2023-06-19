@@ -5,6 +5,7 @@
     padding: 30px;
     margin-bottom: 10px;
     gap: 20px;
+    
   }
   
   .container::-webkit-scrollbar {
@@ -12,7 +13,9 @@
   }
 
   .sideNav {
-    min-width: 15%;
+    max-width: 15%;
+    display: flex;
+
   }
 
   .contents {

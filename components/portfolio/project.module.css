@@ -15,6 +15,7 @@
     margin-bottom: 30px;
     justify-content: center;
   }
+
   
   .Cards{
     width: 100%;
@@ -35,19 +36,25 @@
     width: 100px;
     padding: 5px;
     border-radius: 10px;
-    background: red;
+    background: rgb(9, 149, 142);
     position: absolute;
-    color: black;
-    left: 15px;
-    bottom: 5px;
+    color: rgb(255, 255, 255);
+    left: -10px;
+    bottom: -10px;
     z-index: 3;
+  }
+
+  .portBtn:hover {
+    background: rgb(210, 210, 210);
+    color: rgb(9, 149, 142);
+    border: 2px solid rgb(9, 149, 142)
   }
 
   .miniScreen {
     background: #fff;
     position: absolute;
     width: 80%;
-    height: 70%;
+    height: 60%;
     justify-content: center;
     align-items: center;
     z-index: 2;
@@ -61,12 +68,15 @@
   }
 
   .textBox p {
+    width: 100%;
     padding: 15px;
     position: absolute;
     color: black;
+    font-size: 20px;
+    font-weight: 500;
     background-color: rgba(255, 140, 0, 0.215);
     bottom: 25px;
-    text-align: justify;
+    text-align: right;
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
   }
