@@ -3,6 +3,8 @@
     flex-direction: column;
     position: relative;
     justify-content: space-between;
+    background-color: #787676;
+    border-radius: 15px;
   }
   
   .codeEditor {
@@ -10,15 +12,25 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    object-fit: contain;
+    overflow: auto;
+  }
+
+  .header {
+    font-size: 40px;
   }
 
   .codeBox {
     width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     gap: 15px;
 
+  }
+
+  .codeBox::-webkit-scrollbar {
+    display: none;
   }
   
   .fontSize {
@@ -42,7 +54,15 @@
   .codeBoxHtml,
   .codeBoxCss,
   .codeBoxJs {
-    width: 400px;
+    max-height: 300px; 
+    width: 330px;
+    overflow-y: auto;
+  }
+
+  .codeBoxHtml::-webkit-scrollbar,
+  .codeBoxCss::-webkit-scrollbar,
+  .codeBoxJs::-webkit-scrollbar {
+    display: none;
   }
   
   .htmlTxt,
@@ -52,9 +72,60 @@
     padding: 10px;
     color: #000;
   }
+
+  .noResize {
+    resize: none;
+  }
+
+  .editBoxBG {
+    background-color: #222129;
+    overflow: auto;
+    min-height: unset;
+  }
+
+  .editBoxBG::-webkit-scrollbar {
+    display: none;
+  }
+
+  .textBoxEditor {
+    display: flex;
+    background-color: #222129;
+    min-height: 5px;
+  }
+
+  .textBoxEditor textarea {
+    min-height: 300px;
+    position: relative;
+    z-index: 1;
+    line-height: 20px;
+    background-color: #222129;
+    border-left: 1px solid #999;
+    color: #999;
+    outline: none;
+    resize: none; /* Disable textarea resizing */
+    overflow: hidden;
+  }
+
+.htmlTxt::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .lineNumbers {
+    top: 0;
+    left: 0;
+    width: 30px;
+    background-color: #222129;
+    color: #999;
+    padding: 10px;
+    font-family: monospace;
+    user-select: none;
+    pointer-events: none; /* Prevents line numbers from capturing mouse events */
+    overflow-y: hidden;
+    line-height: 20px;
+  }
   
   .editorViewer {
-    min-width: 65%;
+    min-width: unset;
     height: 600px;
     padding: 20px;
     position: relative;
