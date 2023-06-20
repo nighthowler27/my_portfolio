@@ -1,9 +1,11 @@
+"use client"
 import React from 'react'
+import LoadingPage from '@/components/pageConstruction/underLoading'
 
 const Loading = () => {
   return (
     <div>
-      Loading
+      <LoadingPage />
     </div>
   )
 }

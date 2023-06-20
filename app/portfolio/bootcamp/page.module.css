@@ -1,0 +1,98 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerImage {
+    width: 100%;
+    height: 300px;
+    background-color: beige;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bannerImage div {
+    position: absolute;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 80px;
+    height: 200px;
+    margin: 0 auto;
+    color: black;
+}
+
+.header {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header .headerTitle {
+    font-size: 40px;
+}
+
+.header .desc {
+    font-size: 25px;
+}
+
+.header .descTxt {
+    text-align: justify;
+}
+
+
+
+.featSection {
+    width: 100%;
+    height: fit-content%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.featSection .featTitle {
+    font-size: 25px;
+}
+
+.featSection .featDescTxt {
+    text-align: justify;
+}
+
+.featContent {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featCategorybox{
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: beige;
+    color: black;
+}
+
+.viewBtn {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featCatBtn{
+    width: 300px;
+    padding: 10px 20px;
+    text-align: center;
+}
