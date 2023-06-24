@@ -1,6 +1,8 @@
-import React from 'react'
+"use client"
+import React, { useState} from 'react'
 import Link from 'next/link'
 import styles from "./navbar.module.css"
+import LoginModal from '../loginModal/loginModal'
 
 
 const links = [
@@ -36,7 +38,17 @@ const links = [
     },
 ];
 
+
 const Navbar = () => {
+    const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+    
+    const openLoginModal = () => {
+    setLoginModalOpen(true);
+    };
+
+    const closeLoginModal = () => {
+    setLoginModalOpen(false);
+    };
     
   return (
     <div className={styles.container}>
@@ -53,9 +65,17 @@ const Navbar = () => {
                 ))}
             </div>
             <div className={styles.loginBtn}>
-                <Link href="/" className={styles.login}> 
-                    Login
+
+                <Link href="/login" className={styles.logo}> 
+                Login 
                 </Link>
+
+
+                {/* <button type="button" className="loginBtn" onClick={openLoginModal}>Login</button>
+
+                {isLoginModalOpen && (
+                    <LoginModal open={isLoginModalOpen} onClose={closeLoginModal}/>
+                )} */}
             </div>
 
         </div>

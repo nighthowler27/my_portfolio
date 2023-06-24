@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react'
+
+import React from 'react'
 import styles from "./page.module.css"
 import Image from 'next/image';
 import MiniProject1 from '@/components/portfolio/miniproject1/miniproject1'

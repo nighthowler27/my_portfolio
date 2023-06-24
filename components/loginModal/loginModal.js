@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import styles from './resume.module.css';
+import styles from '../loginModal/login.module.css';
 
-const ResumeModal = ({ open, onClose }) => {
-    return (
+const LoginModal = ({ open, onClose }) => {
+  return (
         <>
           {open && (
             <div className={styles.modalOverlay}>
@@ -44,4 +44,4 @@ const ResumeModal = ({ open, onClose }) => {
       );
     };
 
-export default ResumeModal;
+export default LoginModal
