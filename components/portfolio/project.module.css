@@ -1,28 +1,3 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding: 30px;
-    margin-bottom: 10px;
-  }
-  
-  .container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .CardInfoContainer {
-    margin: 5px;
-    margin-bottom: 30px;
-    justify-content: center;
-  }
-
-  
-  .Cards{
-    width: 100%;
-    height: 100%;
-    display: flex;
-  }
-  
   .card {
     width: 600px;
     height: 300px;
@@ -100,20 +75,4 @@
 
   .windowComp {
     z-index: 1;
-  }
-
-  
-  
-
-  /* ==================== */
-  .containerTest {
-    width: 100%;
-    height: 100%;
-    display: flex;
-  }
-
-  .windowTest {
-    width: 600px;
-    height: 200px;
-    display: flex;
   }

@@ -29,8 +29,33 @@ const project = {
             ]
         },
         {
-            name: 'url',
-            title: 'URL',
+            name: 'project_title',
+            title: 'Project_Title',
+            type: 'string'
+        },
+        {
+            name: 'group_name',
+            title: 'Group_Name',
+            type: 'string'
+        },
+        {
+            name: 'date_started',
+            title: 'Date_Started',
+            type: 'string'
+        },
+        {
+            name: 'date_completed',
+            title: 'Date_Completed',
+            type: 'string'
+        },
+        {
+            name: 'git_repository',
+            title: 'Github_Repository',
+            type: 'url'
+        },
+        {
+            name: 'live_link',
+            title: 'Live_Link',
             type: 'url'
         },
         {

@@ -27,7 +27,7 @@
   }
 
    .portfolioContent {
-    max-width: 85%;
+    width: 100%;
     /* background: #fff; */
     padding: 5px;
     justify-content: center;

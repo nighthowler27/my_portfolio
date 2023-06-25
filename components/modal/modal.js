@@ -31,7 +31,7 @@ const Modal = ({ open, onClose }) => {
                     <div className="modalRightContent">
                         <div className="RigthTitle">
                             <h2>Description</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, cum ipsum id quo saepe magnam libero esse eveniet, incidunt laboriosam nisi! Nobis corrupti ullam voluptate dolores necessitatibus maiores repudiandae placeat minus vitae doloremque fugit beatae quis fuga sapiente nesciunt aperiam perferendis rem nostrum, itaque ad culpa porro? Dolor nobis accusantium dignissimos ab dolore quam reiciendis vitae! Placeat dolorem perspiciatis aliquid animi dolor excepturi, officiis dolore quia sequi similique libero, quam rem. Facilis, laudantium! Cupiditate dignissimos porro dolores repellendus excepturi libero.</p>
+                            <p>Lorem</p>
                         </div>
                     </div>
                 </div>
