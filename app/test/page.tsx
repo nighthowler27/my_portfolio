@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { GoLinkExternal } from 'react-icons/go';
-import BlockContent from '@sanity/block-content-to-react';
+
 
 export default function Page() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -117,7 +117,7 @@ export default function Page() {
                                     <h2>Description</h2>
                                     <p>
                                     {selectedProject.content && (
-                                    <BlockContent blocks={selectedProject.content} />
+                                    {selectedProject.content}
                                     )}
                                     </p>
                                 </div>
