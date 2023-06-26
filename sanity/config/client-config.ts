@@ -1,5 +1,5 @@
 const config = {
-    projectId: "hhhefoj3",
+    projectId: "5g6o3yhu",
     dataset: "production",
     apiVersion: "2023-06-23",
 }

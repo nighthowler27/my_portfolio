@@ -4,7 +4,7 @@ import { kodegoCategory } from "@/types/KodegoCategory";
 import { kodegoPage } from "@/types/KodegoPage";
 import { previousProjectPage } from "@/types/PreviousProjectPage";
 import { portfolioKodegoProject } from "@/types/Project";
-import { specialProjectPage } from "@/types/specialProjectPage";
+import { specialProjectPage } from "@/types/SpecialProjectPage";
 
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
