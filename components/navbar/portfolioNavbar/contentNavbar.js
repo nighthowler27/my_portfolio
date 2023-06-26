@@ -142,28 +142,31 @@ const ContentNavbar = () => {
       <div className={styles.links}>
         {links.map((link) => (
           <div key={link.id} className={styles.linkWrapper}>
-            <Link href={link.url}>
-              <div className={styles.linkButton}>{link.title}</div>
-            </Link>
-            <div className={styles.subLinkWrapper}>
-              {link.subLinks && (
-                <button
-                  className={styles.arrowButton}
-                  onClick={() => toggleSubMenu(link.id)}
-                >
-                  {isSubMenuOpen(link.id) ? (
-                    <FaMinus className={styles.plusMinusIcon} />
-                  ) : (
-                    <FaPlus className={styles.plusMinusIcon} />
-                  )}
-                </button>
-              )}
-              {isSubMenuOpen(link.id) && link.subLinks && (
+            <div className={styles.mainMenu}>
+                <Link href={link.url}>
+                <div className={styles.linkButton}>{link.title}</div>
+                </Link>
+                <div className={styles.sublinkWrapper}>
+                {link.subLinks && (
+                    <button
+                    className={styles.arrowButton}
+                    onClick={() => toggleSubMenu(link.id)}
+                    >
+                    {isSubMenuOpen(link.id) ? (
+                        <FaMinus className={styles.plusMinusIcon} />
+                    ) : (
+                        <FaPlus className={styles.plusMinusIcon} />
+                    )}
+                    </button>
+                )}
+                </div>
+            </div>
+            {isSubMenuOpen(link.id) && link.subLinks && (
                 <div className={styles.FstSubmenu}>
                   {renderSubMenu(link.subLinks)}
                 </div>
               )}
-            </div>
+            
           </div>
         ))}
       </div>

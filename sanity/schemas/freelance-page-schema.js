@@ -1,6 +1,6 @@
-const projectFeature = {
-    name: 'projectFeature',
-    title: 'Project-Features',
+const freelancePage = {
+    name: 'portfolioFreelance',
+    title: 'Portfolio_freelance',
     type: 'document',
     fields: [
 
@@ -29,13 +29,24 @@ const projectFeature = {
             ]
         },
         {
-            name: 'url',
-            title: 'URL',
-            type: 'url'
+            name: 'title',
+            title: 'Title',
+            type: 'string'
         },
         {
-            name: 'content',
-            title: 'Content',
+            name: 'description',
+            title: 'Description',
+            type: 'array',
+            of: [{ type: 'block' }],
+        },
+        {
+            name: 'subtitle',
+            title: 'Subtitle',
+            type: 'string'
+        },
+        {
+            name: 'details',
+            title: 'Details',
             type: 'array',
             of: [{ type: 'block' }],
         }
@@ -44,4 +55,4 @@ const projectFeature = {
 }
 
 
-export default projectFeature;
+export default freelancePage;

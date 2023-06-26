@@ -52,7 +52,7 @@
 
 .featSection {
     width: 100%;
-    height: fit-content%;
+    height: fit-content;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -60,39 +60,45 @@
 
 .featSection .featTitle {
     font-size: 25px;
+    padding: 0 20px;
 }
 
 .featSection .featDescTxt {
     text-align: justify;
+    padding: 0 30px;
 }
 
 .featContent {
     width: 100%;
     padding: 20px;
-    display: flex;
     justify-content: space-between;
+}
+
+.featCategoryboxContainer {
+    width: 100%;
 }
 
 .featCategorybox{
     width: 300px;
-    height: 300px;
-    padding: 0;
+    height: 200px;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: beige;
-    color: black;
+    position: relative;
+    /* background-color: beige; */
+
+
 }
 
 .viewBtn {
     width: 100%;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .featCatBtn{
     width: 300px;
     padding: 10px 20px;
+    margin: 0 auto;
     text-align: center;
 }

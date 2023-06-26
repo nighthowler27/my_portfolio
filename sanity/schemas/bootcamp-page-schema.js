@@ -1,6 +1,6 @@
-const portfolioKodegoProject = {
-    name: 'portfolioKodegoProject',
-    title: 'Portfolio_Kodego_Projects',
+const bootcampPage = {
+    name: 'portfolioBootcamp',
+    title: 'Portfolio_Bootcamp',
     type: 'document',
     fields: [
 
@@ -29,38 +29,24 @@ const portfolioKodegoProject = {
             ]
         },
         {
-            name: 'project_title',
-            title: 'Project_Title',
+            name: 'title',
+            title: 'Title',
             type: 'string'
         },
         {
-            name: 'group_name',
-            title: 'Group_Name',
+            name: 'description',
+            title: 'Description',
+            type: 'array',
+            of: [{ type: 'block' }],
+        },
+        {
+            name: 'subtitle',
+            title: 'Subtitle',
             type: 'string'
         },
         {
-            name: 'date_started',
-            title: 'Date_Started',
-            type: 'string'
-        },
-        {
-            name: 'date_completed',
-            title: 'Date_Completed',
-            type: 'string'
-        },
-        {
-            name: 'git_repository',
-            title: 'Github_Repository',
-            type: 'url'
-        },
-        {
-            name: 'live_link',
-            title: 'Live_Link',
-            type: 'url'
-        },
-        {
-            name: 'content',
-            title: 'Content',
+            name: 'details',
+            title: 'Details',
             type: 'array',
             of: [{ type: 'block' }],
         }
@@ -69,4 +55,4 @@ const portfolioKodegoProject = {
 }
 
 
-export default portfolioKodegoProject;
+export default bootcampPage;

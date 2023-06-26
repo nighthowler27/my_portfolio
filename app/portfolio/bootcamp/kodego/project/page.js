@@ -1,6 +1,6 @@
 "use client"
 import styles from './page.module.css';
-import { getProjects } from '@/sanity/sanity-utils';
+import { getportfolioKodegoProjects } from '@/sanity/sanity-utils';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
@@ -10,13 +10,13 @@ import BlockContent from '@sanity/block-content-to-react';
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [projects, setProjects] = useState([]);
+  const [portfolioKodegoProjects, setPortfolioKodegoProjects] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const projectsData = await getProjects();
-        setProjects(projectsData);
+        const portfolioKodegoProjectsData = await getportfolioKodegoProjects();
+        setPortfolioKodegoProjects(portfolioKodegoProjectsData);
       } catch (error) {
         console.error('Error fetching projects:', error);
       }
@@ -25,8 +25,8 @@ export default function Portfolio() {
     fetchData();
   }, []);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
+  const openModal = (portfolioKodegoProject) => {
+    setSelectedProject(portfolioKodegoProject);
     setModalOpen(true);
   };
 
@@ -68,8 +68,8 @@ export default function Portfolio() {
             </div>
 
             <div className={styles.Cards + " mt-5 grid grid-cols-3 gap-8"}>
-                {projects.map((project) => (
-                <div key={project._id} className={styles.mainContainer}>
+                {portfolioKodegoProjects.map((portfolioKodegoProject) => (
+                <div key={portfolioKodegoProject._id} className={styles.mainContainer}>
                     <div className={styles.background}>
                     <div className={styles.screen_container}>
                         <div className={styles.screen}>
@@ -89,10 +89,10 @@ export default function Portfolio() {
                         <div className={styles.card}>
                             <div className={styles.miniScreen}>
                             <div className={styles.imageContainer}>
-                                {project.image && (
+                                {portfolioKodegoProject.image && (
                                 <Image
-                                    src={project.image}
-                                    alt={project.name}
+                                    src={portfolioKodegoProject.image}
+                                    alt={portfolioKodegoProject.name}
                                     fill={true}
                                     className={styles.image}
                                 />
@@ -100,8 +100,8 @@ export default function Portfolio() {
                             </div>
 
                             <div className={styles.textBox}>
-                                <h1>{project.name}</h1>
-                                <button type="button" className={styles.portBtn} onClick={() => openModal(project)}>
+                                <h1>{portfolioKodegoProject.name}</h1>
+                                <button type="button" className={styles.portBtn} onClick={() => openModal(portfolioKodegoProject)}>
                                 View
                                 </button>
                             </div>

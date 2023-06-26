@@ -30,11 +30,16 @@
 .linkWrapper {
     padding: 5px;
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: space-between; 
     margin-bottom: 5px; 
     background-color: rgb(78, 78, 78);
     border-radius: 5px;
+}
+.mainMenu {
+    display: flex;
+    justify-content: space-between;
 }
 
 .sublinkWrapper {

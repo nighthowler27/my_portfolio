@@ -1,6 +1,6 @@
-const projectCategory = {
-    name: 'projectCategory',
-    title: 'Project-Categories',
+const kodegoPage = {
+    name: 'portfolioKodego',
+    title: 'Portfolio_Kodego',
     type: 'document',
     fields: [
 
@@ -29,13 +29,24 @@ const projectCategory = {
             ]
         },
         {
-            name: 'url',
-            title: 'URL',
-            type: 'url'
+            name: 'title',
+            title: 'Title',
+            type: 'string'
         },
         {
-            name: 'content',
-            title: 'Content',
+            name: 'description',
+            title: 'Description',
+            type: 'array',
+            of: [{ type: 'block' }],
+        },
+        {
+            name: 'subtitle',
+            title: 'Subtitle',
+            type: 'string'
+        },
+        {
+            name: 'details',
+            title: 'Details',
             type: 'array',
             of: [{ type: 'block' }],
         }
@@ -44,4 +55,4 @@ const projectCategory = {
 }
 
 
-export default projectCategory;
+export default kodegoPage;
