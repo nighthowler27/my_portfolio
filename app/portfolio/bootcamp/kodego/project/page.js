@@ -7,7 +7,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { GoLinkExternal } from 'react-icons/go';
 import BlockContent from '@sanity/block-content-to-react';
 
-export default function Portfolio() {
+export default function Page() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [portfolioKodegoProjects, setPortfolioKodegoProjects] = useState([]);
@@ -41,7 +41,7 @@ export default function Portfolio() {
         <div className={styles.CardInfoContainer}>
             <h1 className={styles.header}>Full Stack Web Development</h1>
             <div className={styles.appIcons}>
-                <span> Application used:</span>
+                <span> Application learned and used to complete this projects:</span>
 
                 <div className={styles.iconBox}>
                         
@@ -57,7 +57,7 @@ export default function Portfolio() {
 
                     <Image src="/icons/mongoDBicon.png" alt="htmlIcon.png" width={50} height={50} />
 
-                    <Image src="/icons/googleDev.png" alt="htmlIcon.png" width={120} height={50} />
+                    <Image src="/icons/googleDev.png" alt="htmlIcon.png" width={130} height={30} />
 
                     <Image src="/icons/aws_s3.png" alt="htmlIcon.png" width={110} height={50} />
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WebDev = () => {
+const Page = () => {
   return (
     <div>
       Web Dev
@@ -8,4 +8,4 @@ const WebDev = () => {
   )
 }
 
-export default WebDev
+export default Page

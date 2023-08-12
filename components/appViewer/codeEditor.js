@@ -34,6 +34,7 @@ const CodeEditor = () => {
       <div className={styles.codeEditor}>
         <div>
           <h1 className={styles.header}>Code Editor</h1>
+          <p>This code editor is still under development, you can write, copy and paste html,css, and javascript to the respective text box. At the viewer section,  You can immediatelly view the appearance and behaviour of the codes you inputed in each text boxes. </p>
         </div>
 
         <div className={styles.codeBox}>
@@ -44,7 +45,9 @@ const CodeEditor = () => {
                 <div className={styles.textBoxEditor}>
                   <div className={styles.lineNumbers}>
                     {htmlCode.split('\n').map((_, index) => (
-                      <div key={index}>{index + 1}</div>
+                         <div key={index} className={styles.lineNumber}>
+                            {index + 1}
+                        </div>
                     ))}
                   </div>
                   <textarea
@@ -119,7 +122,7 @@ const CodeEditor = () => {
             </div>
           </div>
         </div>
-
+                        
         <Window className={styles.browserBG} />
       </div>
     </div>

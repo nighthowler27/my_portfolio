@@ -24,7 +24,7 @@ const Typing = () => {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
       }
 
-      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+      this.el.innerHTML = '<span className="wrap">' + this.txt + '</span>';
 
       const that = this;
       let delta = 200 - Math.random() * 100;

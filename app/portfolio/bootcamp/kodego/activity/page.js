@@ -7,7 +7,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { GoLinkExternal } from 'react-icons/go';
 import BlockContent from '@sanity/block-content-to-react';
 
-export default function Portfolio() {
+export default function Page() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [portfolioKodegoActivities, setPortfolioKodegoActivities] = useState([]);

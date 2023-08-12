@@ -20,9 +20,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/lib/*": ["./lib/*"],
+      "@/config/*": ["../../config/*"],
+      "@/types/*": ["./types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/test/page.tsx", "types/Project.ts", "sanity/sanity-utils.ts", "sanity.config.js", "app/portfolio/bootcamp/kodego/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/test/page.js", "types/Project.ts", "sanity/sanity-utils.ts", "sanity.config.js", "app/portfolio/bootcamp/kodego/page.js", "sanity/config/client-config.js", "app/portfolio/bootcamp/page.js", "app/portfolio/bootcamp/kodego/project/page.js", "app/portfolio/bootcamp/kodego/challenge/page.js", "app/portfolio/bootcamp/kodego/activity/page.js", "app/portfolio/page.js"],
   "exclude": ["node_modules"]
 }

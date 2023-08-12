@@ -38,7 +38,7 @@ export default function Home() {
             <div className="leftside">
                 <div className="descBox">
                     <h1>Hi, I&apos;m Stephen</h1>
-                    <h2 aria-label="Hi! I'm a developer"> a certified&nbsp;<span class="typewriter thick"></span></h2>
+                    <h2 aria-label="Hi! I'm a developer"> a certified&nbsp;<span className="typewriter thick"></span></h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                     </p>
