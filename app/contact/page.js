@@ -137,20 +137,20 @@ function ContactForm() {
                             required
                         />
                         </div>
-                        <ValidationError
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                        />
-                        <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                        />
+                            <ValidationError
+                            prefix="Email"
+                            field="email"
+                            errors={state.errors}
+                            />
+                            <ValidationError
+                            prefix="Message"
+                            field="message"
+                            errors={state.errors}
+                            />
                         <div className={`${styles.appFormGroup} ${styles.buttons}`}>
-                        <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
-                            Submit
-                        </button>
+                            <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
+                                Submit
+                            </button>
                         </div>
                     </form>
                     </div>

@@ -42,7 +42,7 @@ export default function Home() {
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia soluta vel, facilis ea non.
                     </p>
-                    <button type="button" className="hireBtn" onClick={openHireModal}>Hire Me</button>
+                    <button type="button" className="hireBtn" onClick={openHireModal}>Set an Appointment</button>
 
                     {isHireModalOpen && (
                         <HireModal open={isHireModalOpen} onClose={closeHireModal}/>

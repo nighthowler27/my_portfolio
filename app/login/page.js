@@ -17,12 +17,7 @@ const page = () => {
                                        
                   </div>
                   <div className={styles.modalRight}>
-                      <div className={styles.modalRightContent}>
-                          <div className={styles.RigthTitle}>
-                            Login
-                              
-                          </div>
-                      </div>
+                      
                   </div>
                 </div>
     

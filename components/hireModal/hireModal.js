@@ -1,8 +1,11 @@
 "use client"
 import React from 'react'
 import styles from './hiremodal.module.css';
+import { useForm, ValidationError } from '@formspree/react';
 
 const HireModal = ({ open, onClose }) => {
+    const [state, handleSubmit] = useForm("mlekqlww");
+
     return (
         <>
           {open && (
@@ -11,32 +14,94 @@ const HireModal = ({ open, onClose }) => {
                 <div className={styles.modalBanner}>
                   <p>Banner Image</p>
                 </div>
-  
-                <div className={styles.modalContent}>
-                  <div className={styles.modalLeft}>
-                    <h1>Project: School Website</h1>
-                    <h2>Group Name: Team M.E.R.S.</h2>
-                    <h2>Date Started: DD/MM/YYYY</h2>
-                    <h2>Date Completed: DD/MM/YYYY</h2>
-                    <h2>Contributors/Members:</h2>
+
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.modalContent}>
                     
-                    
-                  </div>
-                  <div className={styles.modalRight}>
-                      <div className="modalRightContent">
-                          <div className="RigthTitle">
-                              <h2>Description</h2>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, cum ipsum id quo saepe magnam libero esse eveniet, incidunt laboriosam nisi! Nobis corrupti ullam voluptate dolores necessitatibus maiores repudiandae placeat minus vitae doloremque fugit beatae quis fuga sapiente nesciunt aperiam perferendis rem nostrum, itaque ad culpa porro? Dolor nobis accusantium dignissimos ab dolore quam reiciendis vitae! Placeat dolorem perspiciatis aliquid animi dolor excepturi, officiis dolore quia sequi similique libero, quam rem. Facilis, laudantium! Cupiditate dignissimos porro dolores repellendus excepturi libero.</p>
-                          </div>
-                      </div>
-                  </div>
-                </div>
+                        <div className={styles.modalLeft}>
+
+                            <div className={styles.appFormGroup}>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                className={styles.appFormControl} placeholder="NAME" 
+                                required 
+                            />
+                            </div>
+                            <div className={styles.appFormGroup}>
+                            <input 
+                                type="email"
+                                name="email"
+                                className={styles.appFormControl} placeholder="EMAIL"
+                                required
+                            />
+                            </div>
+                            <div className={styles.appFormGroup}>
+                            <input 
+                                type="text"
+                                name="contactNo"
+                                className={styles.appFormControl} placeholder="CONTACT NO."
+                                required 
+                            />
+                            </div>
+                            <div className={styles.appFormGroup}>
+                            <input 
+                                type="text"
+                                name="contactNo"
+                                className={styles.appFormControl} placeholder="COMPANY NAME"
+                            />
+                            </div>
+
+                        </div>
+
+                        <div className={styles.modalRight}>
+                         
+                                <div className={styles.appFormGroup}>
+                                    <input
+                                        type="text"
+                                        name="subjectTitle"
+                                        className={styles.appFormControl} placeholder="PURPOSE OF THE APPOINTMENT"
+                                    />
+                                </div>
+                                
+                                <div className={`${styles.appFormGroup} ${styles.message}`}>
+                                    <textarea
+                                        name="message"
+                                        className={styles.appFormControlMessage} placeholder="MESSAGE/SPECIAL INSTRUCTION"
+                                        required
+                                    />
+
+                                </div>
+                        </div>
+                            <ValidationError
+                            prefix="Email"
+                            field="email"
+                            errors={state.errors}
+                            />
+                            <ValidationError
+                            prefix="Message"
+                            field="message"
+                            errors={state.errors}
+                            />
+                        <div className={`${styles.appFormGroup} ${styles.buttons}`}>
+                            <button type="submit" disabled={state.submitting} className={styles.appFormButton}>
+                                Submit
+                            </button>
+                        </div>
+                        
+                    </div>
+                </form>  
     
                 <div className={styles.modalBtn}>
                   <button type="button" className={styles.closeBtn} onClick={onClose}>
                     Close
                   </button>
                 </div>
+
+                <div className={styles.modalFooter}>
+                  <p>FOOTER MESSAGE</p>
+                </div>
+
               </div>
             </div>
           )}

@@ -14,8 +14,10 @@
   }
   
   .modal {
+    min-width: 800px;
     max-width: 80%; /* Change to "max-width" for responsiveness */
-    height: auto; /* Change to "auto" for dynamic height */
+    min-height: 500px;
+    max-height: auto; /* Change to "auto" for dynamic height */
     margin: 60px;
     color: black;
     background-color: #fff;
@@ -119,11 +121,22 @@
     justify-content: space-between;
 }   
 
+.appFormControl{
+    width: 100%;
+    padding-left: 5px;
+}
+
+.appFormControlMessage{
+    width: 100%;
+    min-height: 150px;
+    padding-left: 5px;
+}
+
 .appFormButton {
     position: absolute;
     padding: 5px 15px;
     right: 25px;
-    bottom: 40px;
+    bottom: 20px;
     background-color: rgb(7, 159, 108);
     border-radius: 10px;
 }

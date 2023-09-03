@@ -9,27 +9,158 @@ const ResumeModal = ({ open, onClose }) => {
             <div className={styles.modalOverlay}>
               <div className={styles.modal}>
                 <div className={styles.modalBanner}>
-                  <p>Banner Image</p>
+                  <p>Banner Buttons</p>
                 </div>
   
                 <div className={styles.modalContent}>
-                  <div className={styles.modalLeft}>
-                    <h1>Project: School Website</h1>
-                    <h2>Group Name: Team M.E.R.S.</h2>
-                    <h2>Date Started: DD/MM/YYYY</h2>
-                    <h2>Date Completed: DD/MM/YYYY</h2>
-                    <h2>Contributors/Members:</h2>
+                    <div className={styles.modalLeft}>
+
+                        {/* Profile Section */}
+                        <div className={styles.ProfileInfo}>
+                            <div className={styles.ProPic}>
+                            </div>
+                            <div className={styles.ProfileName}>
+                                <h1>Stephen M. Cabunilas</h1>
+                                <h3>Jack of all Trades</h3>
+                            </div>
+                        </div>
+
+                        {/* Contact Section */}
+                        <div className={styles.ContactInfo}>
+                            <h1>Contact Info</h1>
+                            <div className={styles.ContactNumber}>
+                                Mobile number
+                            </div>
+                            <div className={styles.ContactNumber}>
+                                Tel. No.
+                            </div>
+                            <div className={styles.ContactLink}>
+                                Email Ad, website, skype, LinkedIn, Behance
+                            </div>
+                            <div className={styles.ContactAddress}>
+                                Address
+                            </div>
+                        </div>
+
+                        {/* Education Section */}
+                        <div className={styles.EducSec}>
+                            <h1>Education</h1>
+                            <div className={styles.EducInfo}>
+                                <p>Date</p>
+                                <h2>Program</h2>
+                                <h3>School Name</h3>
+                                <h4>location</h4>
+                            </div>
+
+                            <div className={styles.EducInfo}>
+                                <p>Date</p>
+                                <h2>Program</h2>
+                                <h3>School Name</h3>
+                                <h4>location</h4>
+                            </div>
+
+                            <div className={styles.EducInfo}>
+                                <p>Date</p>
+                                <h2>Program</h2>
+                                <h3>School Name</h3>
+                                <h4>location</h4>
+                            </div>
+
+                            <div className={styles.EducInfo}>
+                                <p>Date</p>
+                                <h2>Program</h2>
+                                <h3>School Name</h3>
+                                <h4>location</h4>
+                            </div>
+                        </div>
+
+                        {/* Language Section */}
+                        <div className={styles.Language}>
+                            <h1>Languages</h1>
+                            <div className={styles.LanInfo}>
+                                English
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Filipino-Tagalog
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Cebuano-Bisaya
+                            </div>
+                        </div>
+
+                        {/* Interest Section */}
+                        <div className={styles.Language}>
+                            <h1>Interests</h1>
+                            <div className={styles.LanInfo}>
+                                Hiking
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Gaming
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Camping
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Painting
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Swimming
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Reading
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Travelling
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Solving Puzzle
+                            </div>
+                            <div className={styles.LanInfo}>
+                                Playing Musical Instruments
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className={styles.modalRight}>
                     
-                    
-                  </div>
-                  <div className={styles.modalRight}>
-                      <div className="modalRightContent">
-                          <div className="RigthTitle">
-                              <h2>Description</h2>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, cum ipsum id quo saepe magnam libero esse eveniet, incidunt laboriosam nisi! Nobis corrupti ullam voluptate dolores necessitatibus maiores repudiandae placeat minus vitae doloremque fugit beatae quis fuga sapiente nesciunt aperiam perferendis rem nostrum, itaque ad culpa porro? Dolor nobis accusantium dignissimos ab dolore quam reiciendis vitae! Placeat dolorem perspiciatis aliquid animi dolor excepturi, officiis dolore quia sequi similique libero, quam rem. Facilis, laudantium! Cupiditate dignissimos porro dolores repellendus excepturi libero.</p>
-                          </div>
-                      </div>
-                  </div>
+                        {/* Profile Description */}
+                        <div className={styles.ProfileDesc}>
+                            <h2>Profile</h2>
+                            <p>Profile Description</p>
+                        </div>
+
+                        {/* Experiences Section*/}
+                        <div className={styles.Experience}>
+                            <div className={styles.ExpInfo}>
+                                <div className={styles.ExpInfoLeft}>
+                                    <div className={styles.ExpDate}>
+                                        <p>Date</p>
+                                    </div>
+                                    <div className={styles.ExpCompany}>
+                                        <p>Copmany Name</p>
+                                    </div>
+                                </div>
+                                <div className={styles.ExpInfoRight}>
+                                    <div className={styles.ExpPosition}>
+                                        <p>Tittle</p>
+                                    </div>
+                                    <div className={styles.ExpPosDesc}>
+                                        <p>Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Skills Section */}
+                        <div className={styles.SkillsSec}>
+
+                        </div>
+                                   
+                    </div>
+                </div>
+
+                <div className={styles.modalFooter}>
+                  <p>footer</p>
                 </div>
     
                 <div className={styles.modalBtn}>
