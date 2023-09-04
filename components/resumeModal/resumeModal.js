@@ -28,11 +28,11 @@ import {
 import { BsFillPuzzleFill } from 'react-icons/bs';
 
 
-const skillsData = [
-    ["Photoshop", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
-    ["Adobe Premiere", <div className={styles.percent}><div style={{ width: '65%' }}></div></div>, "65%"],
-    ["Adobe Illustrator", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
-  ];
+// const skillsData = [
+//     ["Photoshop", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
+//     ["Adobe Premiere", <div className={styles.percent}><div style={{ width: '65%' }}></div></div>, "65%"],
+//     ["Adobe Illustrator", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
+//   ];
 
 const ResumeModal = ({ open, onClose }) => {
     return (
@@ -249,7 +249,7 @@ const ResumeModal = ({ open, onClose }) => {
                         <div className={styles.SkillsSec}>
                             <h1>Professional Skills</h1>
                             <div className={styles.skillBar}>
-                                <table>
+                                {/* <table>
                                     <tbody>
                                         {skillsData.map((row, rowIndex) => (
                                         <tr key={rowIndex}>
@@ -266,7 +266,85 @@ const ResumeModal = ({ open, onClose }) => {
                                         </tr>
                                         ))}
                                     </tbody>
-                                </table>
+                                </table> */}
+                                
+                                {/* <div className={styles.skillname}>
+                                    <div>Adobe Photoshop</div>
+                                    <div>Adobe Premiere</div>
+                                    <div>Adobe After Effects</div>
+                                    <div>Adobe Illustator</div>
+                                    <div>Adobe Indesign</div>
+                                    <div>Adobe Audition</div>
+                                </div>
+
+                                <div className={styles.skillrate}>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '80%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '60%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '70%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '75%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '65%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '80%' }}></div>
+                                    </div>
+                                </div>
+
+                                <div className={styles.skillscore}>
+                                    <div>80%</div>
+                                    <div>60%</div>
+                                    <div>70%</div>
+                                    <div>75%</div>
+                                    <div>65%</div>
+                                    <div>80%</div>
+                                </div> */}
+
+                                <div className={styles.skillname}>
+                                    <div>Adobe Photoshop</div>
+                                    <div>Adobe Premiere</div>
+                                    <div>Adobe After Effects</div>
+                                    <div>Adobe Illustator</div>
+                                    <div>Adobe Indesign</div>
+                                    <div>Adobe Audition</div>
+                                </div>
+
+                                <div className={styles.skillrate}>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '80%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '60%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '70%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '75%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '65%' }}></div>
+                                    </div>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '80%' }}></div>
+                                    </div>
+                                </div>
+
+                                <div className={styles.skillscore}>
+                                    <div>80%</div>
+                                    <div>60%</div>
+                                    <div>70%</div>
+                                    <div>75%</div>
+                                    <div>65%</div>
+                                    <div>80%</div>
+                                </div>
                             </div>
                         </div>
                                    

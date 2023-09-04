@@ -241,11 +241,30 @@
   
   .skillBar{
     padding: 10px;
+    display: grid;
+    grid-template-columns: 200px 450px 50px;
   }
-  .skillBar table td{
+
+  /* .skillBar table td{
     padding: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+  } */
+
+  .skillname {
+    padding: 5px;
+  }
+
+  .skillrate {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .skillscore {
+    padding: 5px;
   }
 
   .firstColumn {
