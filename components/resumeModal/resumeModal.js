@@ -1,6 +1,43 @@
 "use client"
 import React from 'react'
 import styles from './resume.module.css';
+import Image from 'next/image';
+import { 
+    FaMobileAlt, 
+    FaHiking,
+    FaSwimmer,
+    FaGuitar
+    } from 'react-icons/fa';
+import { 
+    GiRotaryPhone,
+    GiCampingTent,
+    GiPencilBrush,
+    GiBookshelf 
+    } from 'react-icons/gi';
+import { 
+    AiOutlineMail, 
+    AiFillLinkedin, 
+    AiFillBehanceSquare,
+    AiFillHome 
+    } from 'react-icons/ai';
+import { BsGlobe } from 'react-icons/bs';
+import { 
+    SiYoutubegaming, 
+    SiYourtraveldottv 
+    } from 'react-icons/si';
+import { BsFillPuzzleFill } from 'react-icons/bs';
+
+const languageData = [
+    ["English", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
+    ["Filipino - Tagalog", <div className={styles.percent}><div style={{ width: '65%' }}></div></div>, "65%"],
+    ["Cebuano - Bisaya", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
+  ];
+
+const skillsData = [
+    ["Photoshop", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
+    ["Adobe Premiere", <div className={styles.percent}><div style={{ width: '65%' }}></div></div>, "65%"],
+    ["Adobe Illustrator", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
+  ];
 
 const ResumeModal = ({ open, onClose }) => {
     return (
@@ -13,15 +50,17 @@ const ResumeModal = ({ open, onClose }) => {
                 </div>
   
                 <div className={styles.modalContent}>
+                    {/* Leftside Section */}
                     <div className={styles.modalLeft}>
 
                         {/* Profile Section */}
                         <div className={styles.ProfileInfo}>
                             <div className={styles.ProPic}>
+                               
                             </div>
                             <div className={styles.ProfileName}>
                                 <h1>Stephen M. Cabunilas</h1>
-                                <h3>Jack of all Trades</h3>
+                                <h2>Jack of all Trades</h2>
                             </div>
                         </div>
 
@@ -29,16 +68,52 @@ const ResumeModal = ({ open, onClose }) => {
                         <div className={styles.ContactInfo}>
                             <h1>Contact Info</h1>
                             <div className={styles.ContactNumber}>
-                                Mobile number
+                                <div className={styles.ContactIcon}>
+                                    <h2><FaMobileAlt /></h2>
+                                </div>
+                                <h3>(+63) 917-4765-836</h3>
                             </div>
                             <div className={styles.ContactNumber}>
-                                Tel. No.
+                                <div className={styles.ContactIcon}>
+                                    <h2><GiRotaryPhone /></h2>
+                                </div>
+                                <h3>(+63) 028-5843-542</h3>
                             </div>
                             <div className={styles.ContactLink}>
-                                Email Ad, website, skype, LinkedIn, Behance
+                                <div>
+                                <div className={styles.ContactIcon}>
+                                    <h2><AiOutlineMail /></h2>
+                                </div>
+                                <h3>stephcabunilas@hotmail.com</h3>
+                                </div>
+
+                                <div>
+                                <div className={styles.ContactIcon}>
+                                    <h2><BsGlobe /></h2>
+                                </div>
+                                <h3>stephcabunilas.pro</h3>
+                                </div>
+
+                                <div>
+                                <div className={styles.ContactIcon}>
+                                    <h2><AiFillLinkedin /></h2>
+                                </div>
+                                <h3>stephcabunilas@hotmail.com</h3>
+                                </div>
+
+                                <div>
+                                <div className={styles.ContactIcon}>
+                                    <h2><AiFillBehanceSquare /></h2>
+                                </div>
+                                <h3>stephcabunilas@hotmail.com</h3>
+                                </div>
                             </div>
+
                             <div className={styles.ContactAddress}>
-                                Address
+                                <div className={styles.ContactIcon}>
+                                    <h2><AiFillHome /></h2>
+                                </div>
+                                <h3>Blk 6 Lot3, #362H B.Mesa Street Brgy. Mahabang Parang, Binangonan, Rizal, 1940</h3>
                             </div>
                         </div>
 
@@ -46,91 +121,115 @@ const ResumeModal = ({ open, onClose }) => {
                         <div className={styles.EducSec}>
                             <h1>Education</h1>
                             <div className={styles.EducInfo}>
-                                <p>Date</p>
-                                <h2>Program</h2>
-                                <h3>School Name</h3>
-                                <h4>location</h4>
+                                <p>Feb. 27 - May 31, 2023</p>
+                                <h2>Full Stack Web Development</h2>
+                                <h3>Kodego</h3>
+                                <p>Online Bootcamp</p>
                             </div>
 
                             <div className={styles.EducInfo}>
-                                <p>Date</p>
-                                <h2>Program</h2>
-                                <h3>School Name</h3>
-                                <h4>location</h4>
+                                <p>2011 - 2014</p>
+                                <h2>Bachelor of Science in Marine Transportation</h2>
+                                <h3>Technological Institute of the Philippines</h3>
+                                <p>Quiapo, Manila</p>
                             </div>
 
                             <div className={styles.EducInfo}>
-                                <p>Date</p>
-                                <h2>Program</h2>
-                                <h3>School Name</h3>
-                                <h4>location</h4>
+                                <p>2007 - 2011</p>
+                                <h2>Secodary School</h2>
+                                <h3>Mahabang Parang National Highschool</h3>
+                                <p>Binangonan, Rizal</p>
                             </div>
 
                             <div className={styles.EducInfo}>
-                                <p>Date</p>
-                                <h2>Program</h2>
-                                <h3>School Name</h3>
-                                <h4>location</h4>
+                                <p>2000-2006</p>
+                                <h2>Primary School</h2>
+                                <h3>Casimiro A. Ynares Sr. Elementary School</h3>
+                                <p>Binangonan, Rizal</p>
                             </div>
                         </div>
 
                         {/* Language Section */}
                         <div className={styles.Language}>
-                            <h1>Languages</h1>
+                            <h1>Language</h1>
                             <div className={styles.LanInfo}>
-                                English
+                                <p>English</p>
+                                <div className={styles.langBar}></div>
                             </div>
                             <div className={styles.LanInfo}>
-                                Filipino-Tagalog
+                                <p>Filipino-Tagalog</p>
+                                <div className={styles.langBar}></div>
                             </div>
                             <div className={styles.LanInfo}>
-                                Cebuano-Bisaya
+                                <p>Cebuano-Bisaya</p>
+                                <div className={styles.langBar}></div>
                             </div>
                         </div>
 
                         {/* Interest Section */}
-                        <div className={styles.Language}>
-                            <h1>Interests</h1>
-                            <div className={styles.LanInfo}>
-                                Hiking
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Gaming
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Camping
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Painting
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Swimming
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Reading
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Travelling
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Solving Puzzle
-                            </div>
-                            <div className={styles.LanInfo}>
-                                Playing Musical Instruments
+                        <div className={styles.Interest}>
+                            <h1>Interest</h1>
+                            <div className={styles.InterestList}>
+                                <div className={styles.InterestInfo}>
+                                    <h2><FaHiking /></h2>
+                                    <h3>Hiking</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><FaGuitar /></h2>
+                                    <h3>Music</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><GiCampingTent /></h2>
+                                    <h3>Camping</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><GiPencilBrush /></h2>
+                                    <h3>Arts</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><FaSwimmer /></h2>
+                                    <h3>Swimming</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><SiYourtraveldottv /></h2>
+                                    <h3>Travel</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><GiBookshelf /></h2>
+                                    <h3>Reading</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><BsFillPuzzleFill /></h2>
+                                    <h3>Solving Puzzle</h3>
+                                </div>
+                                <div className={styles.InterestInfo}>
+                                    <h2><SiYoutubegaming /></h2>
+                                    <h3>Gaming</h3>
+                                </div>
+                                
                             </div>
                         </div>
 
+                        <Image
+                            src="/img/fog_bg.jpg"
+                            fill={true}
+                            className={styles.BGimage}
+                        />
+
                     </div>
+
+                    {/* Rightside Section */}
                     <div className={styles.modalRight}>
                     
                         {/* Profile Description */}
                         <div className={styles.ProfileDesc}>
-                            <h2>Profile</h2>
+                            <h1>Profile</h1>
                             <p>Profile Description</p>
                         </div>
 
                         {/* Experiences Section*/}
                         <div className={styles.Experience}>
+                            <h1>Work Experience</h1>
                             <div className={styles.ExpInfo}>
                                 <div className={styles.ExpInfoLeft}>
                                     <div className={styles.ExpDate}>
@@ -153,7 +252,27 @@ const ResumeModal = ({ open, onClose }) => {
 
                         {/* Skills Section */}
                         <div className={styles.SkillsSec}>
-
+                            <h1>Professional Skills</h1>
+                            <div className={styles.skillBar}>
+                                <table>
+                                    <tbody>
+                                        {skillsData.map((row, rowIndex) => (
+                                        <tr key={rowIndex}>
+                                            {row.map((column, columnIndex) => (
+                                            <td
+                                                key={columnIndex}
+                                                className={
+                                                    columnIndex === 0 ? styles.firstColumn : columnIndex === 1 ? styles.secondColumn : styles.thirdColumn
+                                                }
+                                            >
+                                                {column}
+                                            </td>
+                                            ))}
+                                        </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                                    
                     </div>
