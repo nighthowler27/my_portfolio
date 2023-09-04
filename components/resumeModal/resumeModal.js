@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react';
 import styles from './resume.module.css';
 import Image from 'next/image';
 import { 
@@ -35,6 +35,14 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
 //   ];
 
 const ResumeModal = ({ open, onClose }) => {
+    // State variables to track the active button
+    const [activeButton, setActiveButton] = useState('Graphics'); // Default to 'Graphics'
+
+    // Function to handle button click and update the active button
+    const handleButtonClick = (buttonName) => {
+        setActiveButton(buttonName);
+    };
+
     return (
         <>
           {open && (
@@ -149,15 +157,42 @@ const ResumeModal = ({ open, onClose }) => {
                             <h1>Language</h1>
                             <div className={styles.LanInfo}>
                                 <p>English</p>
-                                <div className={styles.langBar}></div>
+                                <div className={styles.langBar}>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '80%' }}></div>
+                                    </div>
+                                    <div className={styles.langGrade}>
+                                        <p>Poor</p>
+                                        <p>Fair</p>
+                                        <p>Fluent</p>
+                                    </div>
+                                </div>
                             </div>
                             <div className={styles.LanInfo}>
                                 <p>Filipino-Tagalog</p>
-                                <div className={styles.langBar}></div>
+                                <div className={styles.langBar}>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '100%' }}></div>
+                                    </div>
+                                    <div className={styles.langGrade}>
+                                        <p>Poor</p>
+                                        <p>Fair</p>
+                                        <p>Fluent</p>
+                                    </div>
+                                </div>
                             </div>
                             <div className={styles.LanInfo}>
                                 <p>Cebuano-Bisaya</p>
-                                <div className={styles.langBar}></div>
+                                <div className={styles.langBar}>
+                                    <div className={styles.percent}>
+                                        <div style={{ width: '60%' }}></div>
+                                    </div>
+                                    <div className={styles.langGrade}>
+                                        <p>Poor</p>
+                                        <p>Fair</p>
+                                        <p>Fluent</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -219,27 +254,49 @@ const ResumeModal = ({ open, onClose }) => {
                         {/* Profile Description */}
                         <div className={styles.ProfileDesc}>
                             <h1>Profile</h1>
-                            <p>Profile Description</p>
+                            <div className={styles.ProfileNarative}>
+                                <p>Profile Description</p>
+                            </div> 
                         </div>
 
                         {/* Experiences Section*/}
                         <div className={styles.Experience}>
                             <h1>Work Experience</h1>
-                            <div className={styles.ExpInfo}>
-                                <div className={styles.ExpInfoLeft}>
-                                    <div className={styles.ExpDate}>
-                                        <p>Date</p>
+                            <div className={styles.ExpList}>
+                                <div className={styles.ExpInfo}>
+                                    <div className={styles.ExpInfoLeft}>
+                                        <div className={styles.ExpDate}>
+                                            <p>Date</p>
+                                        </div>
+                                        <div className={styles.ExpCompany}>
+                                            <p>Copmany Name</p>
+                                        </div>
                                     </div>
-                                    <div className={styles.ExpCompany}>
-                                        <p>Copmany Name</p>
+                                    <div className={styles.ExpInfoRight}>
+                                        <div className={styles.ExpPosition}>
+                                            <p>Tittle</p>
+                                        </div>
+                                        <div className={styles.ExpPosDesc}>
+                                            <p>Description</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className={styles.ExpInfoRight}>
-                                    <div className={styles.ExpPosition}>
-                                        <p>Tittle</p>
+                                <div className={styles.ExpInfo}>
+                                    <div className={styles.ExpInfoLeft}>
+                                        <div className={styles.ExpDate}>
+                                            <p>Date</p>
+                                        </div>
+                                        <div className={styles.ExpCompany}>
+                                            <p>Copmany Name</p>
+                                        </div>
                                     </div>
-                                    <div className={styles.ExpPosDesc}>
-                                        <p>Description</p>
+                                    <div className={styles.ExpInfoRight}>
+                                        <div className={styles.ExpPosition}>
+                                            <p>Tittle</p>
+                                        </div>
+                                        <div className={styles.ExpPosDesc}>
+                                            <p>Description</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -248,103 +305,186 @@ const ResumeModal = ({ open, onClose }) => {
                         {/* Skills Section */}
                         <div className={styles.SkillsSec}>
                             <h1>Professional Skills</h1>
-                            <div className={styles.skillBar}>
-                                {/* <table>
-                                    <tbody>
-                                        {skillsData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            {row.map((column, columnIndex) => (
-                                            <td
-                                                key={columnIndex}
-                                                className={
-                                                    columnIndex === 0 ? styles.firstColumn : columnIndex === 1 ? styles.secondColumn : styles.thirdColumn
-                                                }
-                                            >
-                                                {column}
-                                            </td>
+                            <div className={styles.skillBTN}>
+                                <button
+                                className={`${styles.GraphBTN} ${
+                                    activeButton === 'Graphics' ? styles.active : ''
+                                }`}
+                                onClick={() => handleButtonClick('Graphics')}
+                                >
+                                    Graphics
+                                </button>
+                                <button
+                                className={`${styles.WebBTN} ${
+                                    activeButton === 'Web Development' ? styles.active : ''
+                                }`}
+                                onClick={() => handleButtonClick('Web Development')}
+                                >
+                                    Web Development
+                                </button>
+                            </div>
+
+                            <div className={styles.skillTable}>
+                                {/* Skill Table 1 */}
+                                {activeButton === 'Graphics' && (
+                                <div className={styles.skillBar}>
+                                    {/* <table>
+                                        <tbody>
+                                            {skillsData.map((row, rowIndex) => (
+                                            <tr key={rowIndex}>
+                                                {row.map((column, columnIndex) => (
+                                                <td
+                                                    key={columnIndex}
+                                                    className={
+                                                        columnIndex === 0 ? styles.firstColumn : columnIndex === 1 ? styles.secondColumn : styles.thirdColumn
+                                                    }
+                                                >
+                                                    {column}
+                                                </td>
+                                                ))}
+                                            </tr>
                                             ))}
-                                        </tr>
-                                        ))}
-                                    </tbody>
-                                </table> */}
-                                
-                                {/* <div className={styles.skillname}>
-                                    <div>Adobe Photoshop</div>
-                                    <div>Adobe Premiere</div>
-                                    <div>Adobe After Effects</div>
-                                    <div>Adobe Illustator</div>
-                                    <div>Adobe Indesign</div>
-                                    <div>Adobe Audition</div>
+                                        </tbody>
+                                    </table> */}
+
+                                    {/* <div className={styles.skillname}>
+                                        <div>Adobe Photoshop</div>
+                                        <div>Adobe Premiere</div>
+                                        <div>Adobe After Effects</div>
+                                        <div>Adobe Illustator</div>
+                                        <div>Adobe Indesign</div>
+                                        <div>Adobe Audition</div>
+                                    </div>
+
+                                    <div className={styles.skillrate}>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '60%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '70%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '75%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '65%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.skillscore}>
+                                        <div>80%</div>
+                                        <div>60%</div>
+                                        <div>70%</div>
+                                        <div>75%</div>
+                                        <div>65%</div>
+                                        <div>80%</div>
+                                    </div> */}
+
+                                    <div className={styles.skillname}>
+                                        <div>Adobe Photoshop</div>
+                                        <div>Adobe Premiere</div>
+                                        <div>Adobe After Effects</div>
+                                        <div>Adobe Illustator</div>
+                                        <div>Adobe Indesign</div>
+                                        <div>Adobe Audition</div>
+                                    </div>
+
+                                    <div className={styles.skillrate}>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '90%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '70%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '60%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '75%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '85%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.skillscore}>
+                                        <div>90%</div>
+                                        <div>70%</div>
+                                        <div>60%</div>
+                                        <div>75%</div>
+                                        <div>85%</div>
+                                        <div>80%</div>
+                                    </div>
                                 </div>
+                                )}
 
-                                <div className={styles.skillrate}>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '80%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '60%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '70%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '75%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '65%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '80%' }}></div>
-                                    </div>
-                                </div>
-
-                                <div className={styles.skillscore}>
-                                    <div>80%</div>
-                                    <div>60%</div>
-                                    <div>70%</div>
-                                    <div>75%</div>
-                                    <div>65%</div>
-                                    <div>80%</div>
-                                </div> */}
-
+                                {/* Skill Table 2  */}
+                                {activeButton === 'Web Development' && (
+                                <div className={styles.skillBar1}>
                                 <div className={styles.skillname}>
-                                    <div>Adobe Photoshop</div>
-                                    <div>Adobe Premiere</div>
-                                    <div>Adobe After Effects</div>
-                                    <div>Adobe Illustator</div>
-                                    <div>Adobe Indesign</div>
-                                    <div>Adobe Audition</div>
-                                </div>
+                                        <div>HTML</div>
+                                        <div>Javascript</div>
+                                        <div>CSS</div>
+                                        <div>React</div>
+                                        <div>Next Js</div>
+                                        <div>Mongo DB</div>
+                                        <div>MySQL</div>
+                                        <div>Sanity IO</div>
+                                        <div>Amazon S3</div>
+                                    </div>
 
-                                <div className={styles.skillrate}>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '80%' }}></div>
+                                    <div className={styles.skillrate}>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '60%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '70%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '75%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '65%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '75%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '65%' }}></div>
+                                        </div>
+                                        <div className={styles.percent}>
+                                            <div style={{ width: '80%' }}></div>
+                                        </div>
                                     </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '60%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '70%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '75%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '65%' }}></div>
-                                    </div>
-                                    <div className={styles.percent}>
-                                        <div style={{ width: '80%' }}></div>
-                                    </div>
-                                </div>
 
-                                <div className={styles.skillscore}>
-                                    <div>80%</div>
-                                    <div>60%</div>
-                                    <div>70%</div>
-                                    <div>75%</div>
-                                    <div>65%</div>
-                                    <div>80%</div>
+                                    <div className={styles.skillscore}>
+                                        <div>80%</div>
+                                        <div>60%</div>
+                                        <div>70%</div>
+                                        <div>75%</div>
+                                        <div>65%</div>
+                                        <div>80%</div>
+                                        <div>75%</div>
+                                        <div>65%</div>
+                                        <div>80%</div>
+                                    </div>
                                 </div>
+                                )}
                             </div>
                         </div>
                                    
@@ -352,7 +492,7 @@ const ResumeModal = ({ open, onClose }) => {
                 </div>
 
                 <div className={styles.modalFooter}>
-                  <p>footer</p>
+                  <p>latest updated version : 5 Sep 2023</p>
                 </div>
     
                 <div className={styles.modalBtn}>
