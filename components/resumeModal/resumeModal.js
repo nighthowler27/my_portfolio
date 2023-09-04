@@ -27,11 +27,6 @@ import {
     } from 'react-icons/si';
 import { BsFillPuzzleFill } from 'react-icons/bs';
 
-const languageData = [
-    ["English", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
-    ["Filipino - Tagalog", <div className={styles.percent}><div style={{ width: '65%' }}></div></div>, "65%"],
-    ["Cebuano - Bisaya", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
-  ];
 
 const skillsData = [
     ["Photoshop", <div className={styles.percent}><div style={{ width: '80%' }}></div></div>, "80%"],
