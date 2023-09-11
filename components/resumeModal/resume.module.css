@@ -37,6 +37,7 @@
   }
   
   .modalBanner {
+    position: relative;
     background: #ddd;
     height: 150px;
     display: flex;
@@ -121,6 +122,12 @@
     display: flex;
   }
 
+  .ContactNumber:hover, .ContactLink div:hover,
+  .ContactAddress:hover {
+    background-color: #ff9900;
+    font-weight: bold;
+  }
+
   .ContactLink {
     display: flex;
     flex-direction: column;
@@ -188,6 +195,12 @@
     margin-top: 10px;
     margin-bottom: 15px;
     padding-left: 10px;
+  }
+
+  .EducInfo:hover {
+    background-color: #e29a2c;
+    padding: 10px;
+    transform: scale(1.1);
   }
 
   .EducSec p {
@@ -296,7 +309,7 @@
   /* Professional Skills */
   .skillBTN {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .GraphBTN{
     border-radius: 10px 0px 0px 0px;
@@ -401,5 +414,42 @@
     left: 0;
     height: 100%;
     background: #62929E;
+  }
+
+  /* Banner */
+
+  .toolBar {
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .toolBar p {
+    font-size: 22px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .toolBar p:hover {
+    font-weight: bold;
+    background-color: #ff9900;
+    padding: 10px;
+  }
+
+  /* FOOTER */
+
+  .UpdateBTN {
+    padding: 7px;
+    margin-right: 10px;
+    border-radius: 15px;
+  }
+
+  .UpdateBTN:hover {
+    background-color: #ff9900;
+    padding: 7px;
+    margin-right: 10px;
+    border-radius: 15px;
+    font-weight: bolder;
   }
 

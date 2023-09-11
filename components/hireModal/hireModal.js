@@ -1,11 +1,24 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react';
 import styles from './hiremodal.module.css';
 import { useForm, ValidationError } from '@formspree/react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import TimePicker from 'react-time-picker';
+import 'react-time-picker/dist/TimePicker.css';
 
 const HireModal = ({ open, onClose }) => {
-    const [state, handleSubmit] = useForm("mlekqlww");
+  const [state, handleSubmit] = useForm("mlekqlww");
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState('12:00');
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeChange = (time) => {
+    setSelectedTime(time);
+  };
     return (
         <>
           {open && (
@@ -21,35 +34,54 @@ const HireModal = ({ open, onClose }) => {
                         <div className={styles.modalLeft}>
 
                             <div className={styles.appFormGroup}>
-                            <input 
-                                type="text" 
-                                name="name" 
-                                className={styles.appFormControl} placeholder="NAME" 
-                                required 
-                            />
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    className={styles.appFormControl} placeholder="NAME" 
+                                    required 
+                                />
                             </div>
                             <div className={styles.appFormGroup}>
-                            <input 
-                                type="email"
-                                name="email"
-                                className={styles.appFormControl} placeholder="EMAIL"
-                                required
-                            />
+                                <input 
+                                    type="email"
+                                    name="email"
+                                    className={styles.appFormControl} placeholder="EMAIL"
+                                    required
+                                />
                             </div>
                             <div className={styles.appFormGroup}>
-                            <input 
-                                type="text"
-                                name="contactNo"
-                                className={styles.appFormControl} placeholder="CONTACT NO."
-                                required 
-                            />
+                                <input 
+                                    type="text"
+                                    name="contactNo"
+                                    className={styles.appFormControl} placeholder="CONTACT NO."
+                                    required 
+                                />
                             </div>
                             <div className={styles.appFormGroup}>
-                            <input 
-                                type="text"
-                                name="contactNo"
-                                className={styles.appFormControl} placeholder="COMPANY NAME"
-                            />
+                                <input 
+                                    type="text"
+                                    name="contactNo"
+                                    className={styles.appFormControl} placeholder="COMPANY NAME"
+                                />
+                            </div>
+
+                            <div className={styles.dateTime}>
+                                <p>Select Date</p>
+                                <div className={styles.appFormGroup}>
+                                    <DatePicker
+                                    selected={selectedDate}
+                                    onChange={handleDateChange}
+                                    placeholderText="Select Date"
+                                    dateFormat="dd/MM/yyyy"
+                                    />
+                                </div>
+                                <p>Select Time</p>
+                                <div className={styles.appFormGroup}>
+                                    <TimePicker
+                                    value={selectedTime}
+                                    onChange={handleTimeChange}
+                                    />
+                                </div>
                             </div>
 
                         </div>
@@ -67,7 +99,7 @@ const HireModal = ({ open, onClose }) => {
                                 <div className={`${styles.appFormGroup} ${styles.message}`}>
                                     <textarea
                                         name="message"
-                                        className={styles.appFormControlMessage} placeholder="MESSAGE/SPECIAL INSTRUCTION"
+                                        className={`${styles.appFormControlMessage} ${styles.appFormControl}`} placeholder="MESSAGE/SPECIAL INSTRUCTION"
                                         required
                                     />
 

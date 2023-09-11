@@ -18,7 +18,10 @@ import {
     AiOutlineMail, 
     AiFillLinkedin, 
     AiFillBehanceSquare,
-    AiFillHome 
+    AiFillHome,
+    AiOutlineDownload,
+    AiOutlinePrinter,
+    AiOutlineShareAlt, 
     } from 'react-icons/ai';
 import { BsGlobe } from 'react-icons/bs';
 import { 
@@ -34,7 +37,7 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
 //     ["Adobe Illustrator", <div className={styles.percent}><div style={{ width: '70%' }}></div></div>, "70%"],
 //   ];
 
-const ResumeModal = ({ open, onClose }) => {
+    const ResumeModal = ({ open, onClose, user  }) => {
     // State variables to track the active button
     const [activeButton, setActiveButton] = useState('Graphics'); // Default to 'Graphics'
 
@@ -43,13 +46,32 @@ const ResumeModal = ({ open, onClose }) => {
         setActiveButton(buttonName);
     };
 
+    const [lastUpdated, setLastUpdated] = useState(new Date().toLocaleString());
+
+    // Function to update the lastUpdated value when needed
+    const updateLastUpdated = () => {
+        // You can set this to a new date or any updated information
+        const currentDate = new Date().toLocaleString();
+        setLastUpdated(currentDate);
+    };
+
     return (
         <>
           {open && (
             <div className={styles.modalOverlay}>
               <div className={styles.modal}>
                 <div className={styles.modalBanner}>
-                  <p>Banner Buttons</p>
+                  <div className={styles.toolBar}>
+                    <p className={styles.toolBarDownload}>
+                        <AiOutlineDownload />
+                    </p>
+                    <p className={styles.toolBarPrint}>
+                        <AiOutlinePrinter />
+                    </p>
+                    <p className={styles.toolBarShare}>
+                        <AiOutlineShareAlt />
+                    </p>
+                  </div>
                 </div>
   
                 <div className={styles.modalContent}>
@@ -116,7 +138,10 @@ const ResumeModal = ({ open, onClose }) => {
                                 <div className={styles.ContactIcon}>
                                     <h2><AiFillHome /></h2>
                                 </div>
-                                <h3>Blk 6 Lot3, #362H B.Mesa Street Brgy. Mahabang Parang, Binangonan, Rizal, 1940</h3>
+                                <span>
+                                    <h3>Blk 6 Lot3, #362H B.Mesa Street,</h3>
+                                    <h3>Brgy. Mahabang Parang, Binangonan, Rizal, 1940</h3>
+                                </span>
                             </div>
                         </div>
 
@@ -492,7 +517,15 @@ const ResumeModal = ({ open, onClose }) => {
                 </div>
 
                 <div className={styles.modalFooter}>
-                  <p>latest updated version : 5 Sep 2023</p>
+                    {user && user.role === 'admin' && (
+                        <button type="button" onClick={updateLastUpdated} className={styles.UpdateBTN}>
+                        Update
+                        </button>
+                    )}
+                    {/* <button type="button" onClick={updateLastUpdated} className={styles.UpdateBTN}>
+                        Update 
+                    </button> */}
+                    <p>latest updated version : {lastUpdated}</p>
                 </div>
     
                 <div className={styles.modalBtn}>

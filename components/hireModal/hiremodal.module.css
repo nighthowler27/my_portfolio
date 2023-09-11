@@ -121,15 +121,32 @@
     justify-content: space-between;
 }   
 
-.appFormControl{
+.appFormControl {
     width: 100%;
     padding-left: 5px;
-}
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+  }
+  
+  .appFormControl::placeholder {
+    color: #ddd;
+  }
+  
+  .appFormControl:focus {
+    border-bottom-color: #ddd;
+  }
 
 .appFormControlMessage{
     width: 100%;
     min-height: 150px;
     padding-left: 5px;
+    margin-top: 15px;
 }
 
 .appFormButton {
