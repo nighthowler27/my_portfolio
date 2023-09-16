@@ -14,7 +14,7 @@ const HireModal = ({ open, onClose }) => {
   const [selectedSocialMedia, setSelectedSocialMedia] = useState('');
   const [confirmation, setConfirmation] = useState(false);
   const [confirmationClose, setConfirmationClose] = useState(false);
-  const [state, handleSubmit] = useForm("mlekqlww");
+  
 
 
   // Use useEffect instead of DOMContentLoaded for event listener
@@ -46,35 +46,18 @@ const HireModal = ({ open, onClose }) => {
     };
   }, []); // Empty dependency array to run the effect only once
 
-   // Function to format the date as "dd - mmmm - yyyy"
-   const formatDate = (date) => {
-    if (date) {
-      const options = { day: 'numeric', month: 'long', year: 'numeric' };
-      return date.toLocaleDateString('en-US', options);
-    } else {
-      return ''; // Or provide a default value if needed
-    }
-  };
-
-  // Function to format the time in 12-hour format with AM/PM
-  const formatTime = (date) => {
-    if (date) {
-      const options = { hour: 'numeric', minute: 'numeric', hour12: true };
-      return date.toLocaleTimeString('en-US', options);
-    } else {
-      return ''; // Or provide a default time value if needed
-    }
-  }; 
-
-  // Handle date selection
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-    const handleMeetingTypeChange = (event) => {
-    setSelectedMeetingType(event.target.id);
+  const handleTimeChange = (time) => {
+    setSelectedTime(time);
+  };
+
+  const handleMeetingTypeChange = (event) => {
+    setSelectedMeetingType(event.target.value);
     setSelectedSocialMedia(''); // Reset selected social media when meeting type changes
-    setShowMeetingInputs(event.target.id === 'online'); // Simplified condition
+    setShowMeetingInputs(event.target.value === 'online'); // Check if 'online' is selected
   };
 
   const handleSocialMediaChange = (event) => {
@@ -86,22 +69,11 @@ const HireModal = ({ open, onClose }) => {
   };
 
   const handleConfirmationClose = () => {
+    // Toggle the confirmationClose state to show the "Sure?" button
     setConfirmationClose(!confirmationClose);
   };
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
-  
-    // Format the selectedDate using formatDate function
-    const formattedDate = formatDate(selectedDate);
-  
-    // Format the selectedDate using formatTime function
-    const formattedTime = formatTime(selectedDate);
-  
-    // You can use formattedDate and formattedTime in your submission logic
-    console.log('Formatted Date:', formattedDate);
-    console.log('Formatted Time:', formattedTime);
-  
     const result = await handleSubmit(e);
   
     if (result.succeeded) {
@@ -109,6 +81,7 @@ const HireModal = ({ open, onClose }) => {
       onClose();
     }
   };
+  
 
   useEffect(() => {
     // Add event listener for the checkbox here (if needed)
@@ -116,6 +89,49 @@ const HireModal = ({ open, onClose }) => {
       // Cleanup event listener here (if needed)
     };
   }, []);
+
+  const [message, setMessage] = useState('');
+  const characterLimit = 1000; // Change this to your desired character limit
+
+  const handleTextareaChange = (event) => {
+    const inputValue = event.target.value;
+  
+    if (inputValue.length <= characterLimit) {
+      setMessage(inputValue);
+    }
+  };
+  
+  const [state, handleSubmit] = useForm("mlekqlww");
+
+  if (state.succeeded) {
+    return (
+        <div className={styles.modalOverlay}>
+            <div className={styles.modal}>
+                <div className={styles.modalBanner}>
+                    <p>Banner Image</p>
+                </div>
+
+                <div className={styles.modalContentSuccess}>
+                    <div className={styles.appointmentSent}>
+                        <p>Thank you! I will review the appointment you've set and will do my best to confirm it as soon as I can.</p>
+                        <p>In the meantime, please feel free to visit my website and explore some of my projects, portfolio, and services that I offer. You might find something that interests you.</p>
+                    </div>
+                </div>
+
+                <div className={styles.modalBtn}>
+                    <button type="button" className={styles.closeBtn} onClick={onClose}>
+                        Close
+                    </button>
+                </div>
+
+                <div className={styles.modalFooter}>
+                    
+                </div>
+
+            </div>
+      </div>
+    );
+  }
 
   
   return (
@@ -130,7 +146,7 @@ const HireModal = ({ open, onClose }) => {
             <form onSubmit={handleFormSubmit}>
               <div className={styles.modalContent}>
                 <div className={styles.modalLeft}>
-                  <p>Let me know who you are and how I can reach back to you.</p>
+                  <p>Let me know who are you and where can I contact to you.</p>
                             <div className={styles.appFormGroup}>
                                 <input 
                                     type="text" 
@@ -164,12 +180,11 @@ const HireModal = ({ open, onClose }) => {
                             </div>
 
                             <div className={styles.dateTime}>
-                                <p>Appointment Date and Time</p>
+                                <p>Appoint Date and Time</p>
                                 <div className={styles.appFormGroup}>
                                     <DatePicker 
                                     name="schedule"
-                                    selected={selectedDate}
-                                    onChange={handleDateChange}
+                                    value={value}
                                     />
                                 </div>
                                 {/* <p>Select Time</p>
@@ -193,6 +208,7 @@ const HireModal = ({ open, onClose }) => {
                                             value="onsite"
                                             checked={selectedMeetingType === 'onsite'}
                                             onChange={handleMeetingTypeChange}
+                                            required
                                         />
                                         <label htmlFor="onsite">Onsite</label>
                                         
@@ -206,6 +222,7 @@ const HireModal = ({ open, onClose }) => {
                                             value="online"
                                             checked={selectedMeetingType === 'online'}
                                             onChange={handleMeetingTypeChange}
+                                            required
                                         />
                                         <label htmlFor="online">Online</label>
                                         </div>
@@ -218,136 +235,94 @@ const HireModal = ({ open, onClose }) => {
                                             id="onsiteMeetingLink" // Add a unique id
                                             name="onsiteMeetingLink" // Add a unique name
                                             placeholder="Enter Address or Location Link"
+                                            required={selectedMeetingType === 'onsite'}
                                             />
                                         </div>
                                     )}
                                     
                                     {showMeetingInputs && (
                                         <div className={styles.meetingInputs}>
-                                            <div className={styles.socmedList}>
+                                            <fieldset className={styles.socmedList} required>
+                                                <legend>Choose a Social Media Platform</legend>
                                                 <div className={styles.socmed}>
-                                                    <input
-                                                        type="radio"
-                                                        id="googleMeet"
-                                                        name="MeetingPlatform"
-                                                        value="GoogleMeet"
-                                                        checked={selectedSocialMedia === 'googleMeet'}
-                                                        onChange={handleSocialMediaChange}
-                                                    />
-                                                    <label htmlFor="googleMeet">Google Meet</label>
+                                                <input
+                                                    type="radio"
+                                                    id="googleMeet"
+                                                    name="MeetingPlatform"
+                                                    value="GoogleMeet"
+                                                    checked={selectedSocialMedia === 'googleMeet'}
+                                                    onChange={handleSocialMediaChange}
+                                                    required
+                                                />
+                                                <label htmlFor="googleMeet">Google Meet</label>
                                                 </div>
 
                                                 <div className={styles.socmed}>
-                                                    <input
-                                                        type="radio"
-                                                        id="zoom"
-                                                        name="MeetingPlatform"
-                                                        value="Zoom"
-                                                        checked={selectedSocialMedia === 'zoom'}
-                                                        onChange={handleSocialMediaChange}
-                                                    />
-                                                    <label htmlFor="zoom">Zoom</label>
+                                                <input
+                                                    type="radio"
+                                                    id="zoom"
+                                                    name="MeetingPlatform"
+                                                    value="Zoom"
+                                                    checked={selectedSocialMedia === 'zoom'}
+                                                    onChange={handleSocialMediaChange}
+                                                    required
+                                                />
+                                                <label htmlFor="zoom">Zoom</label>
                                                 </div>
 
                                                 <div className={styles.socmed}>
-                                                    <input
-                                                        type="radio"
-                                                        id="discord"
-                                                        name="MeetingPlatform"
-                                                        value="Discord"
-                                                        checked={selectedSocialMedia === 'discord'}
-                                                        onChange={handleSocialMediaChange}
-                                                    />
-                                                    <label htmlFor="discord">Discord</label>
+                                                <input
+                                                    type="radio"
+                                                    id="discord"
+                                                    name="MeetingPlatform"
+                                                    value="Discord"
+                                                    checked={selectedSocialMedia === 'discord'}
+                                                    onChange={handleSocialMediaChange}
+                                                    required
+                                                />
+                                                <label htmlFor="discord">Discord</label>
                                                 </div>
 
                                                 <div className={styles.socmed}>
-                                                    <input
-                                                        type="radio"
-                                                        id="skype"
-                                                        name="MeetingPlatform"
-                                                        value="Skype"
-                                                        checked={selectedSocialMedia === 'skype'}
-                                                        onChange={handleSocialMediaChange}
-                                                    />
-                                                    <label htmlFor="skype">Skype</label>
+                                                <input
+                                                    type="radio"
+                                                    id="skype"
+                                                    name="MeetingPlatform"
+                                                    value="Skype"
+                                                    checked={selectedSocialMedia === 'skype'}
+                                                    onChange={handleSocialMediaChange}
+                                                    required
+                                                />
+                                                <label htmlFor="skype">Skype</label>
                                                 </div>
                                                 <div className={styles.socmed}>
+                                                <input
+                                                    type="radio"
+                                                    id="specific"
+                                                    name="MeetingPlatform"
+                                                    value="OtherSocialMedia"
+                                                    checked={selectedSocialMedia === 'specific'}
+                                                    onChange={handleSocialMediaChange}
+                                                    required
+                                                />
+                                                <label htmlFor="specific">Others</label>
+                                                </div>
+                                            </fieldset>
+
+                                            {selectedSocialMedia && (
+                                                <div className={styles.linkInputs}>
                                                     <input
-                                                        type="radio"
-                                                        id="otherSoc"
-                                                        name="MeetingPlatform"
-                                                        value="OtherSocialMedia"
-                                                        checked={selectedSocialMedia === 'otherSoc'}
-                                                        onChange={handleSocialMediaChange}
+                                                    type="text"
+                                                    id="meetingLink"
+                                                    name="meetingLink"
+                                                    placeholder={`Enter ${selectedSocialMedia} link`}
+                                                    required
+                                                    className={styles.appFormControl}
                                                     />
-                                                    <label htmlFor="otherSoc">Others</label>
                                                 </div>
-                                            </div>
-                                            <div className={styles.linkInputs}>
-                                                    {selectedSocialMedia === 'googleMeet' && (
-                                                        <div className={`${styles.inputOnsite} ${styles.appFormControl}`}>
-                                                        <input
-                                                        type="text"
-                                                        id="meetingLink"
-                                                        name="meetingLink"
-                                                        placeholder="Enter Google Meet link"
-                                                        />
-                                                        </div>
-                                                    )}
-                                                    {selectedSocialMedia === 'zoom' && (
-                                                        <div className={`${styles.inputOnsite} ${styles.appFormControl}`}>
-                                                        <input
-                                                        type="text"
-                                                        id="meetingLink"
-                                                        name="meetingLink"
-                                                        placeholder="Enter Zoom link"
-                                                        />
-                                                        </div>
-                                                    )}
-                                                    {selectedSocialMedia === 'discord' && (
-                                                        <div className={`${styles.inputOnsite} ${styles.appFormControl}`}>
-                                                        <input
-                                                        type="text"
-                                                        id="meetingLink"
-                                                        name="meetingLink"
-                                                        placeholder="Enter Discord link"
-                                                        />
-                                                        </div> 
-                                                    )}
-                                                    {selectedSocialMedia === 'skype' && (
-                                                        <div className={`${styles.inputOnsite} ${styles.appFormControl}`}>
-                                                        <input
-                                                        type="text"
-                                                        id="meetingLink"
-                                                        name="meetingLink"
-                                                        placeholder="Enter Skype link"
-                                                        />
-                                                        </div>
-                                                    )}
-                                                    {selectedSocialMedia === 'otherSoc' && (
-                                                        <div className={styles.inputOnsite}>
-                                                            <div className={styles.appFormControl}>
-                                                            <input
-                                                            type="text"
-                                                            id="meetingLink"
-                                                            name="OtherAppName"
-                                                            placeholder="Social Media platform or App Name"
-                                                            />
-                                                            </div>
-                                                            
-                                                            <div className={styles.appFormControl}>
-                                                            <input
-                                                            type="text"
-                                                            id="meetingLink"
-                                                            name="otherAppMeetingLink"
-                                                            placeholder="Enter Meeting link"
-                                                            />
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                            )}
                                         </div>
+                                        
                                     )}
                                 </div>
 
@@ -357,24 +332,30 @@ const HireModal = ({ open, onClose }) => {
 
                 <div className={styles.modalRight}>
                             
-                                <p>Additional Info</p>                        
-                                <div className={styles.appFormGroup}>
-                                    <input
-                                        type="text"
-                                        name="MeetingPurpose"
-                                        className={styles.appFormControl} placeholder="PURPOSE OF THE APPOINTMENT"
-                                    />
-                                </div>
-                                
-                                <div className={`${styles.appFormGroup} ${styles.message}`}>
-                                    <textarea
-                                        name="Message/Instruction"
-                                        className={`${styles.appFormControlMessage} ${styles.appFormControl}`} placeholder="INSERT MESSAGE/SPECIAL INSTRUCTION"
-                                        required
-                                    />
+                <p>Additional Info</p>                        
+                <div className={styles.appFormGroup}>
+                    <input
+                        type="text"
+                        name="MeetingPurpose"
+                        className={styles.appFormControl} placeholder="PURPOSE OF THE APPOINTMENT"
+                    />
+                </div>
+                
+                <div className={`${styles.appFormGroup} ${styles.message}`}>
+                    <textarea
+                        name="Message/Instruction"
+                        className={`${styles.appFormControlMessage} ${styles.appFormControl}`}
+                        placeholder="INSERT MESSAGE/SPECIAL INSTRUCTION"
+                        required
+                        value={message}
+                        onChange={handleTextareaChange}
+                    />
+                    <div className={styles.textLimit}>
+                        <p>{characterLimit - message.length} <span>/{characterLimit}</span></p>
+                    </div>
 
-                                </div>
-                                <ValidationError
+                </div>
+                <ValidationError
                   prefix="Email"
                   field="email"
                   errors={state.errors}
@@ -385,7 +366,7 @@ const HireModal = ({ open, onClose }) => {
                   errors={state.errors}
                 />
                 <div className={`${styles.appFormGroup} ${styles.buttons}`}>
-                    {!confirmation ? (
+                    {/* {!confirmation ? (
                         <button type="button" className={styles.appFormButton} onClick={handleConfirmation}>
                         Submit
                         </button>
@@ -393,7 +374,10 @@ const HireModal = ({ open, onClose }) => {
                         <button type="submit" className={styles.appFormButton}>
                         Yes!
                         </button>
-                    )}
+                    )} */}
+                    <button type="submit" className={styles.appFormButton}>
+                        Submit!
+                    </button>
                 </div>
                </div> 
               </div>
