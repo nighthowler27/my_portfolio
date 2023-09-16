@@ -4,6 +4,7 @@ import styles from './hiremodal.module.css';
 import { useForm, ValidationError } from '@formspree/react';
 
 import DatePicker from '@/components/DateTimePicker/DatePicker.js';
+import DatePickerMUI from '@/components/DateTimePicker/DatePickerMUI.js';
 
 const HireModal = ({ open, onClose }) => {
   const [value, setValue] = useState(new Date());
@@ -14,6 +15,7 @@ const HireModal = ({ open, onClose }) => {
   const [selectedSocialMedia, setSelectedSocialMedia] = useState('');
   const [confirmation, setConfirmation] = useState(false);
   const [confirmationClose, setConfirmationClose] = useState(false);
+  
   
 
 
@@ -182,6 +184,11 @@ const HireModal = ({ open, onClose }) => {
                             <div className={styles.dateTime}>
                                 <p>Appoint Date and Time</p>
                                 <div className={styles.appFormGroup}>
+                                    {/* <DatePickerMUI 
+                                    name="firstSched"
+                                    value={value}
+                                    required
+                                    /> */}
                                     <DatePicker 
                                     name="schedule"
                                     value={value}

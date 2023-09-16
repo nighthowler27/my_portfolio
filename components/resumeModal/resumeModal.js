@@ -274,6 +274,7 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
                             src="/img/fog_bg.jpg"
                             fill={true}
                             className={styles.BGimage}
+                            alt="leftBG"
                         />
 
                     </div>
