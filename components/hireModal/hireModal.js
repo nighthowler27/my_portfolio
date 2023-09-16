@@ -115,7 +115,7 @@ const HireModal = ({ open, onClose }) => {
 
                 <div className={styles.modalContentSuccess}>
                     <div className={styles.appointmentSent}>
-                        <p>Thank you! I will review the appointment you've set and will do my best to confirm it as soon as I can.</p>
+                        <p>Thank you! I will review the appointment you&aposve set and will do my best to confirm it as soon as I can.</p>
                         <p>In the meantime, please feel free to visit my website and explore some of my projects, portfolio, and services that I offer. You might find something that interests you.</p>
                     </div>
                 </div>
