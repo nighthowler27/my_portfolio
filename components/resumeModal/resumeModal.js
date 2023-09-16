@@ -55,6 +55,11 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
         setLastUpdated(currentDate);
     };
 
+    function formatDate(date) {
+        const options = { day: '2-digit', month: 'long', year: 'numeric' };
+        return new Date(date).toLocaleDateString(undefined, options);
+      }
+
     return (
         <>
           {open && (
@@ -525,7 +530,7 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
                     {/* <button type="button" onClick={updateLastUpdated} className={styles.UpdateBTN}>
                         Update 
                     </button> */}
-                    <p>latest updated version : {lastUpdated}</p>
+                    <p>latest version : {formatDate(lastUpdated)}</p>
                 </div>
     
                 <div className={styles.modalBtn}>

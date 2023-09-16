@@ -162,7 +162,7 @@
   }
 
   .ProfileName h1 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .ProPic{
@@ -241,6 +241,10 @@
     display: flex;
   }
 
+  .InterestInfo:hover {
+    background-color: #e5ad58;
+  }
+
   .InterestInfo h2 {
     font-size: 22px;
     padding: 5px;
@@ -248,6 +252,7 @@
   }
 
   .InterestInfo h3 {
+    font-size: 14px;
     align-items: center;
     padding-top: 5px;
   }

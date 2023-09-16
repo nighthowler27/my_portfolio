@@ -46,15 +46,32 @@ const HireModal = ({ open, onClose }) => {
     };
   }, []); // Empty dependency array to run the effect only once
 
+   // Function to format the date as "dd - mmmm - yyyy"
+   const formatDate = (date) => {
+    if (date) {
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
+    } else {
+      return ''; // Or provide a default value if needed
+    }
+  };
+
+  // Function to format the time in 12-hour format with AM/PM
+  const formatTime = (date) => {
+    if (date) {
+      const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+      return date.toLocaleTimeString('en-US', options);
+    } else {
+      return ''; // Or provide a default time value if needed
+    }
+  }; 
+
+  // Handle date selection
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  const handleTimeChange = (time) => {
-    setSelectedTime(time);
-  };
-
-  const handleMeetingTypeChange = (event) => {
+    const handleMeetingTypeChange = (event) => {
     setSelectedMeetingType(event.target.id);
     setSelectedSocialMedia(''); // Reset selected social media when meeting type changes
     setShowMeetingInputs(event.target.id === 'online'); // Simplified condition
@@ -74,9 +91,19 @@ const HireModal = ({ open, onClose }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Format the selectedDate using formatDate function
+    const formattedDate = formatDate(selectedDate);
+  
+    // Format the selectedDate using formatTime function
+    const formattedTime = formatTime(selectedDate);
+  
+    // You can use formattedDate and formattedTime in your submission logic
+    console.log('Formatted Date:', formattedDate);
+    console.log('Formatted Time:', formattedTime);
+  
     const result = await handleSubmit(e);
-
+  
     if (result.succeeded) {
       // The form submission was successful, so we can close the modal.
       onClose();
@@ -141,7 +168,8 @@ const HireModal = ({ open, onClose }) => {
                                 <div className={styles.appFormGroup}>
                                     <DatePicker 
                                     name="schedule"
-                                    value={value}
+                                    selected={selectedDate}
+                                    onChange={handleDateChange}
                                     />
                                 </div>
                                 {/* <p>Select Time</p>
