@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .modalTitle {
@@ -58,6 +58,7 @@
     flex: 1; /* Allow modal content to grow and occupy available space */
     padding: 20px;
     overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
+    height: fit-content;
     display: flex;
     flex-direction: row;
 }
@@ -173,3 +174,64 @@
     margin: 0 auto;
     z-index: 999;
   }
+
+  /* Meeting List */
+
+  .meetingChoice {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Styles for the checkbox container */
+ .meetingList {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the input container */
+ .addressInput {
+    display: none; /* Initially hide the input */
+    margin-left: 20px; /* Adjust the spacing as needed */
+  }
+
+  .inputOnsite input{
+    width: 100%;
+    padding: 5px;
+    border-bottom: #666;
+  }
+    
+  /* Styles for the checkboxes */
+  .meetingList input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* Styles for the checkbox labels */
+  .meetingList label {
+    font-weight: bold;
+  }
+  
+  /* Style for checked checkboxes */
+  .meetingList input[type="radio"]:checked + label {
+    color: #007bff; /* Change the color to your preference */
+  }
+
+  /* Style for showing the input when the checkbox is checked */
+.meetingList input[type="radio"]:checked ~ .addressInput {
+    display: block;
+  }
+
+  .socmedList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .socmed {
+    display: flex;
+    padding: 5px;
+  }
+
+  .socmed input {
+    margin-right: 5px;
+  }
+  
