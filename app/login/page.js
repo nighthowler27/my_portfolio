@@ -13,15 +13,15 @@ const Page = () => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [show, setShow] = useState({ password: false, conPassword: false });
 
-  // Google Handler function
-  async function handleGoogleSignin() {
-    signIn('google', { callbackUrl: 'http://localhost:3000' });
-  }
+//   // Google Handler function
+//   async function handleGoogleSignin() {
+//     signIn('google', { callbackUrl: 'http://localhost:3000/login' });
+//   }
 
-  // Github Login
-  async function handleGithubSignin() {
-    signIn('github', { callbackUrl: 'http://localhost:3000' });
-  }
+//   // Github Login
+//   async function handleGithubSignin() {
+//     signIn('github', { callbackUrl: 'http://localhost:3000/login' });
+//   }
 
   const toggleForms = () => {
     setShowLoginForm(!showLoginForm);
