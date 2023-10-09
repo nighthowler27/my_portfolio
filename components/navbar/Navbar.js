@@ -2,7 +2,7 @@
 import React, { useState} from 'react'
 import Link from 'next/link'
 import styles from "./navbar.module.css"
-import LoginModal from '../loginModal/loginModal'
+import LoginModal from '../loginModal/loginLayout'
 
 
 const links = [
