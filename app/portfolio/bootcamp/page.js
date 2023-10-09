@@ -4,9 +4,6 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { getbootcampCategories, getbootcampPages} from '@/sanity/sanity-utils'
-import BlockContent from '@sanity/block-content-to-react';
-import { client } from '@/lib/client'
 
 const Page = () => {
   const [bootcampCategories, setBootcampCategories] = useState([]);
