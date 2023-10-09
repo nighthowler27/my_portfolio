@@ -1,14 +1,14 @@
-import { bootcampCategory } from "@/types/BootcampCategory";
-import { bootcampPage } from "@/types/BootcampPage";
-import { freelanceCategory } from "@/types/FreelanceCategory";
-import { freelancePage } from "@/types/FreelancePage";
-import { kodegoCategory } from "@/types/KodegoCategory";
-import { kodegoPage } from "@/types/KodegoPage";
-import { previousProjectCategory } from "@/types/PreviousProjectCategory";
-import { previousProjectPage } from "@/types/PreviousProjectPage";
-import { portfolioKodegoProject } from "@/types/Project";
-import { specialProjectCategory } from "@/types/SpecialProjectCategory";
-import { specialProjectPage } from "@/types/SpecialProjectPage";
+// import { bootcampCategory } from "@/types/BootcampCategory";
+// import { bootcampPage } from "@/types/BootcampPage";
+// import { freelanceCategory } from "@/types/FreelanceCategory";
+// import { freelancePage } from "@/types/FreelancePage";
+// import { kodegoCategory } from "@/types/KodegoCategory";
+// import { kodegoPage } from "@/types/KodegoPage";
+// import { previousProjectCategory } from "@/types/PreviousProjectCategory";
+// import { previousProjectPage } from "@/types/PreviousProjectPage";
+// import { portfolioKodegoProject } from "@/types/Project";
+// import { specialProjectCategory } from "@/types/SpecialProjectCategory";
+// import { specialProjectPage } from "@/types/SpecialProjectPage";
 
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
