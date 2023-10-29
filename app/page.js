@@ -46,7 +46,7 @@ export default function Home() {
                     <span>a certified </span>&nbsp;<span className="typewriter thick"></span>
                     </h2>
                     <p>
-                        I love learning new skills that can help me in my future quest. 
+                        I love learning new skills that can help me in my future quest.
                         I have no problem being out of my comfort zone, that is when I learned the most.
                         Limation is my marker to go beyond and step up.
                     </p>

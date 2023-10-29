@@ -1,9 +1,32 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import styles from "./page.module.css"
 import Window from '@/components/window/window'
+import WhoIam from "@/components/about/WhoIam"
+import WhatIdo from "@/components/about/WhatIdo"
 
 
 const About = () => {
+    const [isWhoIamOpen, setWhoIamOpen] = useState(false);
+    const [isWhatIdoOpen, setWhatIdoOpen] = useState(false);
+
+    const openWhoIam = () => {
+    setWhoIamOpen(true);
+    };
+
+    const closeWhoIam = () => {
+    setWhoIamOpen(false);
+    };
+
+    const openWhatIdo = () => {
+    setWhatIdoOpen(true);
+    };
+
+    const closeWhatIdo = () => {
+    setWhatIdoOpen(false);
+    };
+
+
   return (
     <div className={styles.mainContainer}>
 
@@ -50,6 +73,7 @@ const About = () => {
                         </div>
                         <div className={styles.appText}>
                                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error, sunt non vel itaque facere suscipit quam voluptatem sequi placeat quo odit tenetur excepturi recusandae, libero ad, tempora mollitia officia temporibus impedit? Voluptatem doloribus impedit hic corporis fuga? Cum blanditiis illum ducimus saepe? Officiis nisi, ducimus expedita magni magnam ut adipisci doloribus dolores in. Molestiae, officia explicabo esse consequuntur, quia rerum tenetur minima itaque distinctio magni asperiores, sint dignissimos. Consequuntur similique consequatur, labore itaque animi eius sunt quod officia commodi tempora dolores. Quisquam quaerat, nisi, aspernatur quam vero, aperiam a iusto ullam sapiente consequatur ea! At, provident a. Perferendis, doloremque.</span>
+                                <button type="button" className="hireBtn" onClick={openWhoIam}>Read More</button>
                             </div>
                         </div>
                     </div>
@@ -85,6 +109,7 @@ const About = () => {
                                 </div>
                                 <div className={styles.appText}>
                                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error, sunt non vel itaque facere suscipit quam voluptatem sequi placeat quo odit tenetur excepturi recusandae, libero ad, tempora mollitia officia temporibus impedit? Voluptatem doloribus impedit hic corporis fuga? Cum blanditiis illum ducimus saepe? Officiis nisi, ducimus expedita magni magnam ut adipisci doloribus dolores in. Molestiae, officia explicabo esse consequuntur, quia rerum tenetur minima itaque distinctio magni asperiores, sint dignissimos. Consequuntur similique consequatur, labore itaque animi eius sunt quod officia commodi tempora dolores. Quisquam quaerat, nisi, aspernatur quam vero, aperiam a iusto ullam sapiente consequatur ea! At, provident a. Perferendis, doloremque.</span>
+                                    <button type="button" className="hireBtn" onClick={openWhatIdo}>Read More</button>
                                 </div>
                             </div>
                         </div>
@@ -92,6 +117,22 @@ const About = () => {
                 </div>
             </div>
         </div>
+
+        {isWhoIamOpen && (
+            <div className={styles.modalContainer}>
+                <div className={styles.modal}>
+                    <WhoIam open={isWhoIamOpen} onClose={closeWhoIam}/>
+                </div>
+            </div>
+        )}
+
+        {isWhatIdoOpen && (
+            <div className={styles.modalContainer}>
+                <div className={styles.modal}>
+                    <WhatIdo open={isWhatIdoOpen} onClose={closeWhatIdo}/>
+                </div>
+            </div>
+        )}
     </div>
   )
 }
