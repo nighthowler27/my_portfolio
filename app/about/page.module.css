@@ -181,6 +181,45 @@
     background: #ea1d6f;
   }
 
+  .appReadmore {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: right;
+    align-items: flex-end;
+    color: #714959;
+    font-size: 16px;
+  }
+
+  .appReadmore::hover {
+    color: #ea1d6f;
+  }
+
+  .appReadmore:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #ea1d6f;
+  }
+
+  .ReadBTN {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: right;
+    align-items: flex-end;
+    color: #714959;
+    font-size: 14px;
+  }
+
+  .ReadBTN:hover {
+    color: #ea1d6f;
+  }
+
   .question {
     font-size: 18px;
     font-weight: bold;
