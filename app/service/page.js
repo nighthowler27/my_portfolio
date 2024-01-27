@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import UnderFix from '@/components/pageConstruction/underFix'
 
 
-const page = () => {
+const Services = () => {
   return (
     <div className={styles.container}>
       <UnderFix />
@@ -12,4 +12,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Services

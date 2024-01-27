@@ -1,154 +1,4 @@
-.container {
-    width: 100%;
-    height: 70vh;
-}
-
-.modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  .modal {
-    min-width: 600px;
-    max-width: 70%; /* Change to "max-width" for responsiveness */
-    height: 60%; /* Change to "auto" for dynamic height */
-    margin: 60px;
-    color: black;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .modalTitle {
-    position: absolute;
-    left: 30px;
-    top: 120px;
-
-  }
-  
-  .modalBanner {
-    background: #ddd;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modalFooter{
-    background: #ddd;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalContent {
-    flex: 1; /* Allow modal content to grow and occupy available space */
-    padding: 20px;
-    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
-    display: flex;
-    flex-direction: row;
-}
-  
-  .modalContent .modalLeft {
-    width: 50%;
-    padding: 15px;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .modalInstruction {
-    text-align: left;
-    white-space: nowrap;
-    font-size: 12px;
-  }
- 
-  .modalContent .modalRight {
-    width: 50%;
-    padding: 15px;
-    text-align: justify;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .modalBtn {
-    display: flex;
-    position: absolute;
-    right: 5px;
-    top: -5px;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-  }
-    
-  .closeBtn {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #be4816;
-    color: #d0cfcf;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  .closeBtn:hover {
-    background-color: #d0cfcf;
-    color: #be4816;
-    border: 2px solid #be4816;
-
-  }
-  
-
-  /* ==============FORM */
- .appointmentForm{
-    display: flex;
-    justify-content: space-between;
-}   
-
-.appFormButton {
-    position: absolute;
-    padding: 5px 15px;
-    right: 25px;
-    bottom: 40px;
-    background-color: rgb(7, 159, 108);
-    border-radius: 10px;
-}
-
-.appFormButton:hover {
-    color: rgb(7, 159, 108);
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(7, 159, 108);
-}
-
-.dateTIme{
-    width: 100%;
-    margin: 0 auto;
-}
-
-  .datePicker {
-    margin: 0 auto;
-    z-index: 999;
-  }
-
-  /* =========================================== */
-  .section {
+.section {
     position: relative;
     top: -15px;
 }
@@ -177,12 +27,12 @@
     @apply w-full border py-3 justify-center gap-2 hover:bg-gray-200;
 }
 
+.input_text,
 .input_text + * {
     color: #CBD5E1;
 }
 
-
-
+.input_text:focus,
 .input_text:focus + * {
     color: #6366f1;
 }
@@ -190,6 +40,10 @@
 .input_text:not([type=email])~.span:hover* {
     color: #6366f1;
     cursor: pointer;
+}
+
+.close-button {
+
 }
 
 

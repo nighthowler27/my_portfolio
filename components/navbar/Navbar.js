@@ -9,7 +9,7 @@ const links = [
     {
         id: 1,
         title: "Home",
-        url: "/",
+        url: "/home",
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const links = [
     {
         id: 4,
         title: "Services",
-        url: "/service",
+        url: "/services",
     },
     {
         id: 5,

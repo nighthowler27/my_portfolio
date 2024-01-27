@@ -93,7 +93,7 @@ const Page = () => {
                 </p>
             </div>
 
-            <form className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2  text-gray-800">
               {/* Registration form fields */}
               <div className={styles.input_group}>
                 <input
@@ -152,9 +152,9 @@ const Page = () => {
             </form>
 
             {/* Close button */}
-            <button onClick={toggleForms} className="close-button">
+            {/* <button onClick={toggleForms} className="text-blue-700">
               Login
-            </button>
+            </button> */}
           </div>
         )}
 

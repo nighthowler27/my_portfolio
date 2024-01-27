@@ -58,7 +58,7 @@
     flex: 1; /* Allow modal content to grow and occupy available space */
     padding: 20px;
     overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
-    height: fit-content;
+    height: auto;
     display: flex;
     flex-direction: row;
 }
@@ -241,7 +241,7 @@
   /* Success Form Submitted */
   .modalContentSuccess {
     padding: 50px;
-    height: fit-content;
+    height: auto;
     display: flex;
   }
   .appointmentSent {
