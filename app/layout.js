@@ -25,9 +25,11 @@ export default function RootLayout({ children }) {
                 <AuthProvider>
                     <ThemeProvider>
                         <div className="container">
+                            <Navbar />
                             <div className="wrapper">
-                                <Navbar className="navbar" />
-                                    {children}
+                                    <div className="bodyContent">
+                                        {children}
+                                    </div>
                                 <Footer />
                                 <CopyRightBar />
                             </div>

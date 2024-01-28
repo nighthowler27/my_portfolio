@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./page.module.css"
 import Window from '@/components/window/window'
 import WhoIam from "@/components/about/WhoIam"
@@ -25,6 +25,22 @@ const About = () => {
     const closeWhatIdo = () => {
     setWhatIdoOpen(false);
     };
+
+    useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.keyCode === 27) {
+                setTimeout(() => {
+                    closeWhoIam();
+                    closeWhatIdo();
+                }, 3000); 
+            }
+        };
+        window.addEventListener('keydown', handleEsc);
+    
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+    }, []);
 
 
   return (

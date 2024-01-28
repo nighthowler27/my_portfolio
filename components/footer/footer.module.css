@@ -97,7 +97,7 @@
     margin-right: 5px;
   }
   
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     .links {
       gap: 5px;
     }
