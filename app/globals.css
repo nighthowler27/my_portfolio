@@ -58,6 +58,9 @@ body::-webkit-scrollbar {
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
     background-color: var(--bg);
     min-width: 100vw;
     max-width: 1536px;
@@ -75,7 +78,8 @@ body::-webkit-scrollbar {
 }
 
 .mainLayout {
-    min-height: max-content;
+    display: flex;
+    height: auto;
     margin: 10px 20px;
 }
 
@@ -84,29 +88,30 @@ body::-webkit-scrollbar {
   }
 
   .mainLayoutContentBox {
-    min-height: max-content;
+    display: flex;
+    height: auto;
   }
 
 
 /* Home page */
 .landingMain {
+    display: flex;
     min-width: 60%;
-    height: 90%;
-    margin: 0 auto;
-    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
+    border-radius: 25px;
 }
 
 .landingPage {
     min-width: 60%;
-    min-height: 90%;
+    height:auto;
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 25px;
-    overflow: hidden;
     justify-content: center;
     align-items: center;
 }
@@ -346,8 +351,8 @@ body::-webkit-scrollbar {
     .wrapper {
       max-width: 1366px;
     }
-  }
-  @media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1280px) {
     .wrapper {
       max-width: 1024px;
     }
@@ -402,16 +407,16 @@ body::-webkit-scrollbar {
         justify-content: center;
         text-align: center;
     }
-  }
-  @media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 1024px) {
     .wrapper {
       max-width: 768px;
       padding-left: 40px;
       padding-right: 40px;
     }
     
-  }
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
     .wrapper {
       max-width: 640px;
     }
@@ -513,8 +518,8 @@ body::-webkit-scrollbar {
         bottom: -65px;
         z-index: 0;
     }
-  }
-  @media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 640px) {
     .wrapper {
       max-width: 475px;
     }
@@ -617,8 +622,9 @@ body::-webkit-scrollbar {
         bottom: -65px;
         z-index: 0;
     }
-  }
-  
+}
+
+
   .ql-container{
     font-size: 28px !important;
   }
