@@ -4,9 +4,9 @@ import styles from '../loginModal/login.module.css';
 
 export default function LoginLayout({children}) {
     return (
-      <div className="flex h-screen bg-gray-400 rounded-md">
-          <div className="m-auto bg-slate-50 rounded-md w-3/5 h-3/4 grid lg:grid-cols-2" >
-              <div className={styles.socialMedia}>
+      <div className={styles.loginContainer}>
+          <div className={styles.loginWrapper}>
+              <div className={styles.leftSide}>
                 <div className={styles.inputBttnGoogle}>
                     <button type="submit" className={styles.button}>
                     Google Account
@@ -23,8 +23,8 @@ export default function LoginLayout({children}) {
                     </button>
                 </div>
               </div>
-              <div className="right flex flex-col justify-evenly" >
-                  <div className="right-inner w-full text-center" >
+              <div className={styles.rightSide}>
+                  <div className={styles.rightSideWrapper} >
                       {children}
                   </div>
               </div>

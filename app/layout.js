@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
             <ThemeContextProvider>
                 <AuthProvider>
                     <ThemeProvider>
+                        <div className="bodyHtml">
                         <div className="container">
                             <Navbar />
                             <div className="wrapper">
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
                                 <Footer />
                                 <CopyRightBar />
                             </div>
+                        </div>
                         </div>
                     </ThemeProvider>
                 </AuthProvider>

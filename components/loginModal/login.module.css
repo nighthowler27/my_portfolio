@@ -1,3 +1,29 @@
+.loginContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.loginWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    min-height: 50vh;
+    background-color: bisque;
+}
+
+.leftSide{
+    align-content: center;
+
+}
+
+.rightSide {
+    display: block;
+    width: 40%;
+    padding: 35px;
+}
+
 .socialMedia  {
     display: flex;
     flex-direction: column;
@@ -5,9 +31,7 @@
     align-content: center;
     align-items: center;
     padding: 10px;
-    
 }
-
 
 .inputBttnGoogle,
 .inputBttnFacebook,
@@ -47,227 +71,3 @@
     @apply text-gray-700 border;
 }
 
-
-
-
-/* ================================ */
-.modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    overflow: auto; /* Change to "auto" to enable scrolling */
-  }
-  
-  .modal {
-    max-width: 80%; /* Change to "max-width" for responsiveness */
-    height: auto; /* Change to "auto" for dynamic height */
-    margin: 60px;
-    color: black;
-    background-color: #fff;
-    padding-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    z-index: 9999;
-  }
-
-  .modalTitle {
-    position: absolute;
-    left: 30px;
-    top: 120px;
-
-  }
-  
-  .modalBanner {
-    background: #ddd;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modalFooter{
-    background: #ddd;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalContent {
-    flex: 1; /* Allow modal content to grow and occupy available space */
-    padding: 20px;
-    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
-    display: flex;
-    flex-direction: row;
-}
-  
-  .modalContent .modalLeft {
-    width: 50%;
-    padding: 15px;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .modalInstruction {
-    text-align: left;
-    white-space: nowrap;
-    font-size: 12px;
-  }
- 
-  .modalContent .modalRight {
-    width: 50%;
-    padding: 15px;
-    text-align: justify;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .modalBtn {
-    display: flex;
-    position: absolute;
-    right: 5px;
-    top: -5px;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-  }
-    
-  .closeBtn {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #be4816;
-    color: #d0cfcf;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  .closeBtn:hover {
-    background-color: #d0cfcf;
-    color: #be4816;
-    border: 2px solid #be4816;
-
-  }
-  
-
-  /* ==============FORM */
- .appointmentForm{
-    display: flex;
-    justify-content: space-between;
-}   
-
-.appFormButton {
-    position: absolute;
-    padding: 5px 15px;
-    right: 25px;
-    bottom: 40px;
-    background-color: rgb(7, 159, 108);
-    border-radius: 10px;
-}
-
-.appFormButton:hover {
-    color: rgb(7, 159, 108);
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(7, 159, 108);
-}
-
-.dateTIme{
-    width: 100%;
-    margin: 0 auto;
-}
-
-  .datePicker {
-    margin: 0 auto;
-    z-index: 999;
-  }
-
-
-  /* ==================================================== */
-  .right-inner {
-    position: relative;
-    top: -15px;
- }
- 
- 
- .imgStyle {
-     @apply bg-gradient-to-r from-blue-500 to-indigo-500 rounded-l-md;
-     position: relative;
-     overflow: hidden;
- }
- 
- .cartoonImg {
-     background:  url('/assets_login_reg/img2.png')no-repeat;
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     right: 0;
-     top: 0;
-     width: 100%;
-     height: 100%;
-     background-size: cover;
-     background-position: 65% 100px;
-     z-index: 1;
- }
- 
- .cloud_one {
-     background:  url('/assets_login_reg/cloud_1.png')no-repeat;
-     position: absolute;
-     top: 65%;
-     left: 10%;
-     width: 180px;
-     height: 100px;
-     background-size: contain;
-     z-index: 2;
-     transform: translateX(290%);
-     animation: cloud_one 18.5s ease-in .9s infinite;
- }
- 
- .cloud_two {
-     background: url('/assets_login_reg/cloud_2.png')no-repeat;
-     position: absolute;
-     top: 49%;
-     left: 50%;
-     width: 200px;
-     height: 100px;
-     background-size: contain;
-     z-index: 0;
-     transform: translateX(290%);
-     animation: cloud_two 25.5s ease-in 5.9s infinite;
- }
- 
- /* css keyframes */
- 
- @keyframes cloud_one {
-     0% {
-         transform: translateX(290%);
-     }100%{
-         transform: translateX(-250%);
-     }
- }
- 
- @keyframes cloud_two {
-     0% {
-         transform: translateX(160%);
-     }100%{
-         transform: translateX(-250%);
-     }
- }
- 
- 
