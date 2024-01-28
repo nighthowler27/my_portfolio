@@ -15,13 +15,14 @@ import {
     GiBookshelf 
     } from 'react-icons/gi';
 import { 
-    AiOutlineMail, 
     AiFillLinkedin, 
     AiFillBehanceSquare,
     AiFillHome,
     AiOutlineDownload,
     AiOutlinePrinter,
     AiOutlineShareAlt, 
+    AiOutlineMail,
+    AiOutlineLink 
     } from 'react-icons/ai';
 import { BsGlobe } from 'react-icons/bs';
 import { 
@@ -76,6 +77,12 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
                     <p className={styles.toolBarShare}>
                         <AiOutlineShareAlt />
                     </p>
+                    <p className={styles.toolBarShare}>
+                        <AiOutlineMail />
+                    </p>
+                    <p className={styles.toolBarShare}>
+                        <AiOutlineLink />
+                    </p>
                   </div>
                 </div>
   
@@ -114,7 +121,7 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
                                 <div className={styles.ContactIcon}>
                                     <h2><AiOutlineMail /></h2>
                                 </div>
-                                <h3>stephcabunilas@hotmail.com</h3>
+                                <h3>steph.cabunilas@hotmail.com</h3>
                                 </div>
 
                                 <div>
@@ -144,7 +151,8 @@ import { BsFillPuzzleFill } from 'react-icons/bs';
                                     <h2><AiFillHome /></h2>
                                 </div>
                                 <span>
-                                    <h3>Blk 6 Lot3, #362H B.Mesa Street,</h3>
+                                    <h3>Blk 6 Lot3, #362H</h3>
+                                    <h3>B.Mesa Street,</h3>
                                     <h3>Brgy. Mahabang Parang, Binangonan, Rizal, 1940</h3>
                                 </span>
                             </div>

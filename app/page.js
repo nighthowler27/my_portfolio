@@ -27,13 +27,10 @@ export default function Home() {
     const closeResumeModal = () => {
     setResumeModalOpen(false);
     };
-
-    
+   
   return (
     <div className="landingMain">
-
-        <div className="landingPage">
-            
+        <div className="landingPage">      
             <div className="parallaxBG">
                 <ParallaxBG />
             </div>    
@@ -41,10 +38,20 @@ export default function Home() {
             <div className="contentLanding">
             <div className="leftside">
                 <div className="descBox">
-                    <h1>Hi, I&apos;m Stephen</h1>
+                    <div className="myName">
+                        <h1 className="greet">Hi, I&apos;m</h1>
+                        <h1>Stephen</h1>
+                    </div>
+                    <h3>(The Jack of All Trades)</h3>   
+                    <h3>A Proud Certified</h3>                   
                     <h2 aria-label="Hi! I'm a developer"> 
-                    <span>a certified </span>&nbsp;<span className="typewriter thick"></span>
+                    &nbsp;<span className="typewriter thick"></span>
                     </h2>
+                    <p>
+                        I love learning new skills that can help me in my future quest.
+                        I have no problem being out of my comfort zone, that is when I learned the most.
+                        Limation is my marker to go beyond and step up.
+                    </p>
                     <p>
                         I love learning new skills that can help me in my future quest.
                         I have no problem being out of my comfort zone, that is when I learned the most.

@@ -3,6 +3,7 @@ import React, { useState} from 'react'
 import Link from 'next/link'
 import styles from "./navbar.module.css"
 import LoginModal from '../loginModal/loginLayout'
+import ThemeToggle from '../themeToggle/ThemeToggle'
 
 
 const links = [
@@ -56,6 +57,8 @@ const Navbar = () => {
         Steph Cabunilas 
         </Link>
 
+        <ThemeToggle/>
+
         <div className={styles.navBtn}>
             <div className={styles.links}>
                 {links.map(link=>(
@@ -64,7 +67,7 @@ const Navbar = () => {
                     </Link>
                 ))}
             </div>
-            <div className={styles.loginBtn}>
+            <div className={`${styles.loginBtn}${styles.links}`}>
 
                 <Link href="/login" className={styles.logo}> 
                 Login 
