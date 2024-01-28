@@ -52,11 +52,6 @@ export default function Home() {
                         I have no problem being out of my comfort zone, that is when I learned the most.
                         Limation is my marker to go beyond and step up.
                     </p>
-                    <p>
-                        I love learning new skills that can help me in my future quest.
-                        I have no problem being out of my comfort zone, that is when I learned the most.
-                        Limation is my marker to go beyond and step up.
-                    </p>
                     <button type="button" className="hireBtn" onClick={openHireModal}>Set an Appointment</button>
 
                     {isHireModalOpen && (
