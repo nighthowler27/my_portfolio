@@ -30,7 +30,7 @@ export default function Home() {
    
   return (
     <div className="landingMain">
-        <div className="landingPage">      
+        {/* <div className="landingPage">      
             <div className="parallaxBG">
                 <ParallaxBG />
             </div>    
@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
             </div>
             </div>
-        </div>
+        </div> */}
     </div>
 
   )

@@ -3,15 +3,17 @@ import { Inter } from 'next/font/google';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
+import CopyRightBar from '@/components/copyRight/CopyRight';
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
+import AuthProvider from "@/providers/AuthProvider";
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Stephen Cabunilas Portfolio',
-  description: 'Compilation of Web App Development',
+  description: 'Portfolio and Personal Website',
 }
 
 export default function RootLayout({ children }) {
@@ -19,21 +21,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        
             <ThemeContextProvider>
-                <ThemeProvider>
-                    <div className="container">
-                        <div className="wrapper">
-                            <Navbar className="navbar" /> 
-                            <div className="mainLayoutContentBox">
-                                {children}
+                <AuthProvider>
+                    <ThemeProvider>
+                        <div className="container">
+                            <div className="wrapper">
+                                <Navbar className="navbar" />
+                                    {children}
+                                <Footer />
+                                <CopyRightBar />
                             </div>
-                            <Footer />
                         </div>
-                    </div>
-                </ThemeProvider>
+                    </ThemeProvider>
+                </AuthProvider>
             </ThemeContextProvider>
-        
       </body>
     </html>
   )

@@ -1,0 +1,14 @@
+.container {
+    margin-top: 5px;
+    padding: 20px 10px;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    color: var(--softTextColor);
+  }
+
+.container p {
+    font-size: small;
+    font-weight: 200;
+    color: var(--softTextColor);
+  }

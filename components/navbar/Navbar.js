@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from "./navbar.module.css"
 import LoginModal from '../loginModal/loginLayout'
 import ThemeToggle from '../themeToggle/ThemeToggle'
+import AuthLinks from "../authLinks/AuthLinks";
 
 
 const links = [
@@ -57,29 +58,29 @@ const Navbar = () => {
         Steph Cabunilas 
         </Link>
 
-        <ThemeToggle/>
-
         <div className={styles.navBtn}>
             <div className={styles.links}>
+                <ThemeToggle />
                 {links.map(link=>(
                     <Link key={link.id} href={link.url} className={styles.link}>
                         {link.title}
                     </Link>
                 ))}
+                <AuthLinks />
             </div>
-            <div className={`${styles.loginBtn}${styles.links}`}>
+            {/* <div className={`${styles.loginBtn}${styles.links}`}>
 
                 <Link href="/login" className={styles.logo}> 
                 Login 
                 </Link>
 
 
-                {/* <button type="button" className="loginBtn" onClick={openLoginModal}>Login</button>
+                <button type="button" className="loginBtn" onClick={openLoginModal}>Login</button>
 
                 {isLoginModalOpen && (
                     <LoginModal open={isLoginModalOpen} onClose={closeLoginModal}/>
-                )} */}
-            </div>
+                )}
+            </div> */}
 
         </div>
         
