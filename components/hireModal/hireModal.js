@@ -184,23 +184,8 @@ const HireModal = ({ open, onClose }) => {
                             <div className={styles.dateTime}>
                                 <p>Appoint Date and Time</p>
                                 <div className={styles.appFormGroup}>
-                                    {/* <DatePickerMUI 
-                                    name="firstSched"
-                                    value={value}
-                                    required
-                                    /> */}
-                                    <DatePicker 
-                                    name="schedule"
-                                    value={value}
-                                    />
+                                     
                                 </div>
-                                {/* <p>Select Time</p>
-                                <div className={styles.appFormGroup}>
-                                    <TimePicker
-                                    value={selectedTime}
-                                    onChange={handleTimeChange}
-                                    />
-                                </div> */}
                             </div>
 
                             <div className={styles.meetingMode}>
