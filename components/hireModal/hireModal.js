@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react'; // Import useEffect for DOMC
 import styles from './hiremodal.module.css';
 import { useForm, ValidationError } from '@formspree/react';
 
-import DatePicker from '@/components/dateTimePicker/DatePicker.js';
-import DatePickerMUI from '@/components/dateTimePicker/DatePickerMUI.js';
-
 const HireModal = ({ open, onClose }) => {
   const [value, setValue] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import ParallaxBG from '@/components/parallaxBG/parallaxBG'
-import Link from 'next/link'
 import HireModal from '@/components/hireModal/hireModal'
 import ResumeModal from '@/components/resumeModal/resumeModal'
 
