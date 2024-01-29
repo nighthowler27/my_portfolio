@@ -4,6 +4,7 @@ import DateTimePicker from 'react-datetime-picker';
 import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
+import styles from './dateTime.module.css'
 
 export default function DatePicker() {
   const [value, setValue] = useState(new Date());
@@ -19,7 +20,7 @@ export default function DatePicker() {
 
   return (
     <div>
-      <DateTimePicker onChange={setValue} value={value} name="schedule"/>
+      <DateTimePicker className={styles.dateTime} onChange={setValue} value={value} name="schedule"/>
       {/* Display the formatted date */}
       <p>Selected Date: {formatDate(value)}</p>
     </div>

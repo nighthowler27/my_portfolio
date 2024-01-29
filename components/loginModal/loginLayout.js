@@ -9,17 +9,17 @@ export default function LoginLayout({children}) {
               <div className={styles.leftSide}>
                 <div className={styles.inputBttnGoogle}>
                     <button type="submit" className={styles.button}>
-                    Google Account
+                    Google
                     </button>
                 </div>
                 <div className={styles.inputBttnFacebook}>
                     <button type="submit" className={styles.button}>
-                    Facebook Account
+                    Facebook
                     </button>
                 </div>
                 <div className={styles.inputBttnGithub}>
                     <button type="submit" className={styles.button}>
-                    Github Account
+                    Github
                     </button>
                 </div>
               </div>

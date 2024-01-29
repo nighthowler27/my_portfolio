@@ -25,13 +25,40 @@ export default function Home() {
     };
 
     const closeResumeModal = () => {
-    setResumeModalOpen(false);
-    
+    setResumeModalOpen(false);   
     };
+
+    useEffect(() => {
+        if (isHireModalOpen || isResumeModalOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.overflowX = 'hidden';
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.body.style.overflowX = 'hidden';
+            document.body.style.overflowY = 'auto';
+        };
+        
+        const handleEsc = (event) => {
+            if (event.keyCode === 27) {
+                setTimeout(() => {
+                    closeHireModal();
+                    closeResumeModal();
+                }, 1000); 
+            }
+        };
+        window.addEventListener('keydown', handleEsc);
+    
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+
+        
+    }, [isHireModalOpen, isResumeModalOpen]);
    
   return (
     <div className="landingMain">
-        {/* <div className="landingPage">      
+        <div className="landingPage">      
             <div className="parallaxBG">
                 <ParallaxBG />
             </div>    
@@ -62,7 +89,7 @@ export default function Home() {
             </div>
 
             <div className="rightside">
-                <div className="resume-btn">
+                <div className="resumeBtn">
                 <button type="button" className="CvResumeBtn" onClick={openResumeModal}>CV | Resume</button>
 
                 {isResumeModalOpen && (
@@ -76,10 +103,11 @@ export default function Home() {
                         fill={true} 
                         alt="homepage_pic.png"
                     />
+                    <div className="picBg"></div>
                 </div>
             </div>
             </div>
-        </div> */}
+        </div>
     </div>
 
   )

@@ -1,37 +1,77 @@
 .container {
     display: flex;
-    position: fixed;
-    align-items: center;
+    position: sticky;
+    top: 0px;
     height: 70px;
-    width: 90vw;
-    z-index: 9999;
+    width: 100%;
+    z-index: 9;
   }
 
   .wrapper {
     display: flex;
-    width: 85vw;
+    width: 100%;
     padding: 10px;
     align-items: center;
     justify-content: space-between;
     margin-left: 80px;
     margin-right: 80px;
-    
+  }
+
+  .navBtn{
+    display: flex;
+    flex-direction: row;
+  }
+  .themeToggle{
+    margin-right: 20px;
+  }
+
+  .logoWrapper {
+    flex: 1;
   }
   
   .logo {
-    flex: 1;
     text-align: left;
-    font-size: 36px;
+    font-size: 25px;
     font-weight: bold;
   }
-  
+
   .links {
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex: 2;
+    gap: 10px;
+    flex: 1;
     font-size: 20px;
+    cursor: pointer;
   }
+  
+  .link {
+    position: relative;
+    }
+
+    .link:after {
+        content: '';
+        position: absolute;
+        width: 30px; 
+        height: 3px;
+        background: var(--softTextColor);
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    .link:hover:after,
+    .link.active:after {
+        transform: scaleX(1);
+    }
+
+    .link.active {
+        background-color: aquamarine;
+    }
+
+
+
   /* @media screen and (max-width: 2560px) {
     .container {
         min-width: 53.8%;

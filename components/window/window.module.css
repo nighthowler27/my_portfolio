@@ -37,7 +37,7 @@
   
   .screen {
     position: relative;
-    background: #3e3e3e;
+    background: var(--bgContra);
     border-radius: 15px;
     width: 100%;
     height: 100%; 

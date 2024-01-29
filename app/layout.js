@@ -7,6 +7,7 @@ import CopyRightBar from '@/components/copyRight/CopyRight';
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import Adstrip from '@/components/adStrip/Adstrip'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,16 +26,18 @@ export default function RootLayout({ children }) {
                 <AuthProvider>
                     <ThemeProvider>
                         <div className="bodyHtml">
-                        <div className="container">
-                            <Navbar />
-                            <div className="wrapper">
-                                    <div className="bodyContent">
-                                        {children}
-                                    </div>
-                                <Footer />
-                                <CopyRightBar />
+                            <div className="container">
+                                
+                                <div className="wrapper">
+                                <Navbar />
+                                        <div className="bodyContent">
+                                            <Adstrip />
+                                            {children}
+                                        </div>
+                                    <Footer />
+                                    <CopyRightBar />
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </ThemeProvider>
                 </AuthProvider>

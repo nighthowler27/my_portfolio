@@ -1,141 +1,240 @@
-.container {
+.menuWrapper{
+    display: flex;
+    position: sticky;
+    flex-direction: column;
+    top: 70px;
     width: 100%;
-    margin: 0;
-    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: var(--bg1);
+    z-index: 99;
+    justify-content: center;
+    align-content: center;
+}
+.navMenu {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    /* background-color: blue; */
+    flex-direction: row;
 }
 
-.navHead {
-    padding: 5px;
-}
-
-.links {
+.menuList {
     width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-.link {
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: rgb(123, 123, 123);
-}
-
-.linkWrapper {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: space-between; 
-    margin-bottom: 5px; 
-    background-color: rgb(78, 78, 78);
-    border-radius: 5px;
-}
-.mainMenu {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sublinkWrapper {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: relative;
-    z-index: 999;
-}
-
-.arrowIconActive {
-    transform: rotate(180deg);
-}
-
-.subLink {
-    padding: 10px;
-}
-.subLink:hover {
-    color: aquamarine;
-}
-
-.linkButton {
-    padding: 5px;
-    white-space: nowrap;
-    font-size: 15px;
-}
-
-.linkButton:hover {
-    color: rgb(7, 137, 94);
-}
-
-.arrowButton {
-    right: 0;
-    padding: 5px;
-    border-radius: 50%;
-    justify-content: right;
-
-}
-
-.arrowButton:hover {
-    background-color: rgb(189, 193, 193);
-    color: rgb(7, 137, 94);
-    border: 2px solid rgb(7, 137, 94);
-}
-
-.arrowButtonSubmenu {
-    right: 0;
-    padding: 5px;
-    border-radius: 50%;
-    justify-content: right;
-}
-
-.arrowButtonSubmenu:hover {
-    background-color: rgb(189, 193, 193);
-    color: rgb(7, 137, 94);
-    border: 2px solid rgb(7, 137, 94);
-}
-
-.subMenuLinkWrapper {
-    padding: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    /* background-color: rgb(123, 123, 123); */
-}
-
-.sublinkSubmenuWrapper {
-    padding-bottom: 5px;
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    z-index: 999;
-}
-
-.subMenuLink {
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.subMenuLink:hover {
-    color:  rgb(7, 137, 94);
-}
-
-.container2ndSubLink {
     display: flex;
     justify-content: center;
+    align-content: center;
     align-items: center;
-    z-index: 999;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
-.FstSubmenu {
+.navMenu ul {
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 99;
     position: relative;
-    padding: 0;
-    margin: 0;
-    right: 0;
-    border-radius: 5px;
-    background-color: rgb(160, 160, 159);
-    z-index: 999;
 }
+
+.navMenu ul:hover{
+    color: gray;
+    outline: 1px solid gray;
+}
+
+.navMenu ul p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.subList {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg1);
+}
+
+.subList:hover {
+    outline: 1px solid gray;
+}
+
+.subList li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.subList li p {
+    gap: 5px;
+}
+
+.dropDown {
+    transform: rotate(270deg);
+}
+
+.dropDown:hover{
+    color: aqua;
+}
+
+.rotate {
+    transform: rotate(180deg);
+  }
+
+.menuList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.newList {
+    display: flex;
+    width: 100%;
+    outline: 2px dotted grey;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px;
+}
+
+.newList p.plusIcon {
+    font-size: 18px;
+}
+
+.searchBar {
+    display: flex;
+    padding: 0px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 50px;
+    background-color: var(--mediumTextColor);
+}
+
+.searchBar .searchInput {
+    display: flex;
+    position: relative;
+    background-color: var(--mediumTextColor);
+    color: var(--bgContra);
+}
+.searchBar .searchInput p {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 24px;
+    
+}
+
+.searchBar .searchInput input {
+    display: flex;
+    position: relative;
+    padding-left: 5px;
+    left: 0;
+    background-color: var(--mediumTextColor);
+    color: var(--bgContra);
+}
+
+.searchBar .searchInput input::placeholder {
+    color:brown;
+}
+
+.searchBar .searchInput input:focus{
+    outline: none;
+    color: var(--hardTextColor);
+}
+
+.tagsOrders {
+    display: flex;
+}
+
+
+.tags {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    flex: 2;
+}
+
+.tags ul {
+    display: flex;
+    margin-right: 60px;
+}
+
+.tags ul p {
+    padding-right: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.tags ul li {
+    display: flex;
+    padding-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tags ul li p:hover {
+    color: aqua;
+}
+
+.searchBtn {
+    display: flex;
+    position: relative;
+    right: 60px;
+    padding-right: 20px;
+    padding-left: 15px;
+    background-color: rgb(33, 106, 41);
+    font-weight: bold;
+}
+
+
+.sortOrder {
+    display: flex;
+    font-size: 10px;
+    flex: 1;
+    margin-top: 10px;
+}
+
+.sortOrder div span {
+    width: 30px;
+    margin-right: 15px;
+    font-weight: bolder;
+    text-align: right;
+    text-wrap: nowrap;
+}
+
+.orderList {
+    display: flex;
+}
+
+.sortOrder .orderList p {
+    width: 80px;
+    display: flex;
+    font-size: 18;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.sortOrder .orderList p:hover {
+    outline: 1px solid grey;
+}
+
+.sortOrder .orderList p .sortIcon{
+    cursor: pointer;
+}
+
+.sortOrder .orderList p .sortIcon:hover {
+    color: rgb(47, 255, 0);
+}
+

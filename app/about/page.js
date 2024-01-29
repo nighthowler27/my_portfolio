@@ -32,7 +32,7 @@ const About = () => {
                 setTimeout(() => {
                     closeWhoIam();
                     closeWhatIdo();
-                }, 3000); 
+                }, 1000); 
             }
         };
         window.addEventListener('keydown', handleEsc);

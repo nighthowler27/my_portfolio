@@ -39,7 +39,7 @@ const Page = () => {
         {/* Conditional rendering based on showLoginForm */}
         {showLoginForm && (
             <>
-                <div className="title">
+                <div className={styles.title}>
                     <h1 className="text-green-800 text-3xl font-bold py-4">Login</h1>
                     <p className="w-3/4 mx-auto text-gray-500">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, veniam..
@@ -54,7 +54,7 @@ const Page = () => {
                         placeholder="Email"
                         className={styles.input_text}
                     />
-                    <span className="icon flex items-center px-4">
+                    <span className={`${styles.icon} flex items-center px-4`}>
                         <HiAtSymbol size={25} />
                     </span>
 
@@ -68,16 +68,36 @@ const Page = () => {
                         placeholder="Password"
                         className={styles.input_text}
                     />
-                    <span className="icon flex items-center px-4" onClick={() => setShow(!show)}>
+                    <span className={`${styles.icon} flex items-center px-4`} onClick={() => setShow(!show)}>
                         <HiFingerPrint size={25} />
                     </span>
                     </div>
 
                     {/* login buttons */}
                     <div className="input-button">
-                    <button type="submit" className={styles.button}>
-                        Login
-                    </button>
+                        <button type="submit" className={styles.button}>
+                            Login
+                        </button>
+
+                        <div className={styles.userDesc}>
+                            <p className=" text-gray-500">
+                                Login as visitor if you want to be anonymous user
+                            </p>
+                            <span className=" text-gray-500">or</span>
+                            <p className="text-gray-500">
+                                create and login as Client if you want to avail services
+                            </p>
+                        </div>
+
+                        <div className={styles.userBtn}>
+                            <button type="submit" className={styles.visitorButton}>
+                                Visitor
+                            </button>
+
+                            <button type="submit" className={styles.clientButton}>
+                                Client
+                            </button>
+                        </div>
                     </div>
                 </form>
             </>
@@ -86,7 +106,7 @@ const Page = () => {
         {/* Conditional rendering based on showRegisterForm */}
         {showRegisterForm && (
           <div className={`register-form ${showRegisterForm ? 'slide-in' : ''}`}>
-            <div className="title">
+            <div className={styles.title}>
                 <h1 className="text-green-800 text-3xl font-bold py-4">Signup as Client</h1>
                 <p className="w-3/4 mx-auto text-gray-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, veniam..
@@ -102,7 +122,7 @@ const Page = () => {
                   placeholder="Username"
                   className={styles.input_text}
                 />
-                <span className="icon flex items-center px-4">
+                <span className={`${styles.icon} flex items-center px-4`}>
                   <HiOutlineUser size={25} />
                 </span>
               </div>
@@ -114,7 +134,7 @@ const Page = () => {
             placeholder="Email"
             className={styles.input_text}
             />
-            <span className="icon flex items-center px-4">
+            <span className={`${styles.icon} flex items-center px-4`}>
               <HiAtSymbol size={25} />
             </span>
           </div>
@@ -126,7 +146,7 @@ const Page = () => {
             placeholder="Password"
             className={styles.input_text}
             />
-            <span className="icon flex items-center px-4" onClick={()=> setShow({...show, password: !show.password})}>
+            <span className={`${styles.icon} flex items-center px-4`} onClick={()=> setShow({...show, password: !show.password})}>
               <HiFingerPrint size={25} />
             </span>
           </div>
@@ -138,7 +158,7 @@ const Page = () => {
             placeholder="Confirm Password"
             className={styles.input_text}
             />
-            <span className="icon flex items-center px-4" onClick={()=> setShow({...show, conPassword: !show.conPassword})}>
+            <span className={`${styles.icon} flex items-center px-4`} onClick={()=> setShow({...show, conPassword: !show.conPassword})}>
               <HiFingerPrint size={25} />
             </span>
           </div>

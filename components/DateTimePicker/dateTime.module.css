@@ -1,0 +1,9 @@
+.dateTime {
+    color: var(--textColor);
+    background-color: var(--bg);
+}
+
+div.react-calendar{
+    color: var(--textColor);
+    background-color: var(--bg);
+}

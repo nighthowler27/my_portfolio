@@ -44,6 +44,7 @@ const links = [
 const Navbar = () => {
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
     const [containerColor, setContainerColor] = useState('none');
+    
    
     const openLoginModal = () => {
     setLoginModalOpen(true);
@@ -78,15 +79,26 @@ const Navbar = () => {
   return (
     <div className={styles.container} id="container" style={{ backgroundColor: containerColor }}>
         <div className={styles.wrapper}>
-            <Link href="/" className={styles.logo}> 
-            Steph Cabunilas 
-            </Link>
+            
+
+            <div className={styles.logoWrapper}>
+                <Link href="/" className={styles.logo}> 
+                Steph Cabunilas 
+                </Link>
+            </div>
 
             <div className={styles.navBtn}>
-                <div className={styles.links}>
-                    <ThemeToggle />
+                <div className={styles.themeToggle}>
+                        <ThemeToggle />
+                    </div>  
+                
+                <div className={styles.links}>                              
                     {links.map(link=>(
-                        <Link key={link.id} href={link.url} className={styles.link}>
+                        <Link 
+                        key={link.id} 
+                        href={link.url}
+                        className={styles.link}
+                        >
                             {link.title}
                         </Link>
                     ))}

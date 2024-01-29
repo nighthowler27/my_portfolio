@@ -1,3 +1,4 @@
+
 .loginContainer {
     margin: 0;
     padding: 0;
@@ -7,36 +8,55 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    border-radius: 25px;
     overflow: auto;
-    min-height: 50vh;
-    background-color: bisque;
+    min-height: 550px;
 }
 
 .leftSide{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 550px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
     align-content: center;
 
 }
 
 .rightSide {
-    display: block;
-    width: 40%;
-    padding: 35px;
+    display: flex;
+    width: 50%;
+    height: 550px;
+    padding: 35px; 
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.rightSideWrapper {
+    display: flex;
+    padding: 15px;
+    border-radius: 25px;
+    height: 550px;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
 }
 
 .socialMedia  {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    width: 100%;
     padding: 10px;
 }
 
 .inputBttnGoogle,
 .inputBttnFacebook,
 .inputBttnGithub {
-    width: 90%;
+    width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
 }

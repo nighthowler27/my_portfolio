@@ -1,0 +1,19 @@
+.wrapper {
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.wrapper p {
+    display: flex;
+    margin-right: 20px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.wrapper .message{
+    display: flex;
+}

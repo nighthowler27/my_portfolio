@@ -238,6 +238,7 @@ const HireModal = ({ open, onClose }) => {
                                     {selectedMeetingType === 'onsite' && (
                                         <div className={`${styles.inputOnsite} ${styles.appFormControl} `}>
                                             <input
+                                            className="onsiteLinkInput"
                                             type="text"
                                             id="onsiteMeetingLink" // Add a unique id
                                             name="onsiteMeetingLink" // Add a unique name

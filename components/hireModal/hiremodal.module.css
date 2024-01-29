@@ -9,8 +9,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    z-index: 99;
-    overflow: auto; /* Change to "auto" to enable scrolling */
+    overflow: auto;
+    z-index: 99998;
   }
   
   .modal {
@@ -19,8 +19,8 @@
     min-height: 500px;
     max-height: auto; /* Change to "auto" for dynamic height */
     margin: 60px;
-    color: black;
-    background-color: #fff;
+    color: var(--textColor);
+    background-color: var(--bg);
     padding-top: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -28,7 +28,8 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
+    z-index: 99999;
   }
 
   .modalTitle {
@@ -39,7 +40,7 @@
   }
   
   .modalBanner {
-    background: #ddd;
+    background: var(--bg1);
     height: 150px;
     display: flex;
     justify-content: center;
@@ -47,7 +48,7 @@
   }
 
   .modalFooter{
-    background: #ddd;
+    background: var(--bg1);
     height: 50px;
     display: flex;
     justify-content: center;
@@ -102,14 +103,14 @@
     margin-top: 10px;
     padding: 10px;
     background-color: #be4816;
-    color: #d0cfcf;
+    color: var(--textColor);
     border: none;
     border-radius: 50px;
     cursor: pointer;
   }
 
   .closeBtn:hover {
-    background-color: #d0cfcf;
+    background-color: var(--textColor);
     color: #be4816;
     border: 2px solid #be4816;
 
@@ -128,7 +129,7 @@
     background: none;
     border: none;
     border-bottom: 1px solid #666;
-    color: #666;
+    color: var(--textColor);
     font-size: 14px;
     text-transform: uppercase;
     outline: none;
@@ -136,11 +137,11 @@
   }
   
   .appFormControl::placeholder {
-    color: #ddd;
+    color: var(--textColor);
   }
   
   .appFormControl:focus {
-    border-bottom-color: #ddd;
+    border-bottom-color: var(--bg);
   }
 
 .appFormControlMessage{
@@ -168,12 +169,25 @@
     border: 2px solid rgb(7, 159, 108);
 }
 
+.appformGroup {
+    color: var(--textColor);
+    background-color: var(--bg);
+
+}
+
+div.react-calendar{
+    color: var(--textColor);
+    background-color: var(--bg);
+}
+
 .dateTIme{
     width: 100%;
     margin: 0 auto;
 }
 
   .datePicker {
+    color: var(--textColor);
+    background-color: var(--bg);
     margin: 0 auto;
     z-index: 999;
   }
@@ -201,7 +215,8 @@
   .inputOnsite input{
     width: 100%;
     padding: 5px;
-    border-bottom: #666;
+    background-color: var(--bg);
+    border-bottom: var(--softTextColor);
   }
     
   /* Styles for the checkboxes */
