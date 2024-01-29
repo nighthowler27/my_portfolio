@@ -81,11 +81,10 @@ const Page = () => {
 
                         <div className={styles.userDesc}>
                             <p className=" text-gray-500">
-                                Login as visitor if you want to be anonymous user
+                                Click Visitor to get Anonymous Account
                             </p>
-                            <span className=" text-gray-500">or</span>
                             <p className="text-gray-500">
-                                create and login as Client if you want to avail services
+                                SignUp/Login as Client to Avail Services
                             </p>
                         </div>
 
