@@ -85,7 +85,7 @@ const Page = () => {
 
                         <div className={styles.userDesc}>
                             <p className=" text-gray-500">
-                                Click "Guest" for a Temporay Account
+                                Click &quot;Guest&quot; for a Temporay Account
                             </p>
                             <p className="text-gray-500">
                                 SignUp/Login as Client to Avail Services
