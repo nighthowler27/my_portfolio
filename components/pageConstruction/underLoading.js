@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { CircularProgress, LinearProgress } from '@material-ui/core';
 import Image from 'next/image'
 
 const LoadingPage = () => {
@@ -72,25 +71,9 @@ const LoadingPage = () => {
                 >
                 LOADING...
             </p>
-            <CircularProgress 
-                style={{
-                    width:'100px', 
-                    height: '100px',
-                    borderRadius: '50%',
-                    backgroundColor: 'lightblue',
-                    boxShadow: '0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00', 
-                    }}
-                />
+            <div>CircularProgress</div>
             <br />
-            <LinearProgress 
-                variant="determinate" 
-                value={progress} 
-                style={{
-                    width:'300px', 
-                    height: '20px',
-                    boxShadow: '0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00', 
-                    }}
-                />
+            <div>LinearProgress</div>
         </div>
     </div>
 );
