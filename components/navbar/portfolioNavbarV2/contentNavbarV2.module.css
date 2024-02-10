@@ -1,0 +1,419 @@
+.menuWrapper{
+    display: flex;
+    flex-direction: column;
+    top: 70px;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    margin: 0;
+    background-color: var(--bg1);
+}
+
+.navMenu {
+    display: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+.navMenu ul {
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 99;
+    position: relative;
+    white-space: nowrap;
+}
+
+.navMenu ul p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.navMenu ul p h1 {
+    font-size: 15px;
+}
+
+.navMenu ul p:hover{
+    color: gray;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+.subList {
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: var(--bg1);
+}
+
+.subList2 {
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--bg1);
+
+}
+
+/* .subList:hover {
+    outline: 1px solid gray;
+} */
+
+.subList li, 
+.subList2 li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.subList li:hover,
+.subList2 li:hover {
+    background-color: lightgray;
+}
+
+.subList li h2:hover,
+.subList2 li h2:hover {
+    font-weight: bold;
+}
+
+.subList div,
+.subList2 div {
+    display: flex;
+    flex-direction: row;
+}
+
+.subList div .eye:hover,
+.subList2 div .eye:hover {
+    color: green;
+}
+
+.subList div .edit:hover,
+.subList2 div .edit:hover {
+    color: orange;
+}
+
+.subList div .delete:hover,
+.subList2 div .delete:hover {
+    color: red;
+}
+
+.dropDown {
+    font-size: 20px;
+    transform: rotate(270deg);
+}
+
+.dropDown:hover{
+    color: aqua;
+}
+
+.rotate {
+    transform: rotate(180deg);
+  }
+
+.menuList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.newList {
+    display: flex;
+    width: 100%;
+    outline: 2px dotted grey;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px;
+}
+
+.newList p.plusIcon {
+    font-size: 18px;
+}
+
+.searchBar {
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* overflow: hidden; */
+    background-color: var(--mediumTextColor);
+    position: relative;
+}
+
+.searchBar .searchInput button {
+    width: 50px;
+}
+
+.searchBar2 {
+    display: none;
+    height: 30px;
+    flex-direction: row;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* overflow: hidden; */
+    background-color: var(--mediumTextColor);
+    position: relative;
+}
+
+.searchBar .searchInput, 
+.searchBar2 .searchInput  {
+    display: flex;
+    background-color: var(--mediumTextColor);
+    color: var(--bgContra);
+    justify-content: space-between;
+}
+.searchBar .searchInput button p,
+.searchBar2 .searchInput button p {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 24px;
+    
+}
+
+.searchBar .searchInput button p:hover,
+.searchBar2 .searchInput button p:hover {
+    color: white;
+}
+
+.searchBar .searchInput input,
+.searchBar2 .searchInput input {
+    display: flex;
+    position: relative;
+    padding-left: 15px;
+    left: 0;
+    margin-right: 5px;
+    background-color: var(--mediumTextColor);
+    color: var(--bgContra);
+}
+
+.searchBar .searchInput input::placeholder,
+.searchBar2 .searchInput input::placeholder {
+    color:brown;
+}
+
+.searchBar .searchInput input:focus,
+.searchBar2 .searchInput input:focus{
+    outline: none;
+    color: var(--hardTextColor);
+}
+
+.tagsOrders {
+    display: flex;
+    margin-top: 5px;
+}
+
+
+.tags {
+    width: 100%;
+    padding: 0px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    flex: 2;
+}
+
+.tags ul {
+    display: flex;
+    margin-right: 60px;
+}
+
+.tags ul p {
+    padding-right: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.tags ul li {
+    display: flex;
+    padding-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tags ul li p:hover {
+    color: aqua;
+}
+
+.searchBtn {
+    display: flex;
+    position: relative;
+    right: 60px;
+    padding-right: 20px;
+    padding-left: 15px;
+    background-color: rgb(33, 106, 41);
+    font-weight: bold;
+}
+
+
+.sortOrder {
+    display: flex;
+    font-size: 10px;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.sortOrder div span {
+    width: 30px;
+    margin-right: 15px;
+    font-weight: bolder;
+    text-align: right;
+    text-wrap: nowrap;
+}
+
+.orderList {
+    display: flex;
+}
+
+.sortOrder .orderList p {
+    width: 80px;
+    display: flex;
+    font-size: 18;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.sortOrder .orderList p:hover {
+    outline: 1px solid grey;
+}
+
+.sortOrder .orderList p .sortIcon{
+    cursor: pointer;
+}
+
+.sortOrder .orderList p .sortIcon:hover {
+    color: rgb(47, 255, 0);
+}
+
+
+/* =====================media querry */
+
+@media screen and (max-width: 1280px) {
+    .navMenu ul{
+        width: 140px;
+    }
+    .navMenu ul p h1 {
+        font-size: 12px;
+    }
+
+    /* .navMenu ul p {
+        font-size: 24px
+    }; */
+
+    .menuList {
+        width: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 1024px){
+    .navMenu {
+        flex-direction: column;
+    }
+
+    .dropDown {
+        font-size: 15px;
+    }
+
+    /* .navMenu ul p {
+        font-size: 12px;
+    } */
+
+    .subList,
+    .subList2{
+        width: 200px;
+        top: 20px;
+    }
+
+    .searchBar {
+        display: none;
+    }
+
+    .searchBar2 {
+        display: flex;
+        margin-top: 10px;
+        position: relative;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: center;
+    }
+
+    .searchBar2 .searchInput div input {
+        width: 520px;
+    }
+
+    .searchBar2 .searchInput button {
+        width: 50px;
+    }
+
+    .tagsOrders {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {  
+    .searchBar2 .searchInput div input {
+        width: 400px;
+    }  
+
+}
+@media screen and (max-width: 648px) {
+    .searchBar2 .searchInput div input {
+        width: 240px;
+    }  
+
+}
+
+@media screen and (max-width: 480px) {
+    .searchBar2 .searchInput div input {
+        width: 240px;
+    }  
+
+}
+
+@media (orientation: portrait) {
+
+}
+  

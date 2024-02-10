@@ -1,34 +1,37 @@
-  .wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: column;
+
+  .portfolioWrapper {
     width: 100%;
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+  }
+
+  .portfolioBodyContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 0;
   }
 
   .contentNav {
     display: flex;
     position: sticky;
+    width: 100%;
     top: 70px;
-    z-index: 99;
+    margin-bottom: 5px;
+    z-index: 1;
   }
 
-  .contents {
+  .portfolioContents {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    gap: 5px;
     justify-content: center;
   }
 
-   .portfolioContent {
+   .portfolioBodyContents {
+    display: block;
     width: 100%;
-    /* background: #fff; */
     padding: 5px;
-    justify-content: center;
-    align-items: center;
   }
   

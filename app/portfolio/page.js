@@ -1,11 +1,11 @@
 "use client"
 import styles from "./page.module.css"
-import PortfolioLayout from './layout'
+import PortfolioContents from "./layout"
 
 const Portfolio = () => {
     return (
-        <div className={styles.container}>
-            <PortfolioLayout />
+        <div className={styles.portfolioWrapper}>
+            <PortfolioContents />
         </div>
     )
 }

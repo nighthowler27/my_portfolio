@@ -79,8 +79,6 @@ const Navbar = () => {
   return (
     <div className={styles.container} id="container" style={{ backgroundColor: containerColor }}>
         <div className={styles.wrapper}>
-            
-
             <div className={styles.logoWrapper}>
                 <Link href="/" className={styles.logo}> 
                 Steph Cabunilas 
@@ -89,8 +87,8 @@ const Navbar = () => {
 
             <div className={styles.navBtn}>
                 <div className={styles.themeToggle}>
-                        <ThemeToggle />
-                    </div>  
+                    <ThemeToggle />
+                </div>  
                 
                 <div className={styles.links}>                              
                     {links.map(link=>(

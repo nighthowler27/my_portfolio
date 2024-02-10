@@ -60,6 +60,7 @@
     font-weight: 300;
     width: 320px;
     margin-right: 10px;
+    margin-left: 10px;
   }
 
   .contactMap {
@@ -75,6 +76,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    font-size: 12px;
   }
 
   .list {
@@ -93,7 +95,6 @@
   }
 
   div.contactList div p {
-    font-size: 18px;
     margin-right: 5px;
   }
   
@@ -134,6 +135,12 @@
     
     .links {
         font-size: 14px;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .links {
+      color: var(--softTextColor);
     }
   }
   

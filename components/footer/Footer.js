@@ -30,25 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.linksWrapper}>
-        <div className={styles.contactInfo}>
-            <div className={styles.contactList}>
-                <span className={styles.listTitle}>Contact</span>
-                <div>
-                    <p><TiPhone /></p> 
-                    <span>+63 (02) 8584-3542</span>
-                </div>
-                <div>
-                    <p><AiFillMail /></p>
-                    <span>stephcabunilas@gmail.com</span>
-                </div>
-                <div>
-                    <p><IoMdPin /> </p>
-                    <span>362H B.Mesa Street, Brgy. Mahabang Parang, Binangonan, Rizal, 1940 PH</span>
-                </div>
-            </div>
-            <div className={styles.contactMap}>
-            </div>
-        </div>
+        
         <div className={styles.links}>
             <div className={styles.list}>
                 <span className={styles.listTitle}>Links</span>
@@ -76,6 +58,26 @@ const Footer = () => {
                 <Link href="/">Photography Services</Link>
                 <Link href="/">Videogrpahy Services</Link>
                 <Link href="/">Web Development Services</Link>
+            </div>
+        </div>
+
+        <div className={styles.contactInfo}>
+            <div className={styles.contactList}>
+                <span className={styles.listTitle}>Contact</span>
+                <div>
+                    <p><TiPhone /></p> 
+                    <span>+63 (02) 8584-3542</span>
+                </div>
+                <div>
+                    <p><AiFillMail /></p>
+                    <span>stephcabunilas@gmail.com</span>
+                </div>
+                <div>
+                    <p><IoMdPin /> </p>
+                    <span>362H B.Mesa Street, Brgy. Mahabang Parang, Binangonan, Rizal, 1940 PH</span>
+                </div>
+            </div>
+            <div className={styles.contactMap}>
             </div>
         </div>
       </div>

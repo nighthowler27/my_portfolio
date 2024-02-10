@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
                                 <div className="wrapper">
                                 <Navbar />
                                         <div className="bodyContent">
-                                            <Adstrip />
+                                            {/* <Adstrip /> */}
                                             {children}
                                         </div>
                                     <Footer />

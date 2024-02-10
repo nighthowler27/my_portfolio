@@ -1,12 +1,11 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import styles from "./authLinks.module.css";
-import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+import styles from "./authLinks.module.css";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-
   const { status } = useSession();
 
   return (
@@ -17,10 +16,10 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link href="/write" className={styles.link} >
             Write
           </Link>
-          <span className={styles.link} onClick={signOut}>
+          <span className={styles.link} onClick={signOut} >
             Logout
           </span>
         </>
@@ -32,15 +31,17 @@ const AuthLinks = () => {
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link href="/home" className={styles.link1}>Homepage</Link>
+          <Link href="/about" className={styles.link1}>About</Link>
+          <Link href="/portfolio/index" className={styles.link1}>Portfolio</Link>
+          <Link href="/services" className={styles.link1}>Services</Link>
+          <Link href="/contact" className={styles.link1}>Contact</Link>
           {status === "notauthenticated" ? (
-            <Link href="/login">Login</Link>
+            <Link href="/login" className={styles.link1}>Login</Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              <Link href="/write" className={styles.link1}>Write</Link>
+              <span className={styles.link1}>Logout</span>
             </>
           )}
         </div>

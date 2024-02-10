@@ -19,18 +19,27 @@
 
 .responsiveMenu{
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 0;
+  padding: 20px;
   background-color: var(--bg);
-  height: calc(100vh - 100px);
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  font-size: 36px;
+  gap: 30px;
   z-index: 999;
+}
+
+.link1 {
+    font-size: 25px;
+}
+
+
+.link1:hover {
+    color: brown;
 }
 
 @media screen and (max-width: 1024px) {
