@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { CircularProgress, LinearProgress } from '@material-ui/core';
 import Image from 'next/image'
 
 const Page = () => {
