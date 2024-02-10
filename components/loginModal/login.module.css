@@ -1,49 +1,74 @@
-
 .loginContainer {
+    width: 90%;
+    display: flex;
     margin: 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .loginWrapper {
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     border-radius: 25px;
     overflow: auto;
-    min-height: 550px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .leftSide{
     display: flex;
+    position: relative;
     flex-direction: column;
     width: 50%;
     height: 550px;
-    padding: 30px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+}
 
+.leftSide .loginAccounts {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+    gap: 10px;
+    justify-content: center;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.leftSide .loginAccounts .loginIcons {
+    display: none;
+}
+
+.leftSide .loginAccounts .loginTexts {
+    display: block;
 }
 
 .rightSide {
     display: flex;
     width: 50%;
     height: 550px;
-    padding: 35px; 
+    padding: 0;
     justify-content: center;
     align-items: center;
     align-content: center;
+    object-fit: contain;
+    overflow: hidden;
 }
 
 .rightSideWrapper {
     display: flex;
-    padding: 15px;
-    border-radius: 25px;
     height: 550px;
-    background-color: #f0f0f0;
+    background-color: var(--softBg);
     justify-content: center;
     align-items: center;
     align-content: center;
+    padding-top: 20px;
 
 }
 
@@ -56,24 +81,24 @@
 .inputBttnGoogle,
 .inputBttnFacebook,
 .inputBttnGithub {
-    width: 50%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 128px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .inputBttnGoogle .button {
-    @apply w-full bg-gradient-to-r from-red-500  via-yellow-500 to-green-500 rounded-md;
-    @apply py-3 text-gray-50 text-lg;
+    @apply w-32 bg-gradient-to-r from-red-500  via-yellow-500 to-green-500 rounded-md;
+    @apply py-2 text-gray-50 text-lg;
 }
 
 .inputBttnFacebook .button {
-    @apply w-full bg-gradient-to-r from-blue-500  to-indigo-500 rounded-md;
-    @apply py-3 text-gray-50 text-lg;
+    @apply w-32 bg-gradient-to-r from-blue-500  to-indigo-500 rounded-md;
+    @apply py-2 text-gray-50 text-lg;
 }
 
 .inputBttnGithub .button {
-    @apply w-full bg-gradient-to-r from-gray-500 to-gray-900 rounded-md;
-    @apply py-3 text-gray-50 text-lg;
+    @apply w-32 bg-gradient-to-r from-gray-500 to-gray-900 rounded-md;
+    @apply py-2 text-gray-50 text-lg;
 }
 
 .inputBttnGoogle .button:hover {
@@ -83,7 +108,7 @@
 
 .inputBttnFacebook .button:hover {
     @apply bg-gradient-to-r from-gray-50 to-gray-100 border-blue-900;
-    @apply text-gray-700 border;
+    @apply text-blue-700 border;
 }
 
 .inputBttnGithub .button:hover {
@@ -91,3 +116,96 @@
     @apply text-gray-700 border;
 }
 
+  @media screen and (max-width: 1280px) {
+    .inputBttnGoogle,
+    .inputBttnFacebook,
+    .inputBttnGithub {
+        width: 80px;
+    }
+
+    .inputBttnGoogle .button,
+    .inputBttnFacebook .button,
+    .inputBttnGithub .button {
+        @apply w-20;
+        @apply py-1;
+    }
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    .loginContainer {
+        width: 100%;
+    }
+    
+    .loginWrapper {
+        width: 100%;
+    }
+
+    .loginAccounts div p {
+        font-size: 14px;
+    }
+
+    .inputBttnGoogle,
+    .inputBttnFacebook,
+    .inputBttnGithub {
+        width: 80px;
+    }
+
+    .inputBttnGoogle .button,
+    .inputBttnFacebook .button,
+    .inputBttnGithub .button {
+        @apply w-20;
+        @apply py-1;
+    }
+
+  }
+  @media screen and (max-width: 768px) {
+    .inputBttnGoogle,
+    .inputBttnFacebook,
+    .inputBttnGithub {
+        width: 56px;
+    }
+
+    .inputBttnGoogle .button,
+    .inputBttnFacebook .button,
+    .inputBttnGithub .button {
+        @apply w-14;
+        @apply py-1;
+    }
+    
+    .leftSide .loginAccounts .loginIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .leftSide .loginAccounts .loginTexts {
+        display: none;
+    }
+
+    .rightSideWrapper {
+        padding-top: 2px;
+    }
+    
+  }
+  @media screen and (max-width: 640px) {
+    .loginWrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .leftSide,
+    .rightSide {
+        width: 100%;
+    }
+
+    .leftSide {
+        height: 300px;
+    }
+
+    .rightSideWrapper {
+        padding-top: 20px;
+    }
+  }
+  

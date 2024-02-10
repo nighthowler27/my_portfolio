@@ -34,14 +34,18 @@ const Page = () => {
         <title>{showLoginForm ? 'Login' : 'Register'}</title>
       </Head>
 
-      <section className="w-4/5 mt-2 mx-10 my-auto flex flex-col gap-2">
+      <section 
+        className="
+            w-4/5 mt-2 mx-10 my-auto flex flex-col gap-2 
+           tablet:mx-0
+            ">
        
         {/* Conditional rendering based on showLoginForm */}
         {showLoginForm && (
             <>
                 <div className={styles.title}>
                     <h1 className="text-green-800 text-3xl font-bold py-4">Login</h1>
-                    <p className="w-3/4 mx-auto text-gray-500">
+                    <p className={`${styles.logDesc} {w-3/4 mx-auto text-gray-500}`}>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, veniam..
                     </p>
                 </div>
@@ -81,7 +85,7 @@ const Page = () => {
 
                         <div className={styles.userDesc}>
                             <p className=" text-gray-500">
-                                Click Visitor to get Anonymous Account
+                                Click "Guest" for a Temporay Account
                             </p>
                             <p className="text-gray-500">
                                 SignUp/Login as Client to Avail Services
@@ -90,7 +94,7 @@ const Page = () => {
 
                         <div className={styles.userBtn}>
                             <button type="submit" className={styles.visitorButton}>
-                                Visitor
+                                Guest
                             </button>
 
                             <button type="submit" className={styles.clientButton}>
@@ -106,13 +110,13 @@ const Page = () => {
         {showRegisterForm && (
           <div className={`register-form ${showRegisterForm ? 'slide-in' : ''}`}>
             <div className={styles.title}>
-                <h1 className="text-green-800 text-3xl font-bold py-4">Signup as Client</h1>
-                <p className="w-3/4 mx-auto text-gray-500">
+                <h1 className="text-green-800 text-3xl text-center font-bold py-4">Signup as Client</h1>
+                <p className={`${styles.logDesc} {w-3/4 mx-auto}`}>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, veniam..
                 </p>
             </div>
 
-            <form className="flex flex-col gap-2  text-gray-800">
+            <form className="flex flex-col gap-2">
               {/* Registration form fields */}
               <div className={styles.input_group}>
                 <input
@@ -178,12 +182,13 @@ const Page = () => {
         )}
 
         {/* Bottom */}
-        <p className="text-center text-gray-400">
-          {showLoginForm ? "Don't have an account yet?" : 'Already have an account?'}
-          <button onClick={toggleForms} className="text-blue-700">
+        <p className={`${styles.logSwitch} text-center`}>
+        {showLoginForm ? "Don't have an account yet?" : 'Already have an account?'}
+        <button onClick={toggleForms} className="text-blue-700">
             {showLoginForm ? 'Sign Up' : 'Login'}
-          </button>
+        </button>
         </p>
+
       </section>
     </LoginLayout>
   );

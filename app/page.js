@@ -63,48 +63,54 @@ export default function Home() {
             </div>    
             
             <div className="contentLanding">
-            <div className="leftside">
-                <div className="descBox">
-                    <div className="myName">
-                        <h1 className="greet">Hi, I&apos;m</h1>
-                        <h1>Stephen</h1>
+                <div className="leftside">
+                    <div className="descBox">
+                        <div className="myName">
+                            <h1 className="greet">Hi, I&apos;m</h1>
+                            <h1>Stephen</h1>
+                        </div>
+                        <h3>(The Jack of All Trades)</h3>   
+                        <h3>A Proud Certified</h3>                   
+                        <h2 aria-label="Hi! I'm a developer"> 
+                        &nbsp;<span className="typewriter thick"></span>
+                        </h2>
+                        <p>
+                            I love learning new skills that can help me in my future quest.
+                            I have no problem being out of my comfort zone, that is when I learned the most.
+                            Limation is my marker to go beyond and step up.
+                        </p>
+                        <button type="button" className="hireBtn" onClick={openHireModal}>Set an Appointment</button>
+
+                        {isHireModalOpen && (
+                            <HireModal open={isHireModalOpen} onClose={closeHireModal}/>
+                        )}
                     </div>
-                    <h3>(The Jack of All Trades)</h3>   
-                    <h3>A Proud Certified</h3>                   
-                    <h2 aria-label="Hi! I'm a developer"> 
-                    &nbsp;<span className="typewriter thick"></span>
-                    </h2>
-                    <p>
-                        I love learning new skills that can help me in my future quest.
-                        I have no problem being out of my comfort zone, that is when I learned the most.
-                        Limation is my marker to go beyond and step up.
-                    </p>
-                    <button type="button" className="hireBtn" onClick={openHireModal}>Set an Appointment</button>
+                </div>
 
-                    {isHireModalOpen && (
-                        <HireModal open={isHireModalOpen} onClose={closeHireModal}/>
+                <div className="rightside">
+                    <div className="resumeBtn">
+                    <button type="button" className="CvResumeBtn" onClick={openResumeModal}>CV | Resume</button>
+
+                    {isResumeModalOpen && (
+                        <ResumeModal open={isResumeModalOpen} onClose={closeResumeModal}/>
                     )}
+                    </div>
+                    
+                    <div className="myPic">
+                        <Image 
+                            src="/img/homepage_pic.png"
+                            fill={true}
+                            alt="homepage_pic.png"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                position: 'absolute',
+                            }}
+    
+                        />
+                        <div className="picBg"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div className="rightside">
-                <div className="resumeBtn">
-                <button type="button" className="CvResumeBtn" onClick={openResumeModal}>CV | Resume</button>
-
-                {isResumeModalOpen && (
-                    <ResumeModal open={isResumeModalOpen} onClose={closeResumeModal}/>
-                )}
-                </div>
-                
-                <div className="myPic">
-                    <Image 
-                        src="/img/homepage_pic.png"
-                        fill={true} 
-                        alt="homepage_pic.png"
-                    />
-                    <div className="picBg"></div>
-                </div>
-            </div>
             </div>
         </div>
     </div>

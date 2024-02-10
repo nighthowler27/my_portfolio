@@ -32,10 +32,10 @@
     --bg1: #3b3b3b;
     --bgContra: rgb(212, 211, 211);
     --textColor: #b5b4b4;
-    --softBg: #232325;
-    --softTextColor: #eeeeee;
-    --mediumTextColor: #afafaf;
-    --hardTextColor: rgb(107, 107, 107);
+    --softBg: #b5b5b5;
+    --softTextColor: #656565;
+    --mediumTextColor: #4f4f4f;
+    --hardTextColor: rgb(0, 0, 0);
     --skillBar:linear-gradient(to right, rgba(81, 123, 7, 0.5), rgb(1, 166, 78));
     --picBg: linear-gradient(to top, rgba(81, 81, 81, 0), rgb(190, 189, 189));
     --active: rgba (210, 211, 211, 0.5); 
@@ -45,12 +45,12 @@
   .light {
     --bg: white;
     --bg1: rgb(224, 224, 224);
-    --bgContra:#3e3e3e;
+    --bgContra:#000000;
     --textColor: black;
-    --softBg: #f0f0f0;
-    --softTextColor: #adadad;
-    --mediumTextColor: #797979;
-    --hardTextColor: black;
+    --softBg: #272626;
+    --softTextColor: #666666;
+    --mediumTextColor: #c5c5c5;
+    --hardTextColor: rgb(255, 255, 255);
     --skillBar:linear-gradient(to right, rgba(111, 65, 9, 0.5), rgb(166, 108, 1));
     --picBg: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(81, 81, 81));
     --active: rgba (81, 81, 81, 0.5); 
@@ -93,34 +93,7 @@
 
   }
   
-  @media screen and (max-width: 1536px) {
-    .wrapper {
-      max-width: 1366px;
-    }
-  }
-  @media screen and (max-width: 1280px) {
-    .wrapper {
-      max-width: 1024px;
-    }
-  }
-  @media screen and (max-width: 1024px) {
-    .wrapper {
-      max-width: 768px;
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .wrapper {
-      max-width: 640px;
-    }
-  }
-  @media screen and (max-width: 640px) {
-    .wrapper {
-      max-width: 475px;
-    }
-  }
-  
+ 
   .ql-container{
     font-size: 28px !important;
   }
@@ -202,6 +175,7 @@
 }
 
 .leftside p {
+    font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
@@ -289,6 +263,8 @@
   }
 
   .myPic Image {
+    width: 100%;
+    height: 100%;
     position: relative;
     z-index: 5;
   }
@@ -304,6 +280,174 @@
 .rightside {
     height: 80vh;
 }
+
+/* ===================media querry */
+
+@media screen and (max-width: 1536px) {
+    .wrapper {
+      max-width: 1366px;
+    }
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    .wrapper {
+      max-width: 1024px;
+    }
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    
+    .leftside h1 {
+        font-size: 50px;
+    }
+    
+    .leftside h2 {
+        
+        font-size: 35px;
+    }
+    
+    .leftside h3 {
+        
+        font-size: 15px;
+    }
+
+    .rightside .myPic {
+        /* background: #ff0000; */
+        width: 222px;
+        height: 260px;
+      }
+    
+      .myPic::before {
+        top: 126px;
+        width: 127%;
+      }
+
+      .myPic::after {
+        width: 127%;
+        height: 50%;
+      }
+ 
+      .picBg {
+        background: var(--picBg);
+        width: 260px;
+        height: 260px;
+      }
+    
+  }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      max-width: 640px;
+    }
+
+    .contentLanding {
+        flex-direction: column-reverse;
+    }
+
+    .leftside,
+    .rightside {
+        width: 100%;
+    }
+
+    .leftside h1 {
+        font-size: 45px;
+    }
+    
+    .leftside h2 {
+        
+        font-size: 30px;
+    }
+    
+    .leftside h3 {
+        
+        font-size: 15px;
+    }
+
+    .hireBtn {
+        font-size: 15px;
+        padding: 5px 5px;
+    }
+
+    .rightside .myPic {
+        width: 300px;
+        height: 350px;
+      }
+    
+      .myPic::before {
+        top: 148px;
+        width: 125%;
+        left: -55px;
+      }
+
+      .myPic::after {
+        width: 125%;
+        left: -55px;
+      }
+ 
+      .picBg {
+        background: var(--picBg);
+        width: 350px;
+        height: 350px;
+      }
+
+  }
+
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      max-width: 475px;
+    }
+
+    .contentLanding {
+        flex-direction: column-reverse;
+    }
+
+    .leftside,
+    .rightside {
+        width: 100%;
+    }
+
+    .leftside h1 {
+        font-size: 60px;
+    }
+    
+    .leftside h2 {
+        
+        font-size: 40px;
+    }
+    
+    .leftside h3 {
+        
+        font-size: 20px;
+    }
+
+    .rightside .myPic {
+        width: 300px;
+        height: 350px;
+      }
+    
+      .myPic::before {
+        top: 148px;
+        width: 116%;
+        left: -28px;
+      }
+
+      .myPic::after {
+        width: 116%;
+        left: -28px;
+      }
+ 
+      .picBg {
+        background: var(--picBg);
+        width: 340px;
+        height: 350px;
+      }
+  }
 
 
 /* ===========typewritting effect */

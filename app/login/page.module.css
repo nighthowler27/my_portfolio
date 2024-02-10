@@ -7,9 +7,18 @@
     margin-bottom: 15px;
 }
 
+.title p {
+    color: var(--mediumTextColor);
+}
+
 .section {
     position: relative;
     top: -15px;
+    color: var(--mediumTextColor);
+}
+
+section p.logSwitch {
+    color: var(--mediumTextColor);
 }
 
 .input_group {
@@ -60,15 +69,18 @@
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+    margin-bottom: 10px;
+    color: var(--mediumTextColor);
 }
 
 .userDesc p {
     font-size: 13px;
+    color: var(--mediumTextColor);
 }
 
 .input_text,
 .input_text + * {
-    color: #CBD5E1;
+    color: var(--mediumTextColor);
 }
 
 .input_text:focus,
@@ -86,4 +98,59 @@
 }
 
 
-/* ========================================== */
+/* =============================media querry==== */
+
+@media screen and (max-width: 1280px) {
+    
+}
+@media screen and (max-width: 1024px) {
+    .title .logDesc{
+        width: 90%;
+    }
+    .button,
+    .visitorButton, 
+    .clientButton {
+        @apply w-full;
+        @apply py-1;
+    }
+
+    section p.logSwitch {
+        display: flex; 
+        font-size: 10px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .userDesc p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+
+}
+@media screen and (max-width: 768px) {
+    .input_text {
+        @apply w-full;
+    }
+
+    .userDesc p {
+        text-align: center;
+        font-size: 9px;
+    }
+
+    .input_text,
+    .input_text + * {
+        font-size: 10px;
+    }
+ 
+  
+}
+@media screen and (max-width: 640px) {
+    .userDesc p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+}
+
