@@ -14,7 +14,7 @@
 }
 
 .loadingContainer {
-    width: 80%;
+    width: 600px;
     height: 80vh;
     display: flex;
     position: relative;
@@ -40,6 +40,11 @@
 
 /* =============================media querry==== */
 @media screen and (max-width: 1440px) {
+    .loadingContainer {
+        width: 800px;
+        height: 600px;
+    }
+
     .customLoad {
         width: 360px;
         height: 360px;
@@ -49,11 +54,7 @@
 
 
 @media screen and (max-width: 1024px) {
-    .loadingContainer {
-        width: 100%;
-        height: 80vh;
-    }
-
+    
     .customLoad {
         top: 50px;
     }
