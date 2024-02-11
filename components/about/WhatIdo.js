@@ -26,13 +26,14 @@ const WhatIdo = ({ open, onClose }) => {
               <div className={styles.modalContent}>
 
                 <div className={styles.LeftsidePanel}>
-                    Side Panel
+                    <div className={styles.LeftsidePanelImg1}></div>
                 </div>
 
                 <div className={styles.RightsidePanel}>
 
                     <div className={styles.modalBanner}>
                     <p>WHAT I DO?</p>
+                    <div className={styles.modalBannerImg1}></div>
                     </div>
 
                     <div className={styles.RightPanelConent}>

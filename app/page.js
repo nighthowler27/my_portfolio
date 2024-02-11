@@ -88,6 +88,27 @@ export default function Home() {
                 </div>
 
                 <div className="rightside">
+                    {/* <div 
+                        style={{
+                            width: '800px',
+                            backgroundColor: 'red',
+                            display: 'flex',
+                            position: 'relative',
+                            justifySelf: 'center',
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                        }}>
+                        <Image 
+                            src="/img/trendy_bg.jpeg"
+                            width={820} height={800}
+                            alt="trendy_bg.jpeg"
+                            style={{
+                                position: 'absolute',
+                                overflow: 'auto',
+                                zIndex: '0',
+                            }}
+                        />
+                    </div> */}
                     <div className="resumeBtn">
                     <button type="button" className="CvResumeBtn" onClick={openResumeModal}>CV | Resume</button>
 

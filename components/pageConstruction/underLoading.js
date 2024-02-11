@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Image from 'next/image'
+import styles from './underloading.module.css'
 
 const LoadingPage = () => {
   const [progress, setProgress] = useState(0);
@@ -76,6 +77,7 @@ const LoadingPage = () => {
             <div>LinearProgress</div>
         </div>
     </div>
+    // <div className={styles.loadingContainer}></div>
 );
 }
 export default LoadingPage;

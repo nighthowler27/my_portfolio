@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Image from 'next/image'
+import styles from './underfix.module.css';
 
 const Page = () => {
   const [progress, setProgress] = useState(0);
@@ -22,45 +23,43 @@ const Page = () => {
   }, []);
 
   return (
-    <div 
-        style={{ 
-            display: 'flex', 
-            justifyContent: 'center',
-            alignContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden',
-            }}
-        >
-        <div 
-            style={{ 
-                display: 'flex', 
-                width: '50vw', 
-                height: '80vh',
-                position: 'relative',
-                borderRadius: '25px',
-                justifyContent: 'center',
-                alignContent: 'center',
-                alignItems: 'center',
-                overflow: 'hidden',
-                }}
-            >
-            <Image 
-                src="/img/under_fix.jpeg"
-                width={600} height={600}
-                alt="under_fix.jpeg"
-                style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    zIndex: 0,
-                }}
-            />
-        </div>
-    </div>
+    // <div 
+    //     style={{ 
+    //         display: 'flex', 
+    //         width: '90%',
+    //         }}
+    //     >
+    //     <div 
+    //         style={{ 
+    //             display: 'flex', 
+    //             width: '50vw', 
+    //             height: '80vh',
+    //             position: 'relative',
+    //             borderRadius: '25px',
+    //             justifyContent: 'center',
+    //             alignContent: 'center',
+    //             alignItems: 'center',
+    //             overflow: 'hidden',
+    //             }}
+    //         >
+    //         <Image 
+    //             src="/img/under_fix.jpeg"
+    //             width={600} height={600}
+    //             alt="under_fix.jpeg"
+    //             style={{
+    //                 position: 'absolute',
+    //                 top: '50%',
+    //                 left: '50%',
+    //                 transform: 'translate(-50%, -50%)',
+    //                 width: '100%',
+    //                 height: '100%',
+    //                 objectFit: 'cover',
+    //                 zIndex: 0,
+    //             }}
+    //         />
+    //     </div>
+    // </div>
+    <div className={styles.underFixContainer}></div>
 );
 }
 export default Page;

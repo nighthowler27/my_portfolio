@@ -51,6 +51,34 @@
     justify-content: space-between;
 }
 
+.LeftsidePanelImg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/img/trendy_bg3.jpeg") no-repeat center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
+.LeftsidePanelImg1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/img/trendy_bg2.jpeg") no-repeat center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
 .BGimage{
     width: 350px;
     height: 400px;
@@ -72,14 +100,48 @@
 .modalBanner {
     min-height: 200px;
     display: flex;
+    flex-direction: column;
+    position: relative;
     justify-content: center;
     align-items: center;
 }
 
+.modalBanner .modalBannerImg {
+    width: 90%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/img/trendy_bg2.jpeg") no-repeat left center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
+.modalBanner .modalBannerImg1 {
+    width: 90%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/img/trendy_bg3.jpeg") no-repeat left center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
 .modalBanner p {
+    display: flex;
+    position: absolute;
     font-size: 60px;
     font-family: fantasy;
+    z-index: 1;
 }
+
 .RightPanelConent {
     max-height: auto;
     display: flex;

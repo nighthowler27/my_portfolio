@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import styles from "./authLinks.module.css";
+import { LiaTimesCircle } from "react-icons/lia";
+
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
@@ -35,6 +37,13 @@ const AuthLinks = () => {
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
+            <div className={styles.closeBurger}>
+                <button type="button" onClick={closeMenu}>
+                    <p>
+                        <LiaTimesCircle />
+                    </p>
+                </button>
+            </div>
           <Link href="/home" className={styles.link1} onClick={closeMenu}>Homepage</Link>
           <Link href="/about" className={styles.link1} onClick={closeMenu}>About</Link>
           <Link href="/portfolio/index" className={styles.link1} onClick={closeMenu}>Portfolio</Link>

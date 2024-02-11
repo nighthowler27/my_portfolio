@@ -203,10 +203,14 @@
 
 .rightside {
     width: 50%;
-    /* background: rgb(13, 249, 95); */
     display: flex;
     position: relative;
     overflow: hidden;
+    background: url("/img/trendy_bg2.jpeg") no-repeat center center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
   
   .rightside .resumeBtn {

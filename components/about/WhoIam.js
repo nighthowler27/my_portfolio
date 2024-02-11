@@ -30,6 +30,7 @@ const WhoIam = ({ open, onClose }) => {
 
                   <div className={styles.modalBanner}>
                     <p>WHO I AM?</p>
+                    <div className={styles.modalBannerImg}></div>
                   </div>
 
                   <div className={styles.RightPanelConent}>
@@ -68,12 +69,7 @@ const WhoIam = ({ open, onClose }) => {
               </div>
 
               <div className={styles.LeftsidePanel}>
-                <Image 
-                    src="/img/fog_bg1.jpg"
-                    fill={true}
-                    className={styles.BGimage}
-                    alt="whoiam_pic.png"
-                />
+                    <div className={styles.LeftsidePanelImg}></div>
               </div>
               
             </div>

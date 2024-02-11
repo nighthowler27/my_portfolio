@@ -1,0 +1,45 @@
+.errorPageContainer {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    position: relative;
+    border-radius: 25px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url("/img/under_fix.jpeg") no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+/* =============================media querry==== */
+
+@media screen and (max-width: 1280px) {
+    
+}
+@media screen and (max-width: 1024px) {
+    .loadingContainer {
+        width: 100%;
+        height: 80vh;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .loadingContainer {
+        width: 95%;
+        height: 80vh;
+    }
+  
+}
+@media screen and (max-width: 640px) {
+    .loadingContainer {
+        width: 100%;
+        height: 80vh;
+    }
+}
+
