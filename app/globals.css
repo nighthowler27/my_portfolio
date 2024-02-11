@@ -33,6 +33,7 @@
     --bgContra: rgb(212, 211, 211);
     --textColor: #b5b4b4;
     --softBg: #b5b5b5;
+    --softBg1: #8c8b8b;
     --softTextColor: #656565;
     --mediumTextColor: #4f4f4f;
     --hardTextColor: rgb(0, 0, 0);
@@ -48,6 +49,7 @@
     --bgContra:#000000;
     --textColor: black;
     --softBg: #272626;
+    --softBg1: #666666;
     --softTextColor: #666666;
     --mediumTextColor: #c5c5c5;
     --hardTextColor: rgb(255, 255, 255);

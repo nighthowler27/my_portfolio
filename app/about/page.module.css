@@ -26,13 +26,13 @@
     position: relative;
     justify-content: center;
     left: 0;
-    top: -75px;
+    top: -45px;
     z-index: 5;
     transition: all .5s ease-in-out;
   }
 
   .firstWindow:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   .firstWindow, .secondWindow {
@@ -63,8 +63,8 @@
   }
   .miniWindow2 {
     position: absolute;
-    top: 1px;
-    right: 400px;
+    top: 10px;
+    right: 350px;
     width: 400px; 
     height: 400px;
   }
@@ -77,7 +77,7 @@
   }
   .miniWindow4 {
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 400px;
     width: 350px; 
     height: 200px;
@@ -226,6 +226,7 @@
   }
   
   .appText{
+    width: 100%;
     margin-top: 20px;
     color: #888;
     font-size: 14px;
@@ -315,35 +316,63 @@
     max-height: 350px !important;
   }
   
-  @media screen and (max-width: 520px) {
-    .screenBody {
-      flex-direction: column;
+
+  /* ==============media querry */
+    @media screen and (max-width: 1280px) {
+   
     }
   
-    .screenBodyItem.left {
-      margin-bottom: 30px;
+    @media screen and (max-width: 1024px){
+        .firstWindow {
+            top: 5px;
+          }
+
+        .secondWindow {
+            top: 50px;
+        }
+
+        .firstWindow .background .container .screen .screenBodyItem{
+            width: 400px;
+            height: auto;
+        }
+
+        .miniWindow1,
+        .miniWindow2,
+        .miniWindow3,
+        .miniWindow4 {
+            display: none;
+        }
+
+        .appText span {
+            display: -webkit-box;
+            -webkit-line-clamp: 7; /* Number of lines to display */
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+         }
+    
+    
+  
     }
   
-    .appTitle {
-      flex-direction: row;
+    @media screen and (max-width: 768px) {
+        .firstWindow .background .container .screen .screenBodyItem{
+            width: 350px;
+        }
+        
+        .appText span {
+            -webkit-line-clamp: 7;
+         }
+    
     }
   
-    .appTitle span {
-      margin-right: 12px;
+    @media screen and (max-width: 640px) {
+        .appText span {
+            -webkit-line-clamp: 3;
+         }
+      
     }
   
-    .appTitle:after {
-      display: none;
+    @media (orientation: portrait) {
+     
     }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .screenBody {
-      padding: 40px;
-    }
-  
-    .screenBodyItem {
-      padding: 0;
-    }
-  }
   

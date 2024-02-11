@@ -1,14 +1,13 @@
   .mainContainer {
     width: 100%;
     padding: 0 30px 30px 30px;
-    height: fit-content;
     position: relative;
     display: flex;
     justify-content: center;
   }
   .contentContainer{
     width: 100%;
-    height: fit-content;
+    height: max-content;
     position: relative;
   }
 
@@ -271,36 +270,52 @@
   .messageBox {
     max-height: 350px !important;
   }
-  
-  @media screen and (max-width: 520px) {
-    .screenBody {
-      flex-direction: column;
+    
+    /* ==============media querry */
+    @media screen and (max-width: 1280px) {
+   
     }
   
-    .screenBodyItem.left {
-      margin-bottom: 30px;
+    @media screen and (max-width: 1024px){
+        .miniWindow1,
+        .miniWindow2,
+        .miniWindow3,
+        .miniWindow4 {
+            display: none;
+        }    
+  
     }
   
-    .appTitle {
-      flex-direction: row;
+    @media screen and (max-width: 768px) {   
+        .contentContainer{
+            height: 100vh;
+          }
+
+        .screenBody {
+            flex-direction: column;
+        }
+        
+        .screenBodyItem.left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+        .screenBodyItem.left .appTitle {
+            margin-bottom: 50px;
+        }
+    
     }
   
-    .appTitle span {
-      margin-right: 12px;
+    @media screen and (max-width: 640px) {
+        .contentContainer{
+            width: 100%;
+            height: 115vh;
+            position: relative;
+          }
+      
     }
   
-    .appTitle:after {
-      display: none;
+    @media (orientation: portrait) {
+     
     }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .screenBody {
-      padding: 40px;
-    }
-  
-    .screenBodyItem {
-      padding: 0;
-    }
-  }
-  

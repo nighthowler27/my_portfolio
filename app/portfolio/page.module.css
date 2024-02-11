@@ -18,7 +18,7 @@
     width: 100%;
     top: 70px;
     margin-bottom: 5px;
-    z-index: 1;
+    z-index: 2;
   }
 
   .portfolioContents {
@@ -35,3 +35,25 @@
     padding: 5px;
   }
   
+
+    /* ==============media querry */
+    @media screen and (max-width: 1280px) {
+   
+    }
+  
+    @media screen and (max-width: 920px){
+    
+  
+    }
+  
+    @media screen and (max-width: 768px) {    
+    
+    }
+  
+    @media screen and (max-width: 640px) {
+      
+    }
+  
+    @media (orientation: portrait) {
+     
+    }

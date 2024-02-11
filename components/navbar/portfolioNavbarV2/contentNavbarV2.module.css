@@ -31,6 +31,7 @@
     align-items: center;
     padding-left: 0;
     padding-right: 40px;
+    z-index: 1;
 }
 
 .navMenu ul {
@@ -39,7 +40,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    z-index: 99;
     position: relative;
     white-space: nowrap;
 }
@@ -53,6 +53,7 @@
 
 .navMenu ul p h1 {
     font-size: 15px;
+    z-index: 0;
 }
 
 .navMenu ul p:hover{
@@ -385,6 +386,14 @@
         width: 50px;
     }
 
+    .tags {
+        padding: 0px;
+        padding-left: 20px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
     .tagsOrders {
         flex-direction: column;
         justify-content: center;
@@ -394,15 +403,72 @@
 }
 
 @media screen and (max-width: 768px) {  
+    .navMenu ul {
+        z-index: 0;
+    }
+
+    .subList,
+    .subList2{
+        width: 200px;
+        top: 20px;
+    }
+
+    .searchBarTagOrder {
+        z-index: 0;
+    }
+
     .searchBar2 .searchInput div input {
         width: 400px;
-    }  
+
+    }
+
 
 }
 @media screen and (max-width: 648px) {
     .searchBar2 .searchInput div input {
         width: 240px;
-    }  
+    }
+    
+    .menuList {
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 0;
+        z-index: 98;
+    }
+    .menuList ul p h1 {
+        z-index: 0;
+    }
+
+    .menuList .subList{
+        z-index: 99;
+    }
+
+    .tags {
+        padding: 0px;
+        padding-left: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tags ul{
+        font-size: 9px;
+        margin-right: 0;
+    }
+
+    .sortOrder .orderList p {
+        width: 60px;
+        display: flex;
+        font-size: 18;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
 }
 

@@ -2,12 +2,16 @@
 import React, { useState } from 'react';
 import styles from './codeEditor.module.css';
 import Window from '../window/window';
+import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
 
 const CodeEditor = () => {
   const [htmlCode, setHtmlCode] = useState('');
   const [cssCode, setCssCode] = useState('');
   const [jsCode, setJsCode] = useState('');
   const [fontSize, setFontSize] = useState(13);
+  const [htmlIsVisible, setHtmlIsVisible] = useState(true);
+  const [cssIsVisible, setCssIsVisible] = useState(true);
+  const [jsIsVisible, setJsIsVisible] = useState(true); 
 
   const handleHtmlCodeChange = (event) => {
     setHtmlCode(event.target.value);
@@ -32,42 +36,61 @@ const CodeEditor = () => {
   return (
     <div className={styles.container}>
       <div className={styles.codeEditor}>
-        <div>
+        <div className={styles.codeEditorHeader}>
           <h1 className={styles.header}>Code Editor</h1>
           <p>This code editor is still under development, you can write, copy and paste html,css, and javascript to the respective text box. At the viewer section,  You can immediatelly view the appearance and behaviour of the codes you inputed in each text boxes. </p>
         </div>
 
         <div className={styles.codeBox}>
           <div className={styles.HTMLcontainer}>
-            <h2 className={styles.htmlHeader}>HTML</h2>
-            <div className={styles.codeBoxHtml}>
-              <div className={styles.editBoxBG}>
-                <div className={styles.textBoxEditor}>
-                  <div className={styles.lineNumbers}>
-                    {htmlCode.split('\n').map((_, index) => (
-                         <div key={index} className={styles.lineNumber}>
-                            {index + 1}
-                        </div>
-                    ))}
+            <div className={styles.htmlHeader}>
+                <div className={styles.containerHeader}>
+                    <h2>HTML</h2>
+                    <button onClick={() => setHtmlIsVisible(!htmlIsVisible)}> 
+                    {htmlIsVisible ? <FaRegEye /> : <FaRegEyeSlash />}
+                    </button>
+                </div>
+            </div>
+            
+            {htmlIsVisible && ( 
+              <div className={styles.codeBoxHtml}>
+                <div className={styles.editBoxBG}>
+                  <div className={styles.textBoxEditor}>
+                    <div className={styles.lineNumbers}>
+                      {htmlCode.split('\n').map((_, index) => (
+                           <div key={index} className={styles.lineNumber}>
+                              {index + 1}
+                          </div>
+                      ))}
+                    </div>
+                    <textarea
+                      value={htmlCode}
+                      onChange={handleHtmlCodeChange}
+                      rows="10"
+                      className={`${styles.htmlTxt} ${styles.noResize}`}
+                      onScroll={(e) => {
+                        const textarea = e.target;
+                        const lineNumbers = textarea.previousElementSibling;
+                        lineNumbers.scrollTop = textarea.scrollTop;
+                      }}
+                    ></textarea>
                   </div>
-                  <textarea
-                    value={htmlCode}
-                    onChange={handleHtmlCodeChange}
-                    rows="10"
-                    className={`${styles.htmlTxt} ${styles.noResize}`}
-                    onScroll={(e) => {
-                      const textarea = e.target;
-                      const lineNumbers = textarea.previousElementSibling;
-                      lineNumbers.scrollTop = textarea.scrollTop;
-                    }}
-                  ></textarea>
                 </div>
               </div>
-            </div>
+            )} 
           </div>
 
           <div className={styles.CSScontainer}>
-            <h2 className={styles.cssHeader}>CSS</h2>
+            <div className={styles.htmlHeader}>
+                <div className={styles.containerHeader}>
+                    <h2>CSS</h2>
+                    <button onClick={() => setCssIsVisible(!cssIsVisible)}> 
+                    {cssIsVisible ? <FaRegEye /> : <FaRegEyeSlash />}
+                    </button>
+                </div>
+            </div>
+            
+            {cssIsVisible && ( 
             <div className={styles.codeBoxHtml}>
               <div className={styles.editBoxBG}>
                 <div className={styles.textBoxEditor}>
@@ -85,10 +108,20 @@ const CodeEditor = () => {
                 </div>
               </div>
             </div>
+            )}
           </div>
 
           <div className={styles.JScontainer}>
-            <h2 className={styles.jsHeader}>JavaScript</h2>
+            <div className={styles.htmlHeader}>
+                <div className={styles.containerHeader}>
+                    <h2>JacaScript</h2>
+                    <button onClick={() => setJsIsVisible(!jsIsVisible)}> 
+                    {jsIsVisible ? <FaRegEye /> : <FaRegEyeSlash />}
+                    </button>
+                </div>
+            </div>
+
+            {jsIsVisible && ( 
             <div className={styles.codeBoxHtml}>
               <div className={styles.editBoxBG}>
                 <div className={styles.textBoxEditor}>
@@ -106,6 +139,7 @@ const CodeEditor = () => {
                 </div>
               </div>
             </div>
+            )}
           </div>
         </div>
       </div>
