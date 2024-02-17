@@ -2,6 +2,8 @@
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: auto;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -12,13 +14,17 @@
     justify-content: center;
     overflow: auto;
     z-index: 99998;
-  }
-  
-  .modal {
-    min-width: 800px;
-    max-width: 80%; /* Change to "max-width" for responsiveness */
-    min-height: 500px;
-    max-height: auto; /* Change to "auto" for dynamic height */
+}
+
+.modalOverlay::-webkit-scrollbar {
+    display: none;
+}
+
+.modal {
+    max-width: 80%;
+    /* Change to "max-width" for responsiveness */
+    height: auto;
+    /* Change to "auto" for dynamic height */
     margin: 60px;
     color: var(--textColor);
     background-color: var(--bg);
@@ -26,46 +32,48 @@
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
-    top: 50px;
+    top: -20px;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
     z-index: 99999;
-  }
+}
 
-  .modalTitle {
+.modalTitle {
     position: absolute;
     left: 30px;
     top: 120px;
-  }
-  
-  .modalBanner {
+}
+
+.modalBanner {
     position: relative;
     background: var(--bg1);
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .modalFooter{
+.modalFooter {
     background: var(--bg1);
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .modalContent {
-    flex: 1; /* Allow modal content to grow and occupy available space */
+}
+
+.modalContent {
+    flex: 1;
+    /* Allow modal content to grow and occupy available space */
     padding: 20px;
-    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
+    overflow-y: auto;
+    /* Add "overflow-y" property to enable vertical scrolling */
     display: flex;
     flex-direction: row;
 }
-  
-  .modalContent .modalLeft {
+
+.modalContent .modalLeft {
     width: 30%;
     padding: 15px;
     display: flex;
@@ -76,9 +84,9 @@
     justify-content: space-between;
     color: rgb(255, 255, 255);
 
-  }
- 
-  .modalContent .modalRight {
+}
+
+.modalContent .modalRight {
     position: relative;
     justify-content: space-between;
     width: 70%;
@@ -87,9 +95,9 @@
     flex-direction: column;
     gap: 15px;
     background-color: var(--bg1);
-  }
-  
-  .modalBtn {
+}
+
+.modalBtn {
     display: flex;
     position: absolute;
     right: 5px;
@@ -97,9 +105,9 @@
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-  }
-    
-  .closeBtn {
+}
+
+.closeBtn {
     margin-top: 10px;
     padding: 10px;
     background-color: #be4816;
@@ -107,254 +115,267 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-  }
+}
 
-  .closeBtn:hover {
+.closeBtn:hover {
     background-color: #d0cfcf;
     color: #be4816;
-    border: 2px solid #be4816;  
-  }
-  
-  /* Leftside */
-  .ProfileInfo , .ContactInfo,
-  .EducSec, .Language, .Interest{
+    border: 2px solid #be4816;
+}
+
+/* Leftside */
+.ProfileInfo,
+.ContactInfo,
+.EducSec,
+.Language,
+.Interest {
     z-index: 1;
-  }
+}
 
-  .ContactNumber, .ContactLink,
-  .ContactAddress {
+.ContactNumber,
+.ContactLink,
+.ContactAddress {
     display: flex;
-  }
+}
 
-  .ContactNumber:hover, .ContactLink div:hover,
-  .ContactAddress:hover {
+.ContactNumber:hover,
+.ContactLink div:hover,
+.ContactAddress:hover {
     background-color: #ff9900;
     font-weight: bold;
-  }
+}
 
-  .ContactLink {
+.ContactLink {
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .ContactLink div {
+.ContactLink div {
     display: flex;
-  }
+}
 
-  .ContactLink div h3, .ContactNumber h3 {
+.ContactLink div h3,
+.ContactNumber h3 {
     padding-top: 8px;
-  }
+}
 
-  .ContactIcon h2 {
+.ContactIcon h2 {
     font-size: 22px;
     padding: 10px;
     margin-right: 5px;
-  }
+}
 
-  .modalLeft h1 {
+.modalLeft h1 {
     font-size: 20px;
     font-weight: bolder;
     text-transform: uppercase;
     color: var(--hardTextColor);
-  }
+}
 
-  .ProfileInfo {
+.ProfileInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .ProfileName h1 {
+.ProfileName h1 {
     font-size: 23px;
-  }
+}
 
-  .ProPic{
+.ProPic {
     background-color: #be4816;
     width: 250px;
     height: 250px;
     border-radius: 50%;
     padding: 50px;
     margin: 10px;
-  }
+}
 
-  .ProfileName{
+.ProfileName {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
-  }
+}
 
-  .BGimage{
+.BGimage {
     width: 350px;
     height: 400px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
-  }
+}
 
-  /* Education Section */
-  .EducInfo {
+/* Education Section */
+.EducInfo {
     margin-top: 10px;
     margin-bottom: 15px;
     padding-left: 10px;
-  }
+}
 
-  .EducInfo:hover {
+.EducInfo:hover {
     background-color: #e29a2c;
     padding: 10px;
     transform: scale(1.1);
-  }
+}
 
-  .EducSec p {
+.EducSec p {
     font-size: 12px;
-  }
+}
 
-  .EducSec h2 {
+.EducSec h2 {
     font-size: 18px;
     font-weight: bold;
-  }
+}
 
-  /* Language Section */
-  .LanInfo {
+/* Language Section */
+.LanInfo {
     padding-left: 10px;
     padding-top: 10px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
+    grid-template-columns: repeat(2, 1fr);
+}
 
-  .langGrade {
+.langGrade {
     display: flex;
     font-size: 12px;
     justify-content: space-between;
-  }
+}
 
-  /* Interest Section */
+/* Interest Section */
 
-  .InterestList {
+.InterestList {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
+    grid-template-columns: repeat(2, 1fr);
+}
 
-  .InterestList div {
+.InterestList div {
     margin-bottom: 10px;
-  }
+}
 
-  .InterestInfo {
+.InterestInfo {
     display: flex;
-  }
+}
 
-  .InterestInfo:hover {
+.InterestInfo:hover {
     background-color: #e5ad58;
-  }
+}
 
-  .InterestInfo h2 {
+.InterestInfo h2 {
     font-size: 22px;
     padding: 5px;
     margin-right: 5px;
-  }
+}
 
-  .InterestInfo h3 {
+.InterestInfo h3 {
     font-size: 14px;
     align-items: center;
     padding-top: 5px;
-  }
+}
 
 
-  /* Rightside */
+/* Rightside */
 
-  .modalRight h1 {
+.modalRight h1 {
     font-size: 21px;
     font-weight: bolder;
     text-transform: uppercase;
-  }
+}
 
-  /* Profile Description */
-  .ProfileNarative {
+/* Profile Description */
+.ProfileNarative {
     height: 300px;
     overflow: hidden;
-  }
+}
 
-  .ExpList {
+.ExpList {
     height: 900px;
     overflow: hidden;
-  }
+}
 
-  .Experience .ExpInfo {
+.Experience .ExpInfo {
     margin-top: 10px;
     padding: 5px;
     display: grid;
     grid-template-columns: 1fr 3fr;
-  }
+}
 
-  .ExpInfoLeft {
+.ExpInfoLeft {
     margin-right: 5px;
-  }
+}
 
-  .ExpDate, .ExpCompany {
+.ExpDate,
+.ExpCompany {
     font-size: 14px;
     font-weight: bolder;
     color: #656b75;
-  }
+}
 
-  .ExpPosition {
+.ExpPosition {
     font-size: 16px;
     font-weight: bold;
     color: #2a7da2;
-  }
+}
 
-  .ExpDate, .ExpCompany,
-  .ExpPosition, .ExpPosDesc {
+.ExpDate,
+.ExpCompany,
+.ExpPosition,
+.ExpPosDesc {
     padding-left: 10px;
     margin-bottom: 5px;
-  }
+}
 
-  .ExpDate, .ExpCompany,
-  .ExpPosition {
+.ExpDate,
+.ExpCompany,
+.ExpPosition {
     text-transform: uppercase;
-  }
+}
 
-  /* Professional Skills */
-  .skillBTN {
+/* Professional Skills */
+.skillBTN {
     display: flex;
     justify-content: flex-start;
-  }
-  .GraphBTN{
+}
+
+.GraphBTN {
     border-radius: 10px 0px 0px 0px;
-  }
+}
 
-  .WebBTN{
+.WebBTN {
     border-radius: 0px 10px 0px 0px;
-  }
+}
 
-  .GraphBTN, .WebBTN {
+.GraphBTN,
+.WebBTN {
     padding: 5px;
-  }
+}
 
-  .skillBTN button:hover{
+.skillBTN button:hover {
     background: #62929E;
-  }
+}
 
-  .skillBTN button.active {
+.skillBTN button.active {
     background: #74adbb;
-  }
+}
 
-  /* .SkillsSec{
+/* .SkillsSec{
     position: absolute;
     bottom: 20px;
   } */
-  
-  .skillBar, .skillBar1{
+
+.skillBar,
+.skillBar1 {
     width: 100%;
     padding: 10px;
     background: #e0dfdf;
     border-radius: 0px 0px 10px 10px;
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
-  }
+}
 
-  /* .skillBar:nth-child(),
+/* .skillBar:nth-child(),
   .skillBar1:nth-child(){
     grid-area: one;
   }
@@ -369,118 +390,134 @@
     grid-area: three;
   } */
 
-  /* .skillBar table td{
+/* .skillBar table td{
     padding: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
   } */
 
-  .skillname {
+.skillname {
     padding: 5px;
-  }
+}
 
-  .skillrate {
+.skillrate {
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-  }
+}
 
-  .skillscore {
+.skillscore {
     padding: 5px;
-  }
+}
 
-  .skillscore div {
+.skillscore div {
     padding-left: 10px;
-  }
+}
 
-  .firstColumn {
-    width: 225px; /* Adjust the width */
-    text-align: left; /* Adjust the text alignment */
-  }
-  
-  .secondColumn {
-    width: 450px; /* Adjust the width */
-    text-align: center; /* Adjust the text alignment */
-  }
-  
-  .thirdColumn {
-    width: 50px; /* Adjust the width */
-    text-align: right; /* Adjust the text alignment */
-  }
+.firstColumn {
+    width: 225px;
+    /* Adjust the width */
+    text-align: left;
+    /* Adjust the text alignment */
+}
 
-  .percent {
+.secondColumn {
+    width: 450px;
+    /* Adjust the width */
+    text-align: center;
+    /* Adjust the text alignment */
+}
+
+.thirdColumn {
+    width: 50px;
+    /* Adjust the width */
+    text-align: right;
+    /* Adjust the text alignment */
+}
+
+.percent {
     position: relative;
     width: 100%;
     height: 10px;
     background: rgb(237, 237, 237);
-  }
+}
 
-  .percent div {
+.percent div {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background:var(--skillBar);
-  }
+    background: var(--skillBar);
+}
 
-  /* Banner */
+/* Banner */
 
-  .toolBar {
+.toolBar {
     display: flex;
     position: absolute;
     bottom: 5px;
-  }
+}
 
-  .toolBar p {
+.toolBar p {
     font-size: 22px;
     padding: 10px;
     margin-left: 5px;
     margin-right: 5px;
-  }
+}
 
-  .toolBar p:hover {
+.toolBar p:hover {
     font-weight: bold;
     background-color: #ff9900;
     padding: 10px;
-  }
+}
 
-  /* FOOTER */
+/* FOOTER */
 
-  .UpdateBTN {
+.UpdateBTN {
     padding: 7px;
     margin-right: 10px;
     border-radius: 15px;
-  }
+}
 
-  .UpdateBTN:hover {
+.UpdateBTN:hover {
     background-color: #ff9900;
     padding: 7px;
     margin-right: 10px;
     border-radius: 15px;
     font-weight: bolder;
-  }
+}
 
 
-    /* ==============media querry */
-    @media screen and (max-width: 1280px) {
-   
+/* ==============media querry */
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 1024px) {
+    .modal {
+        width: 80%;
     }
-  
-    @media screen and (max-width: 920px){
-    
-  
+
+    .modalContent {
+        width: 100%;
+        flex-direction: column;
     }
-  
-    @media screen and (max-width: 768px) {    
-    
+
+    .modalContent .modalLeft,
+    .modalContent .modalRight {
+        width: 100%;
     }
-  
-    @media screen and (max-width: 640px) {
-      
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        top: -30px;
     }
-  
-    @media (orientation: portrait) {
-     
-    }
+}
+
+@media screen and (max-width: 640px) {}
+
+@media (orientation: portrait) {}

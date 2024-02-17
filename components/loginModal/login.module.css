@@ -1,5 +1,6 @@
 .loginContainer {
     width: 90%;
+    height: 100%;
     display: flex;
     margin: 0;
     margin-top: 20px;
@@ -12,6 +13,7 @@
 
 .loginWrapper {
     width: 80%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,12 +24,13 @@
     align-content: center;
 }
 
-.leftSide{
+.leftSide {
     display: flex;
     position: relative;
     flex-direction: column;
     width: 50%;
-    height: 550px;
+    min-height: 550px;
+    max-height: auto;
 }
 
 .leftSide .loginAccounts {
@@ -52,7 +55,8 @@
 .rightSide {
     display: flex;
     width: 50%;
-    height: 550px;
+    min-height: 550px;
+    max-height: max-content;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -72,7 +76,7 @@
 
 }
 
-.socialMedia  {
+.socialMedia {
     display: flex;
     width: 100%;
     padding: 10px;
@@ -87,12 +91,12 @@
 }
 
 .inputBttnGoogle .button {
-    @apply w-32 bg-gradient-to-r from-red-500  via-yellow-500 to-green-500 rounded-md;
+    @apply w-32 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-md;
     @apply py-2 text-gray-50 text-lg;
 }
 
 .inputBttnFacebook .button {
-    @apply w-32 bg-gradient-to-r from-blue-500  to-indigo-500 rounded-md;
+    @apply w-32 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md;
     @apply py-2 text-gray-50 text-lg;
 }
 
@@ -116,7 +120,8 @@
     @apply text-gray-700 border;
 }
 
-  @media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
+
     .inputBttnGoogle,
     .inputBttnFacebook,
     .inputBttnGithub {
@@ -129,14 +134,14 @@
         @apply w-20;
         @apply py-1;
     }
-  }
+}
 
 
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .loginContainer {
         width: 100%;
     }
-    
+
     .loginWrapper {
         width: 100%;
     }
@@ -158,42 +163,9 @@
         @apply py-1;
     }
 
-  }
-  @media screen and (max-width: 768px) {
-    .inputBttnGoogle,
-    .inputBttnFacebook,
-    .inputBttnGithub {
-        width: 56px;
-    }
+}
 
-    .inputBttnGoogle .button,
-    .inputBttnFacebook .button,
-    .inputBttnGithub .button {
-        @apply w-14;
-        @apply py-1;
-    }
-    
-    .leftSide .loginAccounts .loginIcons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .leftSide .loginAccounts .loginTexts {
-        display: none;
-    }
-
-    .rightSideWrapper {
-        padding-top: 2px;
-    }
-    
-  }
-  @media screen and (max-width: 640px) {
-    .loginWrapper {
-        flex-direction: column;
-        width: 100%;
-    }
+@media screen and (max-width: 768px) {
 
     .leftSide,
     .rightSide {
@@ -207,5 +179,40 @@
     .rightSideWrapper {
         padding-top: 20px;
     }
-  }
-  
+
+    .loginWrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .inputBttnGoogle,
+    .inputBttnFacebook,
+    .inputBttnGithub {
+        width: 56px;
+    }
+
+    .inputBttnGoogle .button,
+    .inputBttnFacebook .button,
+    .inputBttnGithub .button {
+        @apply w-14;
+        @apply py-1;
+    }
+
+    .leftSide .loginAccounts .loginIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leftSide .loginAccounts .loginTexts {
+        display: none;
+    }
+
+    .rightSideWrapper {
+        padding-top: 2px;
+    }
+
+}
+
+@media screen and (max-width: 640px) {}

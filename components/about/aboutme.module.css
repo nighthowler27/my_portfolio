@@ -10,16 +10,18 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    overflow: auto; /* Change to "auto" to enable scrolling */
-    }
-  
+    overflow: auto;
+    /* Change to "auto" to enable scrolling */
+}
+
 
 
 .modal {
-    min-width: 800px;
-    max-width: 80%; /* Change to "max-width" for responsiveness */
+    max-width: 80%;
+    /* Change to "max-width" for responsiveness */
     min-height: 500px;
-    max-height: auto; /* Change to "auto" for dynamic height */
+    max-height: auto;
+    /* Change to "auto" for dynamic height */
     margin: 60px;
     color: black;
     background-color: #fff;
@@ -30,12 +32,15 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    }
+}
 
 .modalContent {
-    flex: 1; /* Allow modal content to grow and occupy available space */
+    width: 100%;
+    flex: 1;
+    /* Allow modal content to grow and occupy available space */
     padding: 20px;
-    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
+    overflow-y: auto;
+    /* Add "overflow-y" property to enable vertical scrolling */
     height: auto;
     display: flex;
     flex-direction: row;
@@ -57,7 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/img/trendy_bg3.jpeg") no-repeat center ;
+    background: url("/img/trendy_bg3.jpeg") no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -71,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/img/trendy_bg2.jpeg") no-repeat center ;
+    background: url("/img/trendy_bg2.jpeg") no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -79,19 +84,18 @@
     z-index: 0;
 }
 
-.BGimage{
+.BGimage {
     width: 350px;
     height: 400px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
-  }
+}
 
 /* ==========RIGHT SIDE */
 .RightsidePanel {
     height: auto;
-    min-width: 90%;
     max-width: 90%;
     display: flex;
     flex-direction: column;
@@ -154,17 +158,19 @@
     text-align: justify;
 }
 
-.LeftColumn, .RightColumn {
+.LeftColumn,
+.RightColumn {
     width: 50%;
     padding: 5px;
     margin-right: 10px;
     margin-left: 10px;
 }
+
 .PanelContextsTitle {
     margin-top: 10px;
     padding-left: 15px;
     font-size: 16px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 
@@ -179,42 +185,42 @@
     padding: 20px;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .modalBtnTop {
+.modalBtnTop {
     display: flex;
     position: absolute;
     right: 10px;
     justify-content: center;
     align-content: center;
-  }
-  
-  .webLinks {
+}
+
+.webLinks {
     display: flex;
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .link {
+}
+
+.link {
     display: flex;
     padding: 5px;
     margin: 5px;
     justify-content: space-between;
     align-items: center;
     gap: 5px;
-  }
-  
-  .closeBtn {
+}
+
+.closeBtn {
     margin-top: 10px;
     padding: 5px 10px;
     background-color: #ddd;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
 
-  .closeBtnTop {
+.closeBtnTop {
     padding: 10px;
     background-color: #be4816;
     color: #d0cfcf;
@@ -222,33 +228,29 @@
     border-radius: 50px;
     cursor: pointer;
     z-index: 1;
-  }
+}
 
-  .closeBtnTop:hover {
+.closeBtnTop:hover {
     background-color: #d0cfcf;
     color: #be4816;
-    border: 2px solid #be4816;  
-  }
+    border: 2px solid #be4816;
+}
 
-    /* ==============media querry */
-    @media screen and (max-width: 1280px) {
-   
+/* ==============media querry */
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 1024px) {
+    .modal {
+        width: 85%;
     }
-  
-    @media screen and (max-width: 920px){
-    
-  
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 85%;
     }
-  
-    @media screen and (max-width: 768px) {    
-    
-    }
-  
-    @media screen and (max-width: 640px) {
-      
-    }
-  
-    @media (orientation: portrait) {
-     
-    }
-  
+}
+
+@media screen and (max-width: 640px) {}
+
+@media (orientation: portrait) {}

@@ -85,10 +85,10 @@ const Page = () => {
 
                         <div className={styles.userDesc}>
                             <p className=" text-gray-500">
-                                Click &quot;Guest&quot; for a Temporay Account
+                                Click &quot;Guest&quot; to use a Temporay Account
                             </p>
                             <p className="text-gray-500">
-                                SignUp/Login as Client to Avail Services
+                                SignUp/Login as Client to all Avail Services
                             </p>
                         </div>
 

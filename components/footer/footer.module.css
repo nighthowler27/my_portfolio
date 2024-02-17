@@ -1,58 +1,59 @@
 .container {
+    width: 100%;
     margin-top: 50px;
     padding: 20px 10px;
     display: flex;
     color: var(--softTextColor);
-  }
-  
-  .infoWrapper {
+}
+
+.infoWrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 14px;
-  }
-  
-  .logo {
+}
+
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  .logoText {
+}
+
+.logoText {
     font-size: 24px;
-  }
-  
-  .desc {
+}
+
+.desc {
     font-weight: 300;
     padding-right: 20px;
-  }
-  
-  .icons {
+}
+
+.icons {
     font-size: 30px;
     margin-top: 5px;
     display: flex;
-  }
+}
 
-  .icons p {
+.icons p {
     margin-right: 6px;
-  }
-  
-  .linksWrapper {
+}
+
+.linksWrapper {
     flex: 2;
     display: flex;
     flex-direction: row;
     padding: 10px;
-  }
+}
 
-  .contactInfo {
+.contactInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  
-  .contactList {
+
+.contactList {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -61,46 +62,46 @@
     width: 320px;
     margin-right: 10px;
     margin-left: 10px;
-  }
+}
 
-  .contactMap {
+.contactMap {
     width: 300px;
     height: 150px;
     margin: 10px;
     justify-self: center;
-    background-color:bisque;
-  }
+    background-color: bisque;
+}
 
-  .links {
+.links {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
     font-size: 12px;
-  }
+}
 
-  .list {
+.list {
     display: flex;
     flex-direction: column;
     width: 190px;
-    gap: 10px;  
-  }
-  
-  .listTitle {
+    gap: 10px;
+}
+
+.listTitle {
     font-weight: bold;
-  }
+}
 
-  div.contactList div{
+div.contactList div {
     display: flex;
-  }
+}
 
-  div.contactList div p {
+div.contactList div p {
     margin-right: 5px;
-  }
-  
-  @media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1280px) {
     .links {
-      gap: 5px;
+        gap: 5px;
     }
 
     .linksWrapper {
@@ -111,16 +112,17 @@
         margin-top: 15px;
         width: 130px;
     }
-  }
-  @media screen and (max-width: 920px){
+}
+
+@media screen and (max-width: 920px) {
     .container {
         flex-direction: column;
         gap: 5px;
-      }
+    }
 
-  }
+}
 
-  @media screen and (max-width: 768px) {    
+@media screen and (max-width: 768px) {
     .links {
         width: 100%;
         justify-content: space-between;
@@ -128,19 +130,15 @@
 
     .list {
         width: 200px;
-        gap: 10px;  
-      }
-  }
-  @media screen and (max-width: 640px) {
-    
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
     .links {
         font-size: 14px;
     }
-  }
+}
 
-  @media (orientation: portrait) {
-    .links {
-      color: var(--softTextColor);
-    }
-  }
-  
+@media (orientation: portrait) {}

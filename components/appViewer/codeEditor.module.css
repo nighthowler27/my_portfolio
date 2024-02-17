@@ -139,6 +139,7 @@
     padding: 10px;
     font-family: monospace;
     user-select: none;
+    -webkit-user-select: none;
     pointer-events: none; /* Prevents line numbers from capturing mouse events */
     overflow-y: hidden;
     line-height: 20px;

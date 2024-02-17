@@ -2,7 +2,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    bottom: 0;
+    right: auto;
+    width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -10,86 +12,99 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
-    z-index: 99998;
-  }
-  
-  .modal {
-    min-width: 800px;
-    max-width: 80%; /* Change to "max-width" for responsiveness */
-    min-height: 500px;
-    max-height: auto; /* Change to "auto" for dynamic height */
-    margin: 60px;
+    z-index: 9998;
+}
+
+.modalOverlay::-webkit-scrollbar {
+    display: none;
+}
+
+.modal {
+    max-width: 80%;
+    /* Change to "max-width" for responsiveness */
+    height: auto;
+    /* Change to "auto" for dynamic height */
+    top: 15px;
     color: var(--textColor);
     background-color: var(--bg);
+    /* background-color: #be4816; */
     padding-top: 20px;
     border-radius: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    z-index: 99999;
-  }
+    z-index: 9999;
+}
 
-  .modalTitle {
+.modalTitle {
     position: absolute;
     left: 30px;
     top: 120px;
 
-  }
-  
-  .modalBanner {
+}
+
+.modalBanner {
     background: var(--bg1);
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .modalFooter{
+.modalFooter {
     background: var(--bg1);
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .modalContent {
-    flex: 1; /* Allow modal content to grow and occupy available space */
+}
+
+.modalContent {
+    flex: 1;
+    /* Allow modal content to grow and occupy available space */
     padding: 20px;
-    overflow-y: auto; /* Add "overflow-y" property to enable vertical scrolling */
+    overflow-y: auto;
+    /* Add "overflow-y" property to enable vertical scrolling */
     height: auto;
     display: flex;
     flex-direction: row;
 }
-  
-  .modalContent .modalLeft {
+
+.modalContent .modalLeft {
     width: 50%;
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: justify;
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+}
 
-  .modalInstruction {
+.modalInstruction {
     text-align: left;
     white-space: nowrap;
     font-size: 12px;
-  }
- 
-  .modalContent .modalRight {
+}
+
+.modalContent .modalRight {
     width: 50%;
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: justify;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 5px;
-  }
-  
-  .modalBtn {
+}
+
+.modalBtn {
     display: flex;
     position: absolute;
     right: 5px;
@@ -97,9 +112,9 @@
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-  }
-    
-  .closeBtn {
+}
+
+.closeBtn {
     margin-top: 10px;
     padding: 10px;
     background-color: #be4816;
@@ -107,21 +122,21 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-  }
+}
 
-  .closeBtn:hover {
+.closeBtn:hover {
     background-color: var(--textColor);
     color: #be4816;
     border: 2px solid #be4816;
 
-  }
-  
+}
 
-  /* ==============FORM */
- .appointmentForm{
+
+/* ==============FORM */
+.appointmentForm {
     display: flex;
     justify-content: space-between;
-}   
+}
 
 .appFormControl {
     width: 100%;
@@ -134,31 +149,35 @@
     text-transform: uppercase;
     outline: none;
     transition: border-color .2s;
-  }
-  
-  .appFormControl::placeholder {
-    color: var(--textColor);
-  }
-  
-  .appFormControl:focus {
-    border-bottom-color: var(--bg);
-  }
+}
 
-.appFormControlMessage{
+.appFormControl::placeholder {
+    color: var(--textColor);
+}
+
+.appFormControl:focus {
+    border-bottom-color: var(--bg);
+}
+
+.appFormControlMessage {
     width: 100%;
     height: 150px;
     min-height: 150px;
-    max-height: 300px;
+    max-height: 140px;
     padding-left: 5px;
     margin-top: 15px;
     overflow-y: visible;
+}
+
+.appFormControlMessage::-webkit-scrollbar {
+    display: none;
 }
 
 .appFormButton {
     position: absolute;
     padding: 5px 15px;
     right: 25px;
-    bottom: 20px;
+    bottom: 10px;
     background-color: rgb(7, 159, 108);
     border-radius: 10px;
 }
@@ -175,121 +194,137 @@
 
 }
 
-div.react-calendar{
+div.react-calendar {
     color: var(--textColor);
     background-color: var(--bg);
 }
 
-.dateTIme{
+.dateTIme {
     width: 100%;
     margin: 0 auto;
 }
 
-  .datePicker {
+.datePicker {
     color: var(--textColor);
     background-color: var(--bg);
     margin: 0 auto;
     z-index: 999;
-  }
+}
 
-  /* Meeting List */
+/* Meeting List */
 
-  .meetingChoice {
+.meetingChoice {
     display: flex;
     gap: 10px;
-  }
+}
 
-  /* Styles for the checkbox container */
- .meetingList {
+/* Styles for the checkbox container */
+.meetingList {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-  }
+}
 
-  /* Styles for the input container */
- .addressInput {
-    display: none; /* Initially hide the input */
-    margin-left: 20px; /* Adjust the spacing as needed */
-  }
+/* Styles for the input container */
+.addressInput {
+    display: none;
+    /* Initially hide the input */
+    margin-left: 20px;
+    /* Adjust the spacing as needed */
+}
 
-  .inputOnsite input{
+.inputOnsite input {
     width: 100%;
     padding: 5px;
     background-color: var(--bg);
     border-bottom: var(--softTextColor);
-  }
-    
-  /* Styles for the checkboxes */
-  .meetingList input[type="radio"] {
+}
+
+/* Styles for the checkboxes */
+.meetingList input[type="radio"] {
     margin-right: 10px;
-  }
-  
-  /* Styles for the checkbox labels */
-  .meetingList label {
+}
+
+/* Styles for the checkbox labels */
+.meetingList label {
     font-weight: bold;
-  }
-  
-  /* Style for checked checkboxes */
-  .meetingList input[type="radio"]:checked + label {
-    color: #007bff; /* Change the color to your preference */
-  }
+}
 
-  /* Style for showing the input when the checkbox is checked */
-.meetingList input[type="radio"]:checked ~ .addressInput {
+/* Style for checked checkboxes */
+.meetingList input[type="radio"]:checked+label {
+    color: #007bff;
+    /* Change the color to your preference */
+}
+
+/* Style for showing the input when the checkbox is checked */
+.meetingList input[type="radio"]:checked~.addressInput {
     display: block;
-  }
+}
 
-  .socmedList {
+.socmedList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
+}
 
-  .socmed {
+.socmed {
     display: flex;
     padding: 5px;
-  }
+}
 
-  .socmed input {
+.socmed input {
     margin-right: 5px;
-  }
-  
-  /* Success Form Submitted */
-  .modalContentSuccess {
+}
+
+/* Success Form Submitted */
+.modalContentSuccess {
     padding: 50px;
     height: auto;
     display: flex;
-  }
-  .appointmentSent {
+}
+
+.appointmentSent {
     padding: auto;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .textLimit {
+.textLimit {
     display: flex;
     align-items: last baseline;
     justify-content: right;
     font-size: 10px;
-  }
+    margin-bottom: 20px;
+}
 
-    /* ==============media querry */
-    @media screen and (max-width: 1280px) {
-   
+/* ==============media querry */
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 1024px) {
+    .modal {
+        width: 85%;
     }
-  
-    @media screen and (max-width: 920px){
-    
-  
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 85%;
+        height: auto;
+        justify-content: center;
     }
-  
-    @media screen and (max-width: 768px) {    
-    
+
+    .modalContent {
+        width: 100%;
+        flex-direction: column;
     }
-  
-    @media screen and (max-width: 640px) {
-      
+
+    .modalContent .modalLeft,
+    .modalContent .modalRight {
+        width: 100%;
     }
-  
-    @media (orientation: portrait) {
-     
-    }
+
+
+}
+
+@media screen and (max-width: 640px) {}
+
+@media (orientation: portrait) {}
